@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="assets_backend" name="gpsmap_assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/solesgps_map/static/src/css/gpsmaps.css"/>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTDTeSJ3Uu3hHCy73RzGoJbx6vmKcmmUI"></script>
+            <script type="text/javascript" src="/solesgps_map/static/src/js/gpsmaps.js"/>
+        </xpath>
+    </template>
+    
+
+    <record id="view_gpsmap_vehicle_form_inherit" model="ir.ui.view">
+        <field name="name">gpsmap.vehicle.form</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group" position="after">            
+                <group col="4" string="GPS Configuration">
+                        <field name="imei"/>
+                        <field name="phone"/>
+                        <field name="image_vehicle"/>
+                </group>                
+            </xpath>                
+        </field>
+    </record>        
+    <!--
+    <record id='fleet_vehicle_odometer_view_tree' model='ir.ui.view'>
+        <field name="name">fleet.vehicle.odometer.tree</field>
+        <field name="model">fleet.vehicle.odometer</field>
+        <field name="arch" type="xml">
+            <tree string="Odometer Logs" editable="top">
+                <field name="date" />
+                <field name="vehicle_id"/>
+                <field name="driver_id"/>
+                <field name="value" />
+                <field name="unit" />
+            </tree>
+        </field>
+    </record>
+    -->
+    
+    
+    
+    
+    
+</odoo>
