@@ -10,12 +10,12 @@
     </record>
     <menuitem id="menu_gpsmap_maponline" name="Mapa Online" parent="fleet_vehicles" action="action_gpsmap_maponline" groups="gpsmap_group_user"/>
 
-
-    <record model="ir.ui.view" id="positions_tree">
-        <field name="name">positions_tree</field>
+<!--
+    <record id='fleet_positions_tree' model='ir.ui.view'>
+        <field name="name">gpsmap.positions.tree</field>
         <field name="model">gpsmap.positions</field>
         <field name="arch" type="xml">
-            <tree string="Reporte de posiciones">
+            <tree string="Odometer Logs" editable="top">
                 <field name="deviceid"/>
                 <field name="altitude"/>
                 <field name="course"/>
@@ -27,6 +27,8 @@
     </record>
 
 
+
+
     <record id='fleet_position_action' model='ir.actions.act_window'>
         <field name="name">Vehicles</field>
         <field name="res_model">gpsmap.positions</field>
@@ -35,5 +37,5 @@
     </record>
 
     <menuitem id="menu_fleet_position" name="History"  parent="fleet.fleet_vehicles" action="fleet_position_action" groups="solesgps_map.gpsmap_group_user"/>    
-
+-->
 </odoo>
