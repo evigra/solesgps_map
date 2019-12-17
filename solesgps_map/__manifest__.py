@@ -4,7 +4,7 @@
     'name' : 'SolesGPS Map',
     'price' : 395,
     'currency' : 'EUR',
-    'images': 'static/description/map_online.png',    
+    'images': ['static/description/map_online.png'],    
     'author': "SolesGPS :: Eduardo Vizcaino",
     'category': 'fleet, GPS, Geolocation',
     'website' : 'https://solesgps.com',
