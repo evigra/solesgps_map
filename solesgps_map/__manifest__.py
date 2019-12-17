@@ -8,7 +8,7 @@
     'author': "SolesGPS :: Eduardo Vizcaino",
     'category': 'fleet, GPS, Geolocation',
     'website' : 'https://solesgps.com',
-    'summary' : 'GPS Map Online',
+    'summary' : 'Locate the satellite coordinates that your GPS devices throw. Save that information here and see it on the map.',
     'description' : """
 Vehicle, leasing, insurances, cost
 ==================================
