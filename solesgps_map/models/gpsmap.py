@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
-
+import requests
 from dateutil.relativedelta import relativedelta
 from odoo import api, fields, models, _
 class vehicle(models.Model):
@@ -24,7 +24,6 @@ class positions(models.Model):
     _name = "gpsmap.positions"
     _description = 'GPS Positions'
     _pointOnVertex=""
-
     protocol = fields.Char('Protocolo', size=15)
     deviceid = fields.Many2one('fleet.vehicle',ondelete='set null', string="Vehiculo", index=True)
     servertime = fields.Datetime('Server Time')
@@ -41,8 +40,7 @@ class positions(models.Model):
     other = fields.Char('Otros', size=5000)
     leido = fields.Integer('Valido')
     event = fields.Char('Evento', size=70)
-
-
+    
     def run_scheduler(self):
         positions_obj   =self.env['gpsmap.positions']
         vehicle_obj     =self.env['fleet.vehicle']
@@ -78,45 +76,4 @@ class positions(models.Model):
                 data_create['leido']=''
                 data_create['event']=''
                 
-                positions_obj.create(data_create)
-    
-
-    """
-
-    def cron_demo_create_position(self, cr, uid):    
-        positions_obj   = self.pool.get('gpsmap.positions')    
-        vehicle_obj     = self.pool.get('fleet.vehicle')
-        
-    
-        print('========== CRON LALO')
-        vehicle_args  =[]
-        vehicle_ids   =vehicle_obj.search(cr, uid, args_positions,0,200)
-
-        if len(vehicle_ids)>0:         
-            for vehicle_id in vehicle_ids:
-                print('vehicle_id=',vehicle_id)
-                positions_arg               =[['deviceid','=',vehicle_id]]                
-                positions_ids               =positions_obj.search(cr, uid, args_positions,1)
-                                
-                data_create={}        
-                data_create['protocol']     ='tk103'
-                data_create['deviceid']     =vehicle_id
-                data_create['servertime']   =fields.Datetime.now()
-                data_create['devicetime']   =fields.Datetime.now()
-                data_create['fixtime']      =fields.Datetime.now()
-                data_create['valid']        =''
-                data_create['latitude']     =''
-                data_create['longitude']    =''
-                data_create['altitude']     =''
-                data_create['speed']        =Math.random()
-                data_create['course']=''
-                data_create['address']=''
-                data_create['attributes']=''
-                data_create['other']=''
-                data_create['leido']=''
-                data_create['event']=''
-                
-                #positions_id=super(positions, self).create(cr, uid, data_create, context=None)
-        
-    """    
-
+                positions_obj.create(data_create)    

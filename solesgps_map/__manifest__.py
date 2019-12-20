@@ -2,7 +2,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
     'name' : 'SolesGPS Map',
-    'price' : 395,
+    'price' : '395.0',
     'currency' : 'EUR',
     'images': ['static/description/map_online.png'],    
     'author': "SolesGPS :: Eduardo Vizcaino",

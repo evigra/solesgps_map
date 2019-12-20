@@ -11,26 +11,9 @@
     <menuitem id="menu_gpsmap_maponline" name="Online Map" sequence="1" parent="solesgps_map_geolocation" action="action_gpsmap_maponline" groups="gpsmap_group_user"/>
 
 
-
     <record id='fleet_position_action' model='ir.actions.act_window'>
         <field name="name">Vehicles</field>
         <field name="res_model">gpsmap.positions</field>
-        <field name="view_type">tree</field>
-        <field name="view_mode">tree</field>
     </record>
     <menuitem id="menu_gpsmap_position" name="History Map" sequence="3" parent="solesgps_map_geolocation" action="fleet_position_action" groups="gpsmap_group_user"/>    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </odoo>
