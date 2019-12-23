@@ -12,8 +12,10 @@
 
 
     <record id='fleet_position_action' model='ir.actions.act_window'>
-        <field name="name">Vehicles</field>
+        <field name="name">Histoy Map</field>
         <field name="res_model">gpsmap.positions</field>
     </record>
-    <menuitem id="menu_gpsmap_position" name="History Map" sequence="3" parent="solesgps_map_geolocation" action="fleet_position_action" groups="gpsmap_group_user"/>    
+    <menuitem action="fleet_position_action" parent="fleet.fleet_vehicles" id="=fleet_position_menu" groups="fleet.fleet_group_user"/>
+
+
 </odoo>
