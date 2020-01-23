@@ -30,13 +30,13 @@ Main Features
         'fleet',
     ],
     'data': [
-        'security/fleet_security.xml',
+        'security/solesgpsmap_security.xml',
 #        'security/ir.model.access.csv',
-        'views/gpsmap_menuitem.xml',
-        'views/gpsmap_views.xml',
+        'views/solesgpsmap_menuitem.xml',
+        'views/solesgpsmap_views.xml',
     ],
 
-    'demo': ['data/gpsmap_demo.xml'],
+    'demo': ['data/solesgpsmap_demo.xml'],
     'qweb': ['static/src/xml/*.xml'],
     'installable': True,
     'application': True,

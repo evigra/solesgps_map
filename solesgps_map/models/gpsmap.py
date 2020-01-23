@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
+import datetime
 import requests
+import random
 from dateutil.relativedelta import relativedelta
 from odoo import api, fields, models, _
 class vehicle(models.Model):
@@ -9,6 +11,10 @@ class vehicle(models.Model):
         ('01', 'Gray Vehicle'),
         ('02', 'Red Vehicle'),
         ('03', 'Camioneta Gris'),
+        ('04', 'Camioneta Gris'),
+        ('05', 'Camioneta Carga Blanca'),
+        ('06', 'Camioneta Caja Blanca'),
+        ('07', 'Camioneta Caja Azul'),
         ('90', 'Black Phone'),
         ('91', 'Blue  Phone'),
         ('92', 'Green Phone'),
@@ -16,9 +22,16 @@ class vehicle(models.Model):
         ], 'Img GPS', default='01', help='Image of GPS Vehicle', required=True)
     phone = fields.Char('Phone', size=50)
     imei = fields.Char('Imei', size=50)
+    speed = fields.Char('Exceso de Velocidad', default=100, size=3)
     position_id = fields.Many2one('gpsmap.positions',ondelete='set null', string="Ultima Posicion", index=True)
 
-
+class speed(models.Model):
+    _name = "gpsmap.speed"
+    _description = 'Positions Speed'
+    _pointOnVertex=""
+    deviceid = fields.Many2one('fleet.vehicle',ondelete='set null', string="Vehiculo", index=True)
+    starttime = fields.Datetime('Start Time')
+    endtime = fields.Datetime('End Time')
 
 class positions(models.Model):
     _name = "gpsmap.positions"
@@ -38,25 +51,34 @@ class positions(models.Model):
     address = fields.Char('Calle', size=150)
     attributes = fields.Char('Atributos', size=5000)
     other = fields.Char('Otros', size=5000)
-    leido = fields.Integer('Valido')
+    leido = fields.Integer('Leido')
     event = fields.Char('Evento', size=70)
-    
-    def run_scheduler(self):
-        positions_obj   =self.env['gpsmap.positions']
+    def get_system_para(self):
+        para_value = self.env['ir.config_parameter'].get_param('solesgps_map_key','')
+        return para_value
+    def action_addpositions(self):
+        self.run_scheduler()
+    def run_scheduler_demo(self):
+        positions_obj   =self.env['gpsmap.positions']        
         vehicle_obj     =self.env['fleet.vehicle']
         
-        vehicle_args  =[]
-        vehicle_data   =vehicle_obj.search(vehicle_args, offset=0, limit=None, order=None)
+        vehicle_args    =[]
+        vehicle_data    =vehicle_obj.search(vehicle_args, offset=0, limit=None, order=None)
 
-        print('CRON LALO====================')        
-        print('vehicles =',vehicle_data,' total=',len(vehicle_data))
+        now = datetime.datetime.now()
+
         if len(vehicle_data)>0:         
             for vehicle in vehicle_data:
                 positions_arg               =[('deviceid','=',vehicle.id)]                
-                positions_data               =positions_obj.search(positions_arg, offset=0, limit=1, order='devicetime DESC')
-                latitude=positions_data[0].latitude+.00356
-                longitude=positions_data[0].longitude+.00356
-                #print('vehicle_id=',vehicle.id, ' latitude =', positions_data[0].latitude)
+                positions_data              =positions_obj.search(positions_arg, offset=0, limit=1, order='devicetime DESC')
+                
+                velocidad = random.randint(95, 130)
+                curso = random.randint(30, 160)
+                
+                incremento_lat = random.uniform(-0.004, 0.004)
+                
+                latitude=positions_data[0].latitude + incremento_lat
+                longitude=positions_data[0].longitude + 0.00345
 
                 data_create={}        
                 data_create['protocol']     ='tk103'
@@ -68,12 +90,94 @@ class positions(models.Model):
                 data_create['latitude']     =latitude
                 data_create['longitude']    =longitude
                 data_create['altitude']     =''
-                #data_create['speed']        =Math.random()
-                data_create['course']=''
-                data_create['address']=''
-                data_create['attributes']=''
-                data_create['other']=''
-                data_create['leido']=''
-                data_create['event']=''
+                data_create['speed']        =velocidad
+                data_create['course']       =curso
+                data_create['address']      =''
+                data_create['attributes']   =''
+                data_create['other']        =0
+                data_create['leido']        =''
+                data_create['event']        =''
                 
                 positions_obj.create(data_create)    
+        self.run_scheduler_position()
+                
+    def run_scheduler_position(self):
+        now = datetime.datetime.now()
+
+        print('CRON LALO====================',now)        
+        
+        positions_obj   =self.env['gpsmap.positions']
+        vehicle_obj     =self.env['fleet.vehicle']
+        speed_obj       =self.env['gpsmap.speed']
+        mail_obj        =self.env['mail.message']
+        
+        positions_arg               =[('leido','=',0)]                
+        positions_data              =positions_obj.search(positions_arg, offset=0, limit=100)        
+        #positions_data              =positions_obj.search(positions_arg, offset=0, limit=3, order='devicetime ASC')        
+
+        if len(positions_data)>0:         
+            for position in positions_data:
+                vehicle_arg               =[('id','=',position.deviceid.id)]                
+                vehicle              =vehicle_obj.search(vehicle_arg)        
+                if vehicle.speed=='':
+                    vehicle.speed=100
+                if vehicle.speed==0:
+                    vehicle.speed=100    
+
+                speed_arg                   =[['deviceid','=',position.deviceid.id],['endtime','=',False]]                
+                speed_data                  =speed_obj.search(speed_arg, offset=0, limit=50000)        
+                
+                print(position.id, ' ======= Velocidad Count =', len(speed_data), " ID Vehicle=",position.deviceid.id, ' Velocidad permitida =', vehicle.speed, ' Speed=',position.speed)
+                
+                if float(vehicle.speed) < float(position.speed):
+                    if(len(speed_data)==0):
+                        speed                       ={}
+                        speed["deviceid"]           =position.deviceid.id
+                        speed["starttime"]          =position.devicetime
+                        speed_obj.create(speed)
+                        
+                        mail                        ={}
+                        mail["model"]               ="gpsmap.positions"        
+                        mail["res_id"]              =position.id
+                        
+                        mail["message_type"]        ="comment"
+                        
+                        mail["body"]                ="Contenido del mensaje %s" %(vehicle.name) 
+                        
+                        mail_obj.create(mail)        
+                        print('Exceso de velocidad')
+                        
+                else:
+                    if(len(speed_data)>0):
+                        speed                       ={}
+                        for speed in speed_data:
+
+                            speed["endtime"]        =position.devicetime
+                            speed_obj.write(speed)                        
+                            print('Saliendo del exceso de velocidad')
+                    #if len(speed_data)>0:
+                                    
+                position["leido"]=1                
+                positions_obj.write(position)
+                
+    def geofences(self):
+        return false                
+class geofence(models.Model):
+    _name = "gpsmap.geofence"
+    _description = 'GPS Geofence'
+    _pointOnVertex=""
+    name = fields.Char('Name', size=75)
+    description = fields.Char('Description', size=150)
+    area = fields.Text('area')
+    attributes = fields.Text('Attributes')
+    points = fields.Text('Points')
+    color = fields.Selection([
+        ('green', 'Green'),
+        ('red', 'Red'),
+        ('blue', 'Blue'),
+        ('black', 'Black'),
+        ('grey', 'Grey'),
+        ('yellow', 'Yellow'),
+        ], 'Color', default='green', help='Color of geofence', required=True)
+    hidden = fields.Boolean('Hidden')
+        

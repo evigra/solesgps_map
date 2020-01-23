@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+<!--
+        <record id="ir_cron_solesgps_position" model="ir.cron">
+            <field name="name">SolesGPS: Add positions demo</field>
+            <field name="model_id" ref="gpsmap.positions"/>
+            <field name="state">code</field>
+            <field name="code">model.run_scheduler()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="active" eval="True"/>
+        </record>
+-->        
+
       <record id="fleet.vehicle_1" model="fleet.vehicle"> 
           <field name="image_vehicle">02</field>
       </record>
       <record id="fleet.vehicle_2" model="fleet.vehicle"> 
-          <field name="image_vehicle">92</field>
+          <field name="image_vehicle">05</field>
       </record>
       <record id="fleet.vehicle_3" model="fleet.vehicle"> 
           <field name="image_vehicle">90</field>
       </record>
       <record id="fleet.vehicle_4" model="fleet.vehicle"> 
-          <field name="image_vehicle">91</field>
+          <field name="image_vehicle">06</field>
       </record>
       <record id="fleet.vehicle_5" model="fleet.vehicle"> 
           <field name="image_vehicle">01</field>
