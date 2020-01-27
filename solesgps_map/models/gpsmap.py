@@ -32,6 +32,7 @@ class speed(models.Model):
     deviceid = fields.Many2one('fleet.vehicle',ondelete='set null', string="Vehiculo", index=True)
     starttime = fields.Datetime('Start Time')
     endtime = fields.Datetime('End Time')
+    speed = fields.Float('Velocidad',digits=(3,2))
 
 class positions(models.Model):
     _name = "gpsmap.positions"
@@ -110,6 +111,10 @@ class positions(models.Model):
         vehicle_obj     =self.env['fleet.vehicle']
         speed_obj       =self.env['gpsmap.speed']
         mail_obj        =self.env['mail.message']
+        geofence_obj    =self.env['gpsmap.geofence']
+        
+        
+        alerts_data     =geofence_obj.geofences()
         
         positions_arg               =[('leido','=',0)]                
         positions_data              =positions_obj.search(positions_arg, offset=0, limit=100)        
@@ -127,26 +132,24 @@ class positions(models.Model):
                 speed_arg                   =[['deviceid','=',position.deviceid.id],['endtime','=',False]]                
                 speed_data                  =speed_obj.search(speed_arg, offset=0, limit=50000)        
                 
-                print(position.id, ' ======= Velocidad Count =', len(speed_data), " ID Vehicle=",position.deviceid.id, ' Velocidad permitida =', vehicle.speed, ' Speed=',position.speed)
+                #print(position.id, ' ======= Velocidad Count =', len(speed_data), " ID Vehicle=",position.deviceid.id, ' Velocidad permitida =', vehicle.speed, ' Speed=',position.speed)
                 
                 if float(vehicle.speed) < float(position.speed):
                     if(len(speed_data)==0):
                         speed                       ={}
                         speed["deviceid"]           =position.deviceid.id
                         speed["starttime"]          =position.devicetime
+                        speed["speed"]              =position.speed
                         speed_obj.create(speed)
                         
                         mail                        ={}
                         mail["model"]               ="gpsmap.positions"        
-                        mail["res_id"]              =position.id
-                        
-                        mail["message_type"]        ="comment"
-                        
+                        mail["res_id"]              =position.id                        
+                        mail["message_type"]        ="comment"                        
                         mail["body"]                ="Contenido del mensaje %s" %(vehicle.name) 
                         
                         mail_obj.create(mail)        
-                        print('Exceso de velocidad')
-                        
+                        #print('Exceso de velocidad')                        
                 else:
                     if(len(speed_data)>0):
                         speed                       ={}
@@ -154,14 +157,21 @@ class positions(models.Model):
 
                             speed["endtime"]        =position.devicetime
                             speed_obj.write(speed)                        
-                            print('Saliendo del exceso de velocidad')
+                            #print('Saliendo del exceso de velocidad')
                     #if len(speed_data)>0:
+                                    
+                if len(alerts_data)>0:                     
+                    for alerts in alerts_data:
+                        print('===========',alerts.name)
+                        print('===========',alerts.device_ids)
+                        print('===========',alerts.geofence_ids)                                
+                    
+                                    
+                                    
                                     
                 position["leido"]=1                
                 positions_obj.write(position)
                 
-    def geofences(self):
-        return false                
 class geofence(models.Model):
     _name = "gpsmap.geofence"
     _description = 'GPS Geofence'
@@ -180,4 +190,7 @@ class geofence(models.Model):
         ('yellow', 'Yellow'),
         ], 'Color', default='green', help='Color of geofence', required=True)
     hidden = fields.Boolean('Hidden')
+
+    def geofences(self):
+        return false                
         

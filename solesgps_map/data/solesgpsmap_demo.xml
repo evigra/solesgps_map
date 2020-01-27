@@ -37,80 +37,13 @@
           <field name="servertime">2019-11-26 00:43:11</field>
           <field name="devicetime">2019-11-26 00:42:04</field>
           <field name="fixtime">2019-11-26 00:42:04</field>
-          <field name="valid">1</field>
-          <field name="latitude">20.384396666666667</field>
-          <field name="longitude">-102.1166385</field>
+          <field name="valid">1</field>          
+          
+          <field name="latitude">19.10276</field>
+          <field name="longitude">-104.32722</field>
           <field name="altitude ">0</field>
           <field name="speed">47.293</field>
           <field name="course">80</field>
-          <field name="address">0</field>
-          <field name="attributes">0</field>
-          <field name="other">0</field>
-          <field name="leido">0</field>          
-      </record>
-      <record id="position_1_2" model="gpsmap.positions">
-          <field name="protocol">tk103</field> 
-          <field name="deviceid" ref="fleet.vehicle_1" />          
-          <field name="servertime">2019-11-26 00:43:10</field>
-          <field name="devicetime">2019-11-26 00:42:08</field>
-          <field name="fixtime">2019-11-26 00:42:08</field>
-          <field name="valid">1</field>
-          <field name="latitude">20.383963833333333</field>
-          <field name="longitude">-102.11744716666666</field>
-          <field name="altitude ">0</field>
-          <field name="speed">43</field>
-          <field name="course">130</field>
-          <field name="address">0</field>
-          <field name="attributes">0</field>
-          <field name="other">0</field>
-          <field name="leido">0</field>          
-      </record>
-      <record id="position_1_3" model="gpsmap.positions">
-          <field name="protocol">tk103</field> 
-          <field name="deviceid" ref="fleet.vehicle_1" />          
-          <field name="servertime">2019-11-26 00:51:14</field>
-          <field name="devicetime">2019-11-26 00:43:04</field>
-          <field name="fixtime">2019-11-26 00:43:04</field>
-          <field name="valid">1</field>
-          <field name="latitude">20.373417</field>
-          <field name="longitude">-102.12501083333333</field>
-          <field name="altitude ">0</field>
-          <field name="speed">40</field>
-          <field name="course">160</field>
-          <field name="address">0</field>
-          <field name="attributes">0</field>
-          <field name="other">0</field>
-          <field name="leido">0</field>          
-      </record>
-      <record id="position_1_4" model="gpsmap.positions">
-          <field name="protocol">tk103</field> 
-          <field name="deviceid" ref="fleet.vehicle_1" />          
-          <field name="servertime">2019-11-26 00:51:14</field>
-          <field name="devicetime">2019-11-26 00:44:04</field>
-          <field name="fixtime">2019-11-26 00:44:04</field>
-          <field name="valid">1</field>
-          <field name="latitude">20.366215</field>
-          <field name="longitude">-102.13267733333333</field>
-          <field name="altitude ">0</field>
-          <field name="speed">36</field>
-          <field name="course">190</field>
-          <field name="address">0</field>
-          <field name="attributes">0</field>
-          <field name="other">0</field>
-          <field name="leido">0</field>          
-      </record>
-      <record id="position_1_5" model="gpsmap.positions">
-          <field name="protocol">tk103</field> 
-          <field name="deviceid" ref="fleet.vehicle_1" />          
-          <field name="servertime">2019-11-26 00:51:14</field>
-          <field name="devicetime">2019-11-26 00:45:04</field>
-          <field name="fixtime">2019-11-26 00:45:04</field>
-          <field name="valid">1</field>
-          <field name="latitude">19.0849496</field>
-          <field name="longitude">-104.3088941</field>
-          <field name="altitude ">0</field>
-          <field name="speed">40</field>
-          <field name="course">105</field>
           <field name="address">0</field>
           <field name="attributes">0</field>
           <field name="other">0</field>
@@ -124,80 +57,12 @@
           <field name="servertime">2019-11-26 00:43:11</field>
           <field name="devicetime">2019-11-26 00:42:04</field>
           <field name="fixtime">2019-11-26 00:42:04</field>
-          <field name="valid">1</field>
-          <field name="latitude">19.270295333333333</field>
-          <field name="longitude">-103.74593033333333</field>
+          <field name="valid">1</field>                    
+          <field name="latitude">19.1135</field>
+          <field name="longitude">-104.34222429957507</field>
           <field name="altitude ">0</field>
           <field name="speed">47.293</field>
           <field name="course">80</field>
-          <field name="address">0</field>
-          <field name="attributes">0</field>
-          <field name="other">0</field>
-          <field name="leido">0</field>          
-      </record>
-      <record id="position_2_2" model="gpsmap.positions">
-          <field name="protocol">tk103</field> 
-          <field name="deviceid" ref="fleet.vehicle_2" />          
-          <field name="servertime">2019-11-26 00:43:10</field>
-          <field name="devicetime">2019-11-26 00:42:08</field>
-          <field name="fixtime">2019-11-26 00:42:08</field>
-          <field name="valid">1</field>
-          <field name="latitude">19.248802166666668</field>
-          <field name="longitude">-103.72697916666667</field>
-          <field name="altitude ">0</field>
-          <field name="speed">43</field>
-          <field name="course">130</field>
-          <field name="address">0</field>
-          <field name="attributes">0</field>
-          <field name="other">0</field>
-          <field name="leido">0</field>          
-      </record>
-      <record id="position_2_3" model="gpsmap.positions">
-          <field name="protocol">tk103</field> 
-          <field name="deviceid" ref="fleet.vehicle_2" />          
-          <field name="servertime">2019-11-26 00:51:14</field>
-          <field name="devicetime">2019-11-26 00:43:04</field>
-          <field name="fixtime">2019-11-26 00:43:04</field>
-          <field name="valid">1</field>
-          <field name="latitude">19.237216166666666</field>
-          <field name="longitude">-103.71458233333334</field>
-          <field name="altitude ">0</field>
-          <field name="speed">40</field>
-          <field name="course">160</field>
-          <field name="address">0</field>
-          <field name="attributes">0</field>
-          <field name="other">0</field>
-          <field name="leido">0</field>          
-      </record>
-      <record id="position_2_4" model="gpsmap.positions">
-          <field name="protocol">tk103</field> 
-          <field name="deviceid" ref="fleet.vehicle_2" />          
-          <field name="servertime">2019-11-26 00:51:14</field>
-          <field name="devicetime">2019-11-26 00:44:04</field>
-          <field name="fixtime">2019-11-26 00:44:04</field>
-          <field name="valid">1</field>
-          <field name="latitude">20.366215</field>
-          <field name="longitude">-102.13267733333333</field>
-          <field name="altitude ">0</field>
-          <field name="speed">36</field>
-          <field name="course">190</field>
-          <field name="address">0</field>
-          <field name="attributes">0</field>
-          <field name="other">0</field>
-          <field name="leido">0</field>          
-      </record>
-      <record id="position_2_5" model="gpsmap.positions">
-          <field name="protocol">tk103</field> 
-          <field name="deviceid" ref="fleet.vehicle_2" />          
-          <field name="servertime">2019-11-26 00:51:14</field>
-          <field name="devicetime">2019-11-26 00:45:04</field>
-          <field name="fixtime">2019-11-26 00:45:04</field>
-          <field name="valid">1</field>
-          <field name="latitude">19.2303132</field>
-          <field name="longitude">-103.72314</field>
-          <field name="altitude ">0</field>
-          <field name="speed">40</field>
-          <field name="course">345</field>
           <field name="address">0</field>
           <field name="attributes">0</field>
           <field name="other">0</field>
@@ -210,9 +75,9 @@
           <field name="servertime">2019-11-26 00:43:11</field>
           <field name="devicetime">2019-11-26 00:42:04</field>
           <field name="fixtime">2019-11-26 00:42:04</field>
-          <field name="valid">1</field>
-          <field name="latitude">20</field>
-          <field name="longitude">-102</field>
+          <field name="valid">1</field>     
+          <field name="latitude">19.11114</field>
+          <field name="longitude">-104.31674</field>
           <field name="altitude ">0</field>
           <field name="speed">47.293</field>
           <field name="course">280</field>
@@ -229,8 +94,8 @@
           <field name="devicetime">2019-11-26 00:42:04</field>
           <field name="fixtime">2019-11-26 00:42:04</field>
           <field name="valid">1</field>
-          <field name="latitude">19</field>
-          <field name="longitude">-103</field>
+          <field name="latitude">19.08645</field>
+          <field name="longitude">-104.2968</field>
           <field name="altitude ">0</field>
           <field name="speed">47.293</field>
           <field name="course">320</field>

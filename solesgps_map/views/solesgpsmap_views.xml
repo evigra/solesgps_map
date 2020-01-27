@@ -109,7 +109,7 @@
         <field name="key">solesgps_map_key</field>
         <field name="value">AIzaSyCTDTeSJ3Uu3hHCy73RzGoJbx6vmKcmmUI</field>
     </record>
-<!--
+
     <record id="solesgps_mail_alert" model="ir.mail_server"> 
         <field name="name">SolesGPS SMTP Alert</field>
         <field name="smtp_host">solesgps.com</field>
@@ -119,7 +119,7 @@
         <field name="smtp_user">odoo_alerts@solesgps.com</field>
         <field name="smtp_pass">Odoo_alerts1</field>          
     </record>
-
+<!--
     <record id="solesgps_mail_install" model="mail.mail"> 
         <field name="subject">Install module Odoo SolesGPS Map</field>
         <field name="email_to">e.vizcaino@solesgps.com</field>
@@ -127,6 +127,8 @@
         <field name="message_type">email</field>
         <field name="mail_server_id" ref="solesgps_mail_alert" />
     </record>
+
+3122698
 -->    
 
 
@@ -174,6 +176,7 @@
         <field name="arch" type="xml">
             <tree string="Models">
                 <field name="deviceid" />
+                <field name="speed" />
                 <field name="starttime" />
                 <field name="endtime" />
             </tree>
