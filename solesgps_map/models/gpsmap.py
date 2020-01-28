@@ -167,8 +167,6 @@ class positions(models.Model):
                         print('===========',alerts.geofence_ids)                                
                     
                                     
-                                    
-                                    
                 position["leido"]=1                
                 positions_obj.write(position)
                 
