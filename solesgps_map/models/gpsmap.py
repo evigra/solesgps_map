@@ -20,10 +20,20 @@ class vehicle(models.Model):
         ('92', 'Green Phone'),
         ('93', 'Red  Phone')
         ], 'Img GPS', default='01', help='Image of GPS Vehicle', required=True)
-    phone = fields.Char('Phone', size=50)
-    imei = fields.Char('Imei', size=50)
     speed = fields.Char('Exceso de Velocidad', default=100, size=3)
-    position_id = fields.Many2one('gpsmap.positions',ondelete='set null', string="Ultima Posicion", index=True)
+    position_id = fields.Many2one('tc_positions',ondelete='set null', string="Ultima Posicion", index=True)
+
+class devices(models.Model):
+    _name = "tc_devices"
+    name = fields.Char('Name', size=50)
+    uniqueid = fields.Char('Imei', size=50)
+    lastupdate = fields.Datetime('Start Time')
+    positionid = fields.Many2one('tc_positions',ondelete='set null', string="Ultima Posicion", index=True)
+    attributes = fields.Char('Atributos', size=5000)    
+    phone = fields.Char('Phone', size=50)
+    model = fields.Char('Atributos', size=100)
+    speed = fields.Char('Exceso de Velocidad', default=100, size=3)
+    
 
 class speed(models.Model):
     _name = "gpsmap.speed"
@@ -35,7 +45,7 @@ class speed(models.Model):
     speed = fields.Float('Velocidad',digits=(3,2))
 
 class positions(models.Model):
-    _name = "gpsmap.positions"
+    _name = "tc_positions"
     _description = 'GPS Positions'
     _pointOnVertex=""
     protocol = fields.Char('Protocolo', size=15)
@@ -51,6 +61,9 @@ class positions(models.Model):
     course = fields.Integer('Curso')    
     address = fields.Char('Calle', size=150)
     attributes = fields.Char('Atributos', size=5000)
+    accuracy = fields.Char('Accuracy', size=5000)
+    network = fields.Char('Network', size=5000)
+
     other = fields.Char('Otros', size=5000)
     leido = fields.Integer('Leido')
     event = fields.Char('Evento', size=70)
@@ -60,7 +73,7 @@ class positions(models.Model):
     def action_addpositions(self):
         self.run_scheduler()
     def run_scheduler_demo(self):
-        positions_obj   =self.env['gpsmap.positions']        
+        positions_obj   =self.env['tc_positions']        
         vehicle_obj     =self.env['fleet.vehicle']
         
         vehicle_args    =[]
@@ -107,7 +120,7 @@ class positions(models.Model):
 
         print('CRON LALO====================',now)        
         
-        positions_obj   =self.env['gpsmap.positions']
+        positions_obj   =self.env['tc_positions']
         vehicle_obj     =self.env['fleet.vehicle']
         speed_obj       =self.env['gpsmap.speed']
         mail_obj        =self.env['mail.message']
@@ -143,12 +156,12 @@ class positions(models.Model):
                         speed_obj.create(speed)
                         
                         mail                        ={}
-                        mail["model"]               ="gpsmap.positions"        
+                        mail["model"]               ="tc_positions"        
                         mail["res_id"]              =position.id                        
                         mail["message_type"]        ="comment"                        
                         mail["body"]                ="Contenido del mensaje %s" %(vehicle.name) 
                         
-                        mail_obj.create(mail)        
+                        #mail_obj.create(mail)        
                         #print('Exceso de velocidad')                        
                 else:
                     if(len(speed_data)>0):

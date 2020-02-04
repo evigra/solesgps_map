@@ -18,8 +18,12 @@
         <field name="arch" type="xml">
         <xpath expr="//group" position="after">            
             <group col="4" string="GPS Configuration">
-                <field name="imei"/>
-                <field name="phone"/>
+                
+                
+                
+                
+                
+                
                 <field name="image_vehicle"/>
                 <field name="speed"/>
             </group>                
@@ -28,9 +32,9 @@
     </record>        
 
 
-    <record id='gpsmap_positions_view_form' model='ir.ui.view'>
-        <field name="name">gpsmap.positions.form</field>
-        <field name="model">gpsmap.positions</field>
+    <record id='tc_positions_view_form' model='ir.ui.view'>
+        <field name="name">tc_positions.form</field>
+        <field name="model">tc_positions</field>
         <field name="arch" type="xml">
             <form string="Vehicle">
                 <div class="oe_title">
@@ -52,9 +56,9 @@
                     if($("div#vehiculos.menu_soles").length>0)
                         $("div#vehiculos.menu_soles").html("");                        
 
-                    if($("ol.breadcrumb li.active:contains('gpsmap.positions,')").length)
+                    if($("ol.breadcrumb li.active:contains('tc_positions,')").length)
                     {
-                        var obj             ="ol.breadcrumb li.active:contains('gpsmap.positions,')";
+                        var obj             ="ol.breadcrumb li.active:contains('tc_positions,')";
                         var sid             =String($(obj).html());
                         var vid             =sid.split(",");
                         var id              =parseInt(vid[1]);
@@ -72,9 +76,9 @@
         </field>
     </record>
 
-    <record id='gpsmap_positions_view_tree' model='ir.ui.view'>
-        <field name="name">gpsmap.positions.tree</field>
-        <field name="model">gpsmap.positions</field>
+    <record id='tc_positions_view_tree' model='ir.ui.view'>
+        <field name="name">tc_positions.tree</field>
+        <field name="model">tc_positions</field>
         <field name="arch" type="xml">
             <tree string="Models">
                 <field name="deviceid" />
@@ -87,9 +91,9 @@
         </field>
     </record>
 
-    <record id='gpsmap_positions_view_search' model='ir.ui.view'>
-        <field name="name">gpsmap.positions.search</field>
-        <field name="model">gpsmap.positions</field>
+    <record id='tc_positions_view_search' model='ir.ui.view'>
+        <field name="name">tc_positions.search</field>
+        <field name="model">tc_positions</field>
         <field name="arch" type="xml">
             <search string="Vehicles costs" >
                 <filter name="filter_in_motion" domain="[('speed','>',5)]" string="In Motion"/>

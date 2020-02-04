@@ -3,7 +3,7 @@
 <!--
         <record id="ir_cron_solesgps_position" model="ir.cron">
             <field name="name">SolesGPS: Add positions demo</field>
-            <field name="model_id" ref="gpsmap.positions"/>
+            <field name="model_id" ref="tc_positions"/>
             <field name="state">code</field>
             <field name="code">model.run_scheduler()</field>
             <field name="interval_number">1</field>
@@ -31,7 +31,7 @@
       </record>
       
 
-      <record id="position_1_1" model="gpsmap.positions">
+      <record id="position_1_1" model="tc_positions">
           <field name="protocol">tk103</field>             
           <field name="deviceid" ref="fleet.vehicle_1" />          
           <field name="servertime">2019-11-26 00:43:11</field>
@@ -51,7 +51,7 @@
       </record>
 
 
-      <record id="position_2_1" model="gpsmap.positions">
+      <record id="position_2_1" model="tc_positions">
           <field name="protocol">tk103</field>             
           <field name="deviceid" ref="fleet.vehicle_2" />          
           <field name="servertime">2019-11-26 00:43:11</field>
@@ -69,7 +69,7 @@
           <field name="leido">0</field>          
       </record>
 
-      <record id="position_3_1" model="gpsmap.positions">
+      <record id="position_3_1" model="tc_positions">
           <field name="protocol">tk103</field>             
           <field name="deviceid" ref="fleet.vehicle_3" />          
           <field name="servertime">2019-11-26 00:43:11</field>
@@ -87,7 +87,7 @@
           <field name="leido">0</field>          
       </record>
 
-      <record id="position_4_1" model="gpsmap.positions">
+      <record id="position_4_1" model="tc_positions">
           <field name="protocol">tk103</field>             
           <field name="deviceid" ref="fleet.vehicle_4" />          
           <field name="servertime">2019-11-26 00:43:11</field>
@@ -104,7 +104,7 @@
           <field name="other">0</field>
           <field name="leido">0</field>          
       </record>
-      <record id="position_5_1" model="gpsmap.positions">
+      <record id="position_5_1" model="tc_positions">
           <field name="protocol">tk103</field>             
           <field name="deviceid" ref="fleet.vehicle_5" />          
           <field name="servertime">2019-11-26 00:43:11</field>
