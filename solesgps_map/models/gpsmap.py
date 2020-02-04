@@ -53,7 +53,7 @@ class positions(models.Model):
     servertime = fields.Datetime('Server Time')
     devicetime = fields.Datetime('Device Time')
     fixtime = fields.Datetime('Error Time')
-    valid = fields.Integer('Valido')
+    valid = fields.boolean('Valid')
     latitude = fields.Float('Latitud',digits=(5,10))
     longitude = fields.Float('Longitud',digits=(5,10))
     altitude = fields.Float('Altura',digits=(6,2))
