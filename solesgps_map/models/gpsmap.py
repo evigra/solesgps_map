@@ -27,7 +27,7 @@ class devices(models.Model):
     _name = "tc_devices"
     name = fields.Char('Name', size=50)
     uniqueid = fields.Char('Imei', size=50)
-    lastupdate = fields.Datetime('Start Time')
+    lastupdate = fields.Datetime('Last Update')
     positionid = fields.Many2one('tc_positions',ondelete='set null', string="Ultima Posicion", index=True)
     attributes = fields.Char('Atributos', size=5000)    
     phone = fields.Char('Phone', size=50)
