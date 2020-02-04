@@ -109,13 +109,21 @@
         <field name="model">tc_devices</field>
         <field name="arch" type="xml">
             <form string="Devices">
-                <field name="name" />
-                <field name="uniqueid"/>
-                <field name="lastupdate"/>
+                <group  col="4">
+                    <field name="name" />
+                    <field name="uniqueid"/>
+                </group>
+                <group  col="4">
+                    <field name="phone" />
+                    <field name="model" />
+                </group>
+                <group  col="4">
+                    <field name="lastupdate"/>
+                    <field name="attributes" />
+                </group>
                 <field name="positionid" />
-                <field name="attributes" />
-                <field name="phone" />
-                <field name="model" />
+
+
             </form>
         </field>
     </record>
