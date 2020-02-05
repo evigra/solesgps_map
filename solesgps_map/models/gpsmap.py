@@ -21,7 +21,7 @@ class vehicle(models.Model):
         ('93', 'Red  Phone')
         ], 'Img GPS', default='01', help='Image of GPS Vehicle', required=True)
     speed = fields.Char('Exceso de Velocidad', default=100, size=3)
-    #position_id = fields.Many2one('tc_positions',ondelete='set null', string="Ultima Posicion", index=True)
+    devices_id = fields.Many2one('tc_devices',ondelete='set null', string="GPS", index=True)
 
 class devices(models.Model):
     _name = "tc_devices"
