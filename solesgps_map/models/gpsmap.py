@@ -5,6 +5,8 @@ import requests
 import random
 from dateutil.relativedelta import relativedelta
 from odoo import api, fields, models, _
+
+
 class vehicle(models.Model):
     _inherit = "fleet.vehicle"
     image_vehicle = fields.Selection([
@@ -53,7 +55,7 @@ class positions(models.Model):
     servertime = fields.Datetime('Server Time')
     devicetime = fields.Datetime('Device Time')
     fixtime = fields.Datetime('Error Time')
-    valid = fields.boolean('Valid')
+    valid = fields.Boolean('Valid')
     latitude = fields.Float('Latitud',digits=(5,10))
     longitude = fields.Float('Longitud',digits=(5,10))
     altitude = fields.Float('Altura',digits=(6,2))
@@ -67,6 +69,7 @@ class positions(models.Model):
     other = fields.Char('Otros', size=5000)
     leido = fields.Integer('Leido')
     event = fields.Char('Evento', size=70)
+
     def get_system_para(self):
         para_value = self.env['ir.config_parameter'].get_param('solesgps_map_key','')
         return para_value
@@ -182,7 +185,7 @@ class positions(models.Model):
                                     
                 position["leido"]=1                
                 positions_obj.write(position)
-                
+                       
 class geofence(models.Model):
     _name = "gpsmap.geofence"
     _description = 'GPS Geofence'

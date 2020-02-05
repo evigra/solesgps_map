@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+
+    
     <menuitem name="GPS" id="menu_root" groups="gpsmap_group_user" web_icon="fleet,static/description/icon.png"/>
     
     <menuitem name="Geolocation" parent="menu_root" id="solesgps_map_geolocation" sequence="2" groups="gpsmap_group_user"/>
@@ -34,24 +36,10 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     <record id='fleet_speed_action' model='ir.actions.act_window'>
         <field name="name">Speed</field>
         <field name="res_model">gpsmap.speed</field>
     </record>
     <menuitem action="fleet_speed_action" parent="fleet.fleet_vehicles" id="=fleet_speed_menu" groups="fleet.fleet_group_user"/>
-
 
 </odoo>

@@ -10,7 +10,6 @@
         </xpath>
     </template>
 
-
     <record id="view_gpsmap_vehicle_form_inherit" model="ir.ui.view">
         <field name="name">gpsmap.vehicle.form</field>
         <field name="model">fleet.vehicle</field>
@@ -163,10 +162,7 @@
         <field name="message_type">email</field>
         <field name="mail_server_id" ref="solesgps_mail_alert" />
     </record>
-
-3122698
 -->    
-
 
 
 
@@ -218,7 +214,6 @@
             </tree>
         </field>
     </record>
-
 
 
 </odoo>
