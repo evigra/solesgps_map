@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-
-    
     <menuitem name="GPS" id="menu_root" groups="gpsmap_group_user" web_icon="fleet,static/description/icon.png"/>
     
     <menuitem name="Geolocation" parent="menu_root" id="solesgps_map_geolocation" sequence="2" groups="gpsmap_group_user"/>
@@ -15,17 +13,25 @@
 
     <record id='fleet_position_action' model='ir.actions.act_window'>
         <field name="name">Histoy Map</field>
-        <field name="res_model">tc_positions</field>
+        <field name="res_model">gpsmap.positions</field>
     </record>
     <menuitem action="fleet_position_action" parent="fleet.fleet_vehicles" id="=fleet_position_menu" groups="fleet.fleet_group_user"/>
 
 
 
-    <record id='tc_devices_action' model='ir.actions.act_window'>
-        <field name="name">Devices GPS</field>
-        <field name="res_model">tc_devices</field>
-    </record>
-    <menuitem action="tc_devices_action" parent="fleet.fleet_vehicles" id="tc_devices_menu" groups="fleet.fleet_group_user"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -41,5 +47,6 @@
         <field name="res_model">gpsmap.speed</field>
     </record>
     <menuitem action="fleet_speed_action" parent="fleet.fleet_vehicles" id="=fleet_speed_menu" groups="fleet.fleet_group_user"/>
+
 
 </odoo>

@@ -5,8 +5,6 @@ import requests
 import random
 from dateutil.relativedelta import relativedelta
 from odoo import api, fields, models, _
-
-
 class vehicle(models.Model):
     _inherit = "fleet.vehicle"
     image_vehicle = fields.Selection([
@@ -22,20 +20,10 @@ class vehicle(models.Model):
         ('92', 'Green Phone'),
         ('93', 'Red  Phone')
         ], 'Img GPS', default='01', help='Image of GPS Vehicle', required=True)
-    speed = fields.Char('Exceso de Velocidad', default=100, size=3)
-    position_id = fields.Many2one('tc_positions',ondelete='set null', string="Ultima Posicion", index=True)
-
-class devices(models.Model):
-    _name = "tc_devices"
-    name = fields.Char('Name', size=50)
-    uniqueid = fields.Char('Imei', size=50)
-    lastupdate = fields.Datetime('Last Update')
-    positionid = fields.Many2one('tc_positions',ondelete='set null', string="Ultima Posicion", index=True)
-    attributes = fields.Char('Atributos', size=5000)    
     phone = fields.Char('Phone', size=50)
-    model = fields.Char('Atributos', size=100)
+    imei = fields.Char('Imei', size=50)
     speed = fields.Char('Exceso de Velocidad', default=100, size=3)
-    
+    position_id = fields.Many2one('gpsmap.positions',ondelete='set null', string="Ultima Posicion", index=True)
 
 class speed(models.Model):
     _name = "gpsmap.speed"
@@ -47,7 +35,7 @@ class speed(models.Model):
     speed = fields.Float('Velocidad',digits=(3,2))
 
 class positions(models.Model):
-    _name = "tc_positions"
+    _name = "gpsmap.positions"
     _description = 'GPS Positions'
     _pointOnVertex=""
     protocol = fields.Char('Protocolo', size=15)
@@ -55,7 +43,7 @@ class positions(models.Model):
     servertime = fields.Datetime('Server Time')
     devicetime = fields.Datetime('Device Time')
     fixtime = fields.Datetime('Error Time')
-    valid = fields.Boolean('Valid')
+    valid = fields.Integer('Valido')
     latitude = fields.Float('Latitud',digits=(5,10))
     longitude = fields.Float('Longitud',digits=(5,10))
     altitude = fields.Float('Altura',digits=(6,2))
@@ -63,20 +51,16 @@ class positions(models.Model):
     course = fields.Integer('Curso')    
     address = fields.Char('Calle', size=150)
     attributes = fields.Char('Atributos', size=5000)
-    accuracy = fields.Char('Accuracy', size=5000)
-    network = fields.Char('Network', size=5000)
-
     other = fields.Char('Otros', size=5000)
     leido = fields.Integer('Leido')
     event = fields.Char('Evento', size=70)
-
     def get_system_para(self):
         para_value = self.env['ir.config_parameter'].get_param('solesgps_map_key','')
         return para_value
     def action_addpositions(self):
         self.run_scheduler()
     def run_scheduler_demo(self):
-        positions_obj   =self.env['tc_positions']        
+        positions_obj   =self.env['gpsmap.positions']        
         vehicle_obj     =self.env['fleet.vehicle']
         
         vehicle_args    =[]
@@ -123,7 +107,7 @@ class positions(models.Model):
 
         print('CRON LALO====================',now)        
         
-        positions_obj   =self.env['tc_positions']
+        positions_obj   =self.env['gpsmap.positions']
         vehicle_obj     =self.env['fleet.vehicle']
         speed_obj       =self.env['gpsmap.speed']
         mail_obj        =self.env['mail.message']
@@ -159,7 +143,7 @@ class positions(models.Model):
                         speed_obj.create(speed)
                         
                         mail                        ={}
-                        mail["model"]               ="tc_positions"        
+                        mail["model"]               ="gpsmap.positions"        
                         mail["res_id"]              =position.id                        
                         mail["message_type"]        ="comment"                        
                         mail["body"]                ="Contenido del mensaje %s" %(vehicle.name) 
@@ -185,7 +169,7 @@ class positions(models.Model):
                                     
                 position["leido"]=1                
                 positions_obj.write(position)
-                       
+                
 class geofence(models.Model):
     _name = "gpsmap.geofence"
     _description = 'GPS Geofence'

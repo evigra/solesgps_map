@@ -10,13 +10,16 @@
         </xpath>
     </template>
 
+
     <record id="view_gpsmap_vehicle_form_inherit" model="ir.ui.view">
         <field name="name">gpsmap.vehicle.form</field>
         <field name="model">fleet.vehicle</field>
         <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
         <field name="arch" type="xml">
         <xpath expr="//group" position="after">            
-            <group col="4" string="GPS Configuration">                
+            <group col="4" string="GPS Configuration">
+                <field name="imei"/>
+                <field name="phone"/>
                 <field name="image_vehicle"/>
                 <field name="speed"/>
             </group>                
@@ -25,9 +28,9 @@
     </record>        
 
 
-    <record id='tc_positions_view_form' model='ir.ui.view'>
-        <field name="name">tc_positions.form</field>
-        <field name="model">tc_positions</field>
+    <record id='gpsmap_positions_view_form' model='ir.ui.view'>
+        <field name="name">gpsmap.positions.form</field>
+        <field name="model">gpsmap.positions</field>
         <field name="arch" type="xml">
             <form string="Vehicle">
                 <div class="oe_title">
@@ -35,6 +38,8 @@
                     <field name="deviceid" placeholder="e.g. Model S"/>
                     </h1>
                 </div>                                                          
+
+
                 <div style="position:relative; width:100%; height:100%;">
                     <div id="map_tree" style="width:100%; height:350px;"> MAPA</div>
                     <div style="z-index:100; text-align:left; position:absolute; bottom:0px; left:0px; width:100%; height:70px; background-color:#222; color:#aaa; padding:10px;">
@@ -42,13 +47,14 @@
                         <div id="tablero"  style="float:left;"></div>
                     </div>  
                 </div>
+
                 <script>
                     if($("div#vehiculos.menu_soles").length>0)
                         $("div#vehiculos.menu_soles").html("");                        
 
-                    if($("ol.breadcrumb li.active:contains('tc_positions,')").length)
+                    if($("ol.breadcrumb li.active:contains('gpsmap.positions,')").length)
                     {
-                        var obj             ="ol.breadcrumb li.active:contains('tc_positions,')";
+                        var obj             ="ol.breadcrumb li.active:contains('gpsmap.positions,')";
                         var sid             =String($(obj).html());
                         var vid             =sid.split(",");
                         var id              =parseInt(vid[1]);
@@ -66,9 +72,9 @@
         </field>
     </record>
 
-    <record id='tc_positions_view_tree' model='ir.ui.view'>
-        <field name="name">tc_positions.tree</field>
-        <field name="model">tc_positions</field>
+    <record id='gpsmap_positions_view_tree' model='ir.ui.view'>
+        <field name="name">gpsmap.positions.tree</field>
+        <field name="model">gpsmap.positions</field>
         <field name="arch" type="xml">
             <tree string="Models">
                 <field name="deviceid" />
@@ -81,9 +87,9 @@
         </field>
     </record>
 
-    <record id='tc_positions_view_search' model='ir.ui.view'>
-        <field name="name">tc_positions.search</field>
-        <field name="model">tc_positions</field>
+    <record id='gpsmap_positions_view_search' model='ir.ui.view'>
+        <field name="name">gpsmap.positions.search</field>
+        <field name="model">gpsmap.positions</field>
         <field name="arch" type="xml">
             <search string="Vehicles costs" >
                 <filter name="filter_in_motion" domain="[('speed','>',5)]" string="In Motion"/>
@@ -98,47 +104,6 @@
             </search>
         </field>
     </record>    
-
-    <record id='tc_devices_view_form' model='ir.ui.view'>
-        <field name="name">tc_devices.form</field>
-        <field name="model">tc_devices</field>
-        <field name="arch" type="xml">
-            <form string="Devices">
-                <group  col="4">
-                    <field name="name" />
-                    <field name="uniqueid"/>
-                </group>
-                <group  col="4">
-                    <field name="phone" />
-                    <field name="model" />
-                </group>
-                <group  col="4">
-                    <field name="lastupdate"/>
-                    <field name="attributes" />
-                </group>
-            </form>
-        </field>
-    </record>
-
-    <record id='tc_devices_view_tree' model='ir.ui.view'>
-        <field name="name">tc_devices.tree</field>
-        <field name="model">tc_devices</field>
-        <field name="arch" type="xml">
-            <tree string="Models">
-                <field name="name" />
-                <field name="uniqueid"/>
-                <field name="lastupdate"/>
-                <field name="positionid" />
-                <field name="attributes" />
-                <field name="phone" />
-                <field name="model" />
-            </tree>
-        </field>
-    </record>
-
-
-
-
 
     <record id="solesgps_key_map" model="ir.config_parameter"> 
         <field name="key">solesgps_map_key</field>
@@ -162,7 +127,10 @@
         <field name="message_type">email</field>
         <field name="mail_server_id" ref="solesgps_mail_alert" />
     </record>
+
+3122698
 -->    
+
 
 
 
