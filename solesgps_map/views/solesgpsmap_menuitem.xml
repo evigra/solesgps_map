@@ -18,19 +18,11 @@
     <menuitem action="fleet_position_action" parent="fleet.fleet_vehicles" id="=fleet_position_menu" groups="fleet.fleet_group_user"/>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <record id='tc_devices_action' model='ir.actions.act_window'>
+        <field name="name">Devices GPS</field>
+        <field name="res_model">tc_devices</field>
+    </record>
+    <menuitem action="tc_devices_action" parent="fleet.fleet_vehicles" id="tc_devices_menu" groups="fleet.fleet_group_user"/>
 
 
 
