@@ -10,28 +10,11 @@
     </record>
     <menuitem id="menu_gpsmap_maponline" name="Online Map" sequence="1" parent="solesgps_map_geolocation" action="action_gpsmap_maponline" groups="gpsmap_group_user"/>
 
-
     <record id='fleet_position_action' model='ir.actions.act_window'>
         <field name="name">Histoy Map</field>
         <field name="res_model">gpsmap.positions</field>
     </record>
     <menuitem action="fleet_position_action" parent="fleet.fleet_vehicles" id="=fleet_position_menu" groups="fleet.fleet_group_user"/>
-
-
-    <record id='tc_devices_action' model='ir.actions.act_window'>
-        <field name="name">Devices GPS</field>
-        <field name="res_model">tc_devices</field>
-    </record>
-    <menuitem action="tc_devices_action" parent="fleet.fleet_vehicles" id="tc_devices_menu" groups="fleet.fleet_group_user"/>
-
-
-
-
-
-
-
-
-
 
 
     <record id='fleet_speed_action' model='ir.actions.act_window'>

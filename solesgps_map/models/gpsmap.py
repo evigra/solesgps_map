@@ -20,21 +20,19 @@ class vehicle(models.Model):
         ('92', 'Green Phone'),
         ('93', 'Red  Phone')
         ], 'Img GPS', default='01', help='Image of GPS Vehicle', required=True)
-    speed = fields.Char('Exceso de Velocidad', default=100, size=3)
-    devices_id = fields.Many2one('tc_devices',ondelete='set null', string="GPS", index=True)
-
-class devices(models.Model):
-    _name = "tc_devices"
-    name = fields.Char('Name', size=50)
-    uniqueid = fields.Char('Imei', size=50)
-    lastupdate = fields.Datetime('Last Update')
-    positionid = fields.Many2one('tc_positions',ondelete='set null', string="Ultima Posicion", index=True)
-    attributes = fields.Char('Atributos', size=5000)    
     phone = fields.Char('Phone', size=50)
-    model = fields.Char('Atributos', size=100)
-    speed = fields.Char('Exceso de Velocidad', default=100, size=3)
+    imei = fields.Char('Imei', size=50)
+    speed = fields.Char('Exceso de Velocidad', default=100, size=3)   
 
+    def create(self,vals):
+        print('CREATE LALO====================')        
 
+        #sql="INSERT INTO tc_devices (name,uniqueid,phone,disabled,speed) VALUES ('",vals["name"]"','",vals["uniqueid"],"','",vals["phone"],"','",vals["disabled"],"','",vals["speed"],"')"
+        sql="INSERT INTO tc_devices (name,uniqueid,phone,speed) VALUES ('",vals["name"]"','",vals["uniqueid"],"','",vals["phone"],"','",vals["speed"],"')"
+        #sql="INSERT INTO tc_devices VALUES ('id','name','uniqueid','lastupdate','positionid','groupid','attributes','phone','model','contact','category','disabled','speed')"
+        #vals = {'name': 'ABC', 'standard':10}
+        print(sql)        
+        return super(vehicle, self).create(vals)
 
 class speed(models.Model):
     _name = "gpsmap.speed"

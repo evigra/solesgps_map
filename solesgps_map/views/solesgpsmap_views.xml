@@ -18,10 +18,10 @@
         <field name="arch" type="xml">
         <xpath expr="//group" position="after">            
             <group col="4" string="GPS Configuration">
+                <field name="imei"/>
+                <field name="phone"/>
                 <field name="image_vehicle"/>
                 <field name="speed"/>
-                <field name="devices_id"/>
-                
             </group>                
         </xpath>                
         </field>
