@@ -41,6 +41,8 @@ class vehicle(models.Model):
         sql='INSERT INTO tc_devices (name,uniqueid,phone,speed) VALUES ("',vals["name"],'","',vals["uniqueid"],'","',vals["phone"],'","',vals["speed"],'")'
         #sql="INSERT INTO tc_devices VALUES ('id','name','uniqueid','lastupdate','positionid','groupid','attributes','phone','model','contact','category','disabled','speed')"
         #vals = {'name': 'ABC', 'standard':10}
+        print(vals)
+        
         print(sql)        
         return super(vehicle, self).write(vals)
     
