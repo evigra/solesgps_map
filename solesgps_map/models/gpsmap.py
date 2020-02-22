@@ -24,27 +24,6 @@ class vehicle(models.Model):
     imei = fields.Char('Imei', size=50)
     speed = fields.Char('Exceso de Velocidad', default=100, size=3)   
     
-    def create(self,vals):
-        print('CREATE LALO====================')        
-
-        #sql="INSERT INTO tc_devices (name,uniqueid,phone,disabled,speed) VALUES ('",vals["name"]"','",vals["uniqueid"],"','",vals["phone"],"','",vals["disabled"],"','",vals["speed"],"')"
-        #sql="INSERT INTO tc_devices (name,uniqueid,phone,speed) VALUES ('",vals["name"]"','",vals["uniqueid"],"','",vals["phone"],"','",vals["speed"],"')"
-        #sql="INSERT INTO tc_devices VALUES ('id','name','uniqueid','lastupdate','positionid','groupid','attributes','phone','model','contact','category','disabled','speed')"
-        #vals = {'name': 'ABC', 'standard':10}
-        #print(sql)        
-        return super(vehicle, self).create(vals)
-
-    def write(self,vals):
-        print('WRITE LALO====================')        
-
-        #sql="INSERT INTO tc_devices (name,uniqueid,phone,disabled,speed) VALUES ('",vals["name"]"','",vals["uniqueid"],"','",vals["phone"],"','",vals["disabled"],"','",vals["speed"],"')"
-        #sql='INSERT INTO tc_devices (name,uniqueid,phone,speed) VALUES ("',vals["name"],'","',vals["uniqueid"],'","',vals["phone"],'","',vals["speed"],'")'
-        #sql="INSERT INTO tc_devices VALUES ('id','name','uniqueid','lastupdate','positionid','groupid','attributes','phone','model','contact','category','disabled','speed')"
-        #vals = {'name': 'ABC', 'standard':10}
-        print(vals)
-        
-        #print(sql)        
-        return super(vehicle, self).write(vals)
     
 class speed(models.Model):
     _name = "gpsmap.speed"
