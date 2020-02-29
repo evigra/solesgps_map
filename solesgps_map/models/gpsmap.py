@@ -15,6 +15,7 @@ class vehicle(models.Model):
         ('05', 'Camioneta Carga Blanca'),
         ('06', 'Camioneta Caja Blanca'),
         ('07', 'Camioneta Caja Azul'),
+        ('30', 'Moto'),
         ('90', 'Black Phone'),
         ('91', 'Blue  Phone'),
         ('92', 'Green Phone'),
