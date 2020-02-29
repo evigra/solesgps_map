@@ -48,7 +48,7 @@ class positions(models.Model):
     longitude = fields.Float('Longitud',digits=(5,10))
     altitude = fields.Float('Altura',digits=(6,2))
     speed = fields.Float('Velocidad',digits=(3,2))
-    course = fields.Integer('Curso')    
+    course = fields.Float('Curso',digits=(3,2))
     address = fields.Char('Calle', size=150)
     attributes = fields.Char('Atributos', size=5000)
     other = fields.Char('Otros', size=5000)
