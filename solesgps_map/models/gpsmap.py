@@ -71,7 +71,8 @@ class positions(models.Model):
             for vehicle in vehicle_data:
                 positions_arg                   =[('deviceid','=',vehicle.id)]                
                 positions_data                  =self.search(positions_arg, offset=0, limit=1, order='devicetime DESC')
-                return_positions[vehicle.id]    =positions_data
+                if len(positions_data)>0:
+                    return_positions[vehicle.id]    =positions_data
             return return_positions
     def run_scheduler_demo(self):
         positions_obj                           =self.env['gpsmap.positions']        
