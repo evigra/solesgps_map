@@ -49,30 +49,43 @@ class positions(models.Model):
     longitude = fields.Float('Longitud',digits=(5,10))
     altitude = fields.Float('Altura',digits=(6,2))
     speed = fields.Float('Velocidad',digits=(3,2))
-    course = fields.Float('Curso',digits=(3,2))
-    address = fields.Char('Calle', size=150)
-    attributes = fields.Char('Atributos', size=5000)
-    other = fields.Char('Otros', size=5000)
-    leido = fields.Integer('Leido')
-    event = fields.Char('Evento', size=70)
+    course                                      = fields.Float('Curso',digits=(3,2))
+    address                                     = fields.Char('Calle', size=150)
+    attributes                                  = fields.Char('Atributos', size=5000)
+    other                                       = fields.Char('Otros', size=5000)
+    leido                                       = fields.Integer('Leido')
+    event                                       =fields.Char('Evento', size=70)
     def get_system_para(self):
-        para_value = self.env['ir.config_parameter'].get_param('solesgps_map_key','')
+        para_value                              =self.env['ir.config_parameter'].get_param('solesgps_map_key','')
         return para_value
     def action_addpositions(self):
         self.run_scheduler()
-    def run_scheduler_demo(self):
-        positions_obj   =self.env['gpsmap.positions']        
-        vehicle_obj     =self.env['fleet.vehicle']
+    def js_positions(self):
+        vehicle_obj                             =self.env['fleet.vehicle']
         
-        vehicle_args    =[]
-        vehicle_data    =vehicle_obj.search(vehicle_args, offset=0, limit=None, order=None)
-
-        now = datetime.datetime.now()
+        vehicle_args                            =[]
+        return_positions                        ={}
+        vehicle_data                            =vehicle_obj.search(vehicle_args, offset=0, limit=None, order=None)
 
         if len(vehicle_data)>0:         
             for vehicle in vehicle_data:
-                positions_arg               =[('deviceid','=',vehicle.id)]                
-                positions_data              =positions_obj.search(positions_arg, offset=0, limit=1, order='devicetime DESC')
+                positions_arg                   =[('deviceid','=',vehicle.id)]                
+                positions_data                  =positions_obj.search(positions_arg, offset=0, limit=1, order='devicetime DESC')
+                return_positions[vehicle.id]    =positions_data
+            return return_positions
+    def run_scheduler_demo(self):
+        positions_obj                           =self.env['gpsmap.positions']        
+        vehicle_obj                             =self.env['fleet.vehicle']
+        
+        vehicle_args                            =[]
+        vehicle_data                            =vehicle_obj.search(vehicle_args, offset=0, limit=None, order=None)
+
+        now                                     =datetime.datetime.now()
+
+        if len(vehicle_data)>0:         
+            for vehicle in vehicle_data:
+                positions_arg                   =[('deviceid','=',vehicle.id)]                
+                positions_data                  =positions_obj.search(positions_arg, offset=0, limit=1, order='devicetime DESC')
                 
                 velocidad = random.randint(95, 130)
                 curso = random.randint(30, 160)
