@@ -61,10 +61,10 @@ class positions(models.Model):
     def action_addpositions(self):
         self.run_scheduler()
     def js_positions(self):
-        vehicle_obj                             =self.env['fleet.vehicle']
-        
-        vehicle_args                            =[]
+        vehicle_obj                             =self.env['fleet.vehicle']        
+        vehicle_args                            =[]        
         return_positions                        ={}
+        
         vehicle_data                            =vehicle_obj.search(vehicle_args, offset=0, limit=None, order=None)
 
         if len(vehicle_data)>0:         
