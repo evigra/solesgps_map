@@ -219,7 +219,8 @@ odoo.define('solesgps_map', function(require){
                 }
                 else
                 {
-                    method          ="js_positions";
+                    method          ="search_read";
+                    //method          ="js_positions";
                     time            =1;
                 }
 
@@ -233,10 +234,10 @@ odoo.define('solesgps_map', function(require){
                     })
                     .then(function (result) 
                     {      
-                        console.log(result);    
+                        
 		                if(result!= null && result.length>0)
 		                {		    
-		                            
+		                    console.log("==============="+result);            
 		                    for(iresult in result)
 		                    {
 		                        
