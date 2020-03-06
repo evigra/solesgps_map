@@ -73,6 +73,7 @@ class positions(models.Model):
                 positions_arg                   =[]
                 positions_data                  =self.search_read(positions_arg, offset=0, limit=1, order='devicetime DESC')
                 if len(positions_data)>0:
+                    print('====== ', positions_data)
                     return_positions[vehicle.id]    =positions_data
             return return_positions
     def run_scheduler_demo(self):
