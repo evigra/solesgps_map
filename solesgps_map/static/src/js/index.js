@@ -204,8 +204,12 @@ odoo.define('solesgps_map', function(require){
         
         positions_search:function(argument){
 	        //setTimeout(function(){
-	            if(argument==undefined)  var arg=[[],[]];
-
+	            if(argument==undefined)
+	            {
+	                var arg=[[],[]];
+	                var arg=[[],[]];
+	                
+	            }
                 var vehiculo_id;
                 var vehiculos       =local.vehicles;
                 var iresult;
@@ -220,7 +224,7 @@ odoo.define('solesgps_map', function(require){
                 else
                 {
                     method          ="search_read";
-                    //method          ="js_positions";
+                    method          ="js_positions";
                     time            =1;
                 }
 
