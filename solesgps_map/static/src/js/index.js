@@ -248,7 +248,7 @@ odoo.define('solesgps_map', function(require){
                         .then(function (result) 
                         {      
                             console.log("==============="+result);            
-                            /*
+                            
 		                    if(result!= null && result.length>0)
 		                    {		    
 		                        
@@ -294,8 +294,8 @@ odoo.define('solesgps_map', function(require){
 		                            }
                                 }
                                 gpsmaps_obj.positions_paint(argument);
-                            }
-                            */                                                                  
+                                }
+
                         });
                         
                     } 
