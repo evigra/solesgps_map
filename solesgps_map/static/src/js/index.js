@@ -232,15 +232,13 @@ odoo.define('solesgps_map', function(require){
                     
                         console.log("==============="+vehiculo);            
                         
-	                    /*
+	                    
 	                    if(argument==undefined)
 	                    {
 	                        var arg=[[],[]];
-	                        var arg=[[('deviceid','=',vehicle.id)],[]];	                
+	                        var arg=[[('deviceid','=',vehiculo.id)],[]];	                
 	                    }
-
-
-
+	                    /*
                         local.positions=Array();
                         rpc.query({
                              model: "gpsmap.positions", 
