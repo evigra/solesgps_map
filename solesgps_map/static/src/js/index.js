@@ -221,7 +221,7 @@ odoo.define('solesgps_map', function(require){
                     //method          ="js_positions";
                     time            =1;
                 }
-                /*
+                
 
                 setTimeout(function()
                 {           
@@ -231,6 +231,7 @@ odoo.define('solesgps_map', function(require){
                     
                         console.log("==============="+vehiculo);            
                         
+	                    /*
 	                    if(argument==undefined)
 	                    {
 	                        var arg=[[],[]];
@@ -293,13 +294,15 @@ odoo.define('solesgps_map', function(require){
 		                            }
                                 }
                                 gpsmaps_obj.positions_paint(argument);
-                            }                                                              
+                            }
+                                                                                          
                         });
+                        */
                     } 
 	            },time);                
 	            
 	            
-	            */
+	            
 	            
 	            
         },
