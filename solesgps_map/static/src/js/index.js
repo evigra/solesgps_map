@@ -204,6 +204,7 @@ odoo.define('solesgps_map', function(require){
         
         positions_search:function(argument){
 	        //setTimeout(function(){
+	            var ivehiculos;
                 var vehiculo_id;
                 var vehiculos       =local.vehicles;
                 var iresult;
