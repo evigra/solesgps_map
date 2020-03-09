@@ -227,11 +227,11 @@ odoo.define('solesgps_map', function(require){
 
                 setTimeout(function()
                 {           
-                    for(ivehiculos in vehiculos)
+                    //for(ivehiculos in vehiculos)
                     {                   
-                        var vehiculo               =vehiculos[ivehiculos];  
+                      //  var vehiculo               =vehiculos[ivehiculos];  
                     
-                        console.log("==============="+vehiculo);            
+                        //console.log("==============="+vehiculo);            
                         
 	                    
 	                    if(argument==undefined)
