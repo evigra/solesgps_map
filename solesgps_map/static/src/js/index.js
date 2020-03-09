@@ -203,6 +203,7 @@ odoo.define('solesgps_map', function(require){
         //////////////////////////////////////////////////////////////
         
         positions_search:function(argument){
+            /*    
 	        //setTimeout(function(){
 	            var ivehiculos;
                 var vehiculo_id;
@@ -238,7 +239,7 @@ odoo.define('solesgps_map', function(require){
 	                        var arg=[[],[]];
 	                        var arg=[[('deviceid','=',vehiculo.id)],[]];	                
 	                    }
-	                    /*
+	                    
                         local.positions=Array();
                         rpc.query({
                              model: "gpsmap.positions", 
