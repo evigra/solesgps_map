@@ -204,44 +204,25 @@ odoo.define('solesgps_map', function(require){
         
         positions_search:function(argument){
 	        //setTimeout(function(){
-	            if(argument==undefined)  var arg=[[],[]];
+	            var fields_select=['deviceid','devicetime','latitude','longitude','speed'];
+	        
 	            if(argument==undefined)  
-	                var arg=[
-	                    [
-	                        
-	                    ],
-	                    [
-	                        ['deviceid','devicetime','latitude','longitude','speed'],
-	                        ['limit',1],	                        
-	                    ]
-	                ];
-	            //if(argument==undefined)  var arg=[[],{limit:1}];
+	            {
+	                var arg=[[],[]];
+	            
+	                var arg = [
+                        ['deviceid', '=', '1']
+                    ];
+	            }
 	            
 	            
-	            /*
-    deviceid = fields.Many2one('fleet.vehicle',ondelete='set null', string="Vehiculo", index=True)
-    servertime = fields.Datetime('Server Time')
-    devicetime = fields.Datetime('Device Time')
-    fixtime = fields.Datetime('Error Time')
-    valid = fields.Integer('Valido')
-    latitude = fields.Float('Latitud',digits=(5,10))
-    longitude = fields.Float('Longitud',digits=(5,10))
-    altitude = fields.Float('Altura',digits=(6,2))
-    speed = fields.Float('Velocidad',digits=(3,2))
-    course                                      = fields.Float('Curso',digits=(3,2))
-    address                                     = fields.Char('Calle', size=150)
-    attributes                                  = fields.Char('Atributos', size=5000)
-    other                                       = fields.Char('Otros', size=5000)
-    leido                                       = fields.Integer('Leido')
-    event                                       =fields.Char('Evento', size=70)
-	            
-	            */
-
                 var vehiculo_id;
                 var vehiculos       =local.vehicles;
                 var iresult;
                 var method;
                 var time;
+                
+                
                 if(typeof argument=="number")
                 {
                     method          ="read";
@@ -257,11 +238,25 @@ odoo.define('solesgps_map', function(require){
                 setTimeout(function()
                 {            
                     local.positions=Array();
+                    
+                    this._rpc({
+                        model: 'gpsmap.positions',
+                        method: method,
+                        domain: arg,
+                        fields: fields_select,
+                    })
+                    
+                    
+                    
+                    /*
+                    
                     rpc.query({
                          model: "gpsmap.positions", 
                          method: method,
                          args:arg,
-                    })                    
+                    })
+                    */
+                                        
                     .then(function (result) 
                     {      
 		                if(result!= null && result.length>0)
