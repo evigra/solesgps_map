@@ -231,6 +231,7 @@ odoo.define('solesgps_map', function(require){
                          method: method,
                          args:arg,
                     })
+                    .limit(1)
                     .then(function (result) 
                     {      
 		                if(result!= null && result.length>0)
