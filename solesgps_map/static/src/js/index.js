@@ -203,111 +203,6 @@ odoo.define('solesgps_map', function(require){
         //////////////////////////////////////////////////////////////
         
         positions_search:function(argument){
-            
-	        //setTimeout(function(){
-	            var ivehiculos;
-                var vehiculo_id;
-                var vehiculos       =local.vehicles;
-                var iresult;
-                var method;
-                var time;
-                if(typeof argument=="number")
-                {
-                    method          ="read";
-                    arg             =[argument]
-                    time            =1000;
-                }
-                else
-                {
-                    method          ="search_read";
-                    //method          ="js_positions";
-                    time            =1;
-                }
-                
-
-                setTimeout(function()
-                {           
-                    //for(ivehiculos in vehiculos)
-                    {                   
-                      //  var vehiculo               =vehiculos[ivehiculos];  
-                    
-                        //console.log("==============="+vehiculo);            
-                        
-	                    
-	                    if(argument==undefined)
-	                    {
-	                        var arg=[[],[]];
-	                        //var arg=[[('deviceid','=',vehiculo.id)],[]];	                
-	                    }
-	                    
-                        local.positions=Array();
-                        rpc.query({
-                             model: "gpsmap.positions", 
-                             method: method,
-                             args:arg,
-                        })
-                        .then(function (result) 
-                        {      
-                            console.log("==============="+result);            
-                            /*                            
-		                    if(result!= null && result.length>0)
-		                    {		    
-		                        
-		                        for(iresult in result)
-		                        {
-		                            
-        		                            
-		                            //if(vehiculos[device_id]!=undefined)
-		                            {              		                
-		                                var positions               =result[iresult];
-		                                console.log(iresult + " === " + positions);    
-		                                var device                  =positions.deviceid;		                
-		                                var device_id               =device[0];             
-		                            	if(method=="read")          
-		                            	{
-		                            	    positions.se            ="historyForm";    
-		                            	    device_active           =device_id;
-		                            	}    
-                   
-		                                positions.mo                ="";
-		                                positions.st                =1;
-		                                positions.te                ="d_telefono";
-		                                //positions.dn                =vehiculo_name;
-		                                positions.ty                ="type";
-		                                positions.na                ="name";
-		                                positions.de                =device_id;
-		                                positions.la                =positions.latitude;
-		                                positions.lo                =positions.longitude; 
-		                                positions.co                =positions.course; 
-		                                positions.mi                ="milage"; 
-		                                positions.sp                =positions.speed; 
-		                                positions.ba                ="batery"; 
-		                                positions.ti                =positions.devicetime; 
-
-		                                positions.ho                ="icon_online"; 
-		                                positions.ad                =positions.address; 
-		                                positions.ot                =positions.other; 
-		                                //positions.im                =vehiculos[device_id].image_vehicle; 
-		                                positions.ev                ="event"; 
-		                                positions.ge                ="geofence"; 
-		                                positions.ni                ="nivel";
-		                                
-		                                local.positions[device_id]  =positions;
-		                            }
-
-                                }
-                                gpsmaps_obj.positions_paint(argument);
-                            }
-                            */
-                        });
-                    } 
-	            },time);                
-        },
-        
-        
-        
-/*
-        positions_search:function(argument){
 	        //setTimeout(function(){
 	            if(argument==undefined)  var arg=[[],[]];
 
@@ -386,7 +281,6 @@ odoo.define('solesgps_map', function(require){
 	            },time);
                 
         },
-*/
         //////////////////////////////////////////////////////////////
         CreateMap:function(iZoom,iMap,coordinates,object) 
         {
