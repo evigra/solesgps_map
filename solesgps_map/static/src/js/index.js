@@ -205,6 +205,7 @@ odoo.define('solesgps_map', function(require){
         positions_search:function(argument){
 	        //setTimeout(function(){
 	            if(argument==undefined)  var arg=[[],[]];
+	            if(argument==undefined)  var arg=[[['deviceid','=',1]],{limit:1}];
 	            //if(argument==undefined)  var arg=[[],{limit:1}];
 
                 var vehiculo_id;
