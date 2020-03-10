@@ -244,7 +244,7 @@ odoo.define('solesgps_map', function(require){
                         method: method,
                         domain: arg,
                         fields: fields_select,
-                        limit:50         
+                        limit:50,         
                         order:'deviceid DESC'               
                     })
                     .then(function (result) 
