@@ -214,10 +214,7 @@ odoo.define('solesgps_map', function(require){
                         ['deviceid', '=', '1']
                     ];
 	                var arg = [];
-
-
 	            }
-	            
 	            
                 var vehiculo_id;
                 var vehiculos       =local.vehicles;
@@ -247,7 +244,8 @@ odoo.define('solesgps_map', function(require){
                         method: method,
                         domain: arg,
                         fields: fields_select,
-                        limit:25                        
+                        limit:50         
+                        order:'deviceid DESC'               
                     })
                     .then(function (result) 
                     {      
@@ -265,8 +263,7 @@ odoo.define('solesgps_map', function(require){
 		                        	{
 		                        	    positions.se            ="historyForm";    
 		                        	    device_active           =device_id;
-		                        	}    
-               
+		                        	}                   
 		                            positions.mo                ="";
 		                            positions.st                =1;
 		                            positions.te                ="d_telefono";
