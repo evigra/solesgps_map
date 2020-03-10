@@ -204,7 +204,7 @@ odoo.define('solesgps_map', function(require){
         
         positions_search:function(argument){
 	        //setTimeout(function(){
-	            var fields_select=['deviceid','devicetime','latitude','longitude','speed'];
+	            var fields_select=['deviceid','devicetime','latitude','longitude','speed','other','address'];
 	        
 	            if(argument==undefined)  
 	            {
@@ -247,7 +247,7 @@ odoo.define('solesgps_map', function(require){
                         method: method,
                         domain: arg,
                         fields: fields_select,
-                        limit:5                        
+                        limit:25                        
                     })
                     .then(function (result) 
                     {      
