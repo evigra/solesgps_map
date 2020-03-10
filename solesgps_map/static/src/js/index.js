@@ -213,6 +213,9 @@ odoo.define('solesgps_map', function(require){
 	                var arg = [
                         ['deviceid', '=', '1']
                     ];
+	                var arg = [];
+
+
 	            }
 	            
 	            
@@ -244,6 +247,7 @@ odoo.define('solesgps_map', function(require){
                         method: method,
                         domain: arg,
                         fields: fields_select,
+                        
                     })
                     
                     
