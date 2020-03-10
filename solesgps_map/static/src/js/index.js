@@ -210,10 +210,12 @@ odoo.define('solesgps_map', function(require){
 	                    [
 	                        
 	                    ],
-	                    {
-	                        'fields':['deviceid','devicetime','latitude','longitude','speed','',''],
-	                        'limit':1
-	                    }
+	                    [
+	                        {
+	                            'fields':['deviceid','devicetime','latitude','longitude','speed'],
+	                            'limit':1
+	                        }
+	                    ]
 	                ];
 	            //if(argument==undefined)  var arg=[[],{limit:1}];
 	            
