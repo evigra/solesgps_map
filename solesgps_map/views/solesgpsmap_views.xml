@@ -76,7 +76,7 @@
         <field name="name">gpsmap.positions.tree</field>
         <field name="model">gpsmap.positions</field>
         <field name="arch" type="xml">
-            <tree string="Models">
+            <tree string="Models"  default_order='devicetime desc' >
                 <field name="deviceid" />
                 <field name="devicetime"/>
                 <field name="speed"/>
