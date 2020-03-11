@@ -38,6 +38,7 @@ class speed(models.Model):
 class positions(models.Model):
     _name = "gpsmap.positions"
     _description = 'GPS Positions'
+    _order = "devicetime DESC"
     _pointOnVertex=""
     protocol = fields.Char('Protocolo', size=15)
     deviceid = fields.Many2one('fleet.vehicle',ondelete='set null', string="Vehiculo", index=True)
