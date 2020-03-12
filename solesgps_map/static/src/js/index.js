@@ -142,6 +142,8 @@ odoo.define('solesgps_map', function(require){
             var ipositions;
             if(local.positions.length>0)
             {
+                console.log(local.positions.length + " Positions");   
+                local.positions.length
                 var vehiculo_id;
                 var vehiculos       =local.vehicles;
                 var ivehiculos;
