@@ -254,6 +254,7 @@ odoo.define('solesgps_map', function(require){
                             })
                             .then(function (result) 
                             {      
+                                console.log("Device " + local.positions.length +")");    
 		                        if(result!= null && result.length>0)
 		                        {		            
 		                            for(iresult in result)
@@ -263,7 +264,7 @@ odoo.define('solesgps_map', function(require){
 	                                    var device                  =positions.deviceid;		                
 	                                    //var device_id               =device[0];
 	                                    
-	                                    console.log("Device " + local.positions.length +")");    
+	                                    
 	                                    
 	                                	if(method=="read")          
 	                                	{
