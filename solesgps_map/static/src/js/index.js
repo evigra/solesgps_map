@@ -215,6 +215,7 @@ odoo.define('solesgps_map', function(require){
                 var iresult;
                 var method;
                 var time;
+                var ivehiculos;
                 
                 if(typeof argument=="number")
                 {
