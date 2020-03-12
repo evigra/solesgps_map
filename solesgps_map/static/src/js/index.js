@@ -89,10 +89,10 @@ odoo.define('solesgps_map', function(require){
 		        {
 		            for(iresult in result)
 		            {		                
-		                var geofence                    =result[iresult];		                
-                        var geofence_id                 =geofence["id"];                        
+		                var geofence                        =result[iresult];		                
+                        var geofence_id                     =geofence["id"];                        
                         if(geofence["name"]!="")
-                            local.geofences[geofence_id]     =geofence;                        
+                            local.geofences[geofence_id]    =geofence;                        
                     }
                 }    
             });
@@ -118,7 +118,12 @@ odoo.define('solesgps_map', function(require){
                 },2500);                
             } 
         },
-        //////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////
+        // /etc/init.d/directadmin restart
+        // /etc/init.d/directadmin
+        // ./getLicense.sh 10968 112610
+        //
+        // /usr/local/directadmin/scripts/./getLicense.sh 10968 112610
         positions: function() {
             if($("div#map").length>0) 
             {        	    
@@ -205,23 +210,11 @@ odoo.define('solesgps_map', function(require){
         positions_search:function(argument){
 	        //setTimeout(function(){
 	            var fields_select=['deviceid','devicetime','latitude','longitude','speed','other','address'];
-	        
-	            if(argument==undefined)  
-	            {
-	                var arg=[[],[]];
-	            
-	                var arg = [
-                        ['deviceid', '=', '1']
-                    ];
-	                var arg = [];
-	            }
-	            
                 var vehiculo_id;
                 var vehiculos       =local.vehicles;
                 var iresult;
                 var method;
                 var time;
-                
                 
                 if(typeof argument=="number")
                 {
@@ -237,62 +230,73 @@ odoo.define('solesgps_map', function(require){
 
                 setTimeout(function()
                 {            
-                    local.positions=Array();
-                    
-                    rpc.query({
-                        model: 'gpsmap.positions',
-                        method: method,
-                        domain: arg,
-                        fields: fields_select,
-                        limit:50,         
-                        order:'devicetime DESC'               
-                    })
-                    .then(function (result) 
-                    {      
-		                if(result!= null && result.length>0)
-		                {		            
-		                    for(iresult in result)
-		                    {
-		                        //if(vehiculos[device_id]!=undefined)
-		                        {              		                
-		                            var positions               =result[iresult];
-		                            
-		                            var device                  =positions.deviceid;		                
-		                            var device_id               =device[0];             
-		                        	if(method=="read")          
-		                        	{
-		                        	    positions.se            ="historyForm";    
-		                        	    device_active           =device_id;
-		                        	}                   
-		                            positions.mo                ="";
-		                            positions.st                =1;
-		                            positions.te                ="d_telefono";
-		                            ////positions.dn                =vehiculo_name;
-		                            positions.ty                ="type";
-		                            positions.na                ="name";
-		                            positions.de                =device_id;
-		                            positions.la                =positions.latitude;
-		                            positions.lo                =positions.longitude; 
-		                            positions.co                =positions.course; 
-		                            positions.mi                ="milage"; 
-		                            positions.sp                =positions.speed; 
-		                            positions.ba                ="batery"; 
-		                            positions.ti                =positions.devicetime; 
+                    if(vehiculos!= null && vehiculos.length>0)
+                    {	    
+                        local.positions=Array();                
+                        for(ivehiculos in vehiculos)
+                        {		                
+                            var vehiculo        =vehiculos[ivehiculos];		                
+                            var vehiculo_id     =vehiculo["id"];
+                            
+                            var arg = [
+                                ['deviceid', '=', vehiculo_id]
+                            ];
 
-		                            positions.ho                ="icon_online"; 
-		                            positions.ad                =positions.address; 
-		                            positions.ot                =positions.other; 
-		                            ////positions.im                =vehiculos[device_id].image_vehicle; 
-		                            positions.ev                ="event"; 
-		                            positions.ge                ="geofence"; 
-		                            positions.ni                ="nivel";
-		                            
-		                            local.positions[device_id]  =positions;
-		                        }
-                            }
-                            gpsmaps_obj.positions_paint(argument);
-                        }                                                              
-                    });
+
+                            rpc.query({
+                                model: 'gpsmap.positions',
+                                method: method,
+                                domain: arg,
+                                fields: fields_select,
+                                limit:1,         
+                            })
+                            .then(function (result) 
+                            {      
+		                        if(result!= null && result.length>0)
+		                        {		            
+		                            for(iresult in result)
+		                            {
+	                                    var positions               =result[iresult];
+	                                    
+	                                    var device                  =positions.deviceid;		                
+	                                    var device_id               =device[0];             
+	                                	if(method=="read")          
+	                                	{
+	                                	    positions.se            ="historyForm";    
+	                                	    device_active           =device_id;
+	                                	}                   
+	                                    positions.mo                ="";
+	                                    positions.st                =1;
+	                                    positions.te                ="d_telefono";
+	                                    ////positions.dn                =vehiculo_name;
+	                                    positions.ty                ="type";
+	                                    positions.na                ="name";
+	                                    positions.de                =device_id;
+	                                    positions.la                =positions.latitude;
+	                                    positions.lo                =positions.longitude; 
+	                                    positions.co                =positions.course; 
+	                                    positions.mi                ="milage"; 
+	                                    positions.sp                =positions.speed; 
+	                                    positions.ba                ="batery"; 
+	                                    positions.ti                =positions.devicetime; 
+
+	                                    positions.ho                ="icon_online"; 
+	                                    positions.ad                =positions.address; 
+	                                    positions.ot                =positions.other; 
+	                                    ////positions.im                =vehiculos[device_id].image_vehicle; 
+	                                    positions.ev                ="event"; 
+	                                    positions.ge                ="geofence"; 
+	                                    positions.ni                ="nivel";
+	                                    
+	                                    local.positions[device_id]  =positions;
+                                    }                                    
+                                }                                                              
+                            });
+
+
+                        }
+                        gpsmaps_obj.positions_paint(argument);
+                    }
 	            },time);
                 
         },

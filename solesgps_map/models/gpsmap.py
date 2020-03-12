@@ -30,6 +30,7 @@ class speed(models.Model):
     _name = "gpsmap.speed"
     _description = 'Positions Speed'
     _pointOnVertex=""
+    _order = "starttime DESC"
     deviceid = fields.Many2one('fleet.vehicle',ondelete='set null', string="Vehiculo", index=True)
     starttime = fields.Datetime('Start Time')
     endtime = fields.Datetime('End Time')
@@ -40,22 +41,22 @@ class positions(models.Model):
     _description = 'GPS Positions'
     _order = "devicetime DESC"
     _pointOnVertex=""
-    protocol = fields.Char('Protocolo', size=15)
-    deviceid = fields.Many2one('fleet.vehicle',ondelete='set null', string="Vehiculo", index=True)
-    servertime = fields.Datetime('Server Time')
-    devicetime = fields.Datetime('Device Time')
-    fixtime = fields.Datetime('Error Time')
-    valid = fields.Integer('Valido')
-    latitude = fields.Float('Latitud',digits=(5,10))
-    longitude = fields.Float('Longitud',digits=(5,10))
-    altitude = fields.Float('Altura',digits=(6,2))
-    speed = fields.Float('Velocidad',digits=(3,2))
+    protocol                                    = fields.Char('Protocolo', size=15)
+    deviceid                                    = fields.Many2one('fleet.vehicle',ondelete='set null', string="Vehiculo", index=True)
+    servertime                                  = fields.Datetime('Server Time')
+    devicetime                                  = fields.Datetime('Device Time')
+    fixtime                                     = fields.Datetime('Error Time')
+    valid                                       = fields.Integer('Valido')
+    latitude                                    = fields.Float('Latitud',digits=(5,10))
+    longitude                                   = fields.Float('Longitud',digits=(5,10))
+    altitude                                    = fields.Float('Altura',digits=(6,2))
+    speed                                       = fields.Float('Velocidad',digits=(3,2))
     course                                      = fields.Float('Curso',digits=(3,2))
     address                                     = fields.Char('Calle', size=150)
     attributes                                  = fields.Char('Atributos', size=5000)
     other                                       = fields.Char('Otros', size=5000)
     leido                                       = fields.Integer('Leido')
-    event                                       =fields.Char('Evento', size=70)
+    event                                       = fields.Char('Evento', size=70)
     def get_system_para(self):
         para_value                              =self.env['ir.config_parameter'].get_param('solesgps_map_key','')
         return para_value
@@ -132,12 +133,11 @@ class positions(models.Model):
         speed_obj       =self.env['gpsmap.speed']
         mail_obj        =self.env['mail.message']
         geofence_obj    =self.env['gpsmap.geofence']
-        
-        
+                
         alerts_data     =geofence_obj.geofences()
         
         positions_arg               =[('leido','=',0)]                
-        positions_data              =positions_obj.search(positions_arg, offset=0, limit=100)        
+        positions_data              =positions_obj.search(positions_arg, offset=0, limit=500)        
         #positions_data              =positions_obj.search(positions_arg, offset=0, limit=3, order='devicetime ASC')        
 
         if len(positions_data)>0:         
@@ -210,5 +210,4 @@ class geofence(models.Model):
     hidden = fields.Boolean('Hidden')
 
     def geofences(self):
-        return false                
-        
+        return false                        
