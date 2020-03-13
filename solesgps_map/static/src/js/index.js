@@ -242,6 +242,8 @@ odoo.define('solesgps_map', function(require){
                             var vehiculo        =vehiculos[ivehiculos];		                
                             var device_id       =vehiculo["id"];
                             
+                            console.log("Device  " + device_id );		            
+                            
                             var arg = [
                                 ['deviceid', '=', vehiculo_id]
                             ];
