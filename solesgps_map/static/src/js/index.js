@@ -242,10 +242,10 @@ odoo.define('solesgps_map', function(require){
                             var vehiculo        =vehiculos[ivehiculos];		                
                             var device_id       =vehiculo["id"];
                             
-                            console.log("Device  " + device_id );		            
+                            console.log("Device  " + vehiculo["id"] );		            
                             
                             var arg = [
-                                ['deviceid', '=', vehiculo_id]
+                                ['deviceid', '=', vehiculo["id"]]
                             ];
 
                             rpc.query({
@@ -258,9 +258,10 @@ odoo.define('solesgps_map', function(require){
                             .then(function (result) 
                             {      
                                     
+                                console.log("Device then" + vehiculo["id"]);		            
 		                        if(result!= null && result.length>0)
 		                        {
-		                            console.log("Device " + device_id);		            
+		                            
 		                            for(iresult in result)
 		                            {
 	                                    var positions               =result[iresult];
