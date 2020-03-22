@@ -21,20 +21,20 @@ class vehicle(models.Model):
         ('92', 'Green Phone'),
         ('93', 'Red  Phone')
         ], 'Img GPS', default='01', help='Image of GPS Vehicle', required=True)
-    phone = fields.Char('Phone', size=50)
-    imei = fields.Char('Imei', size=50)
-    speed = fields.Char('Exceso de Velocidad', default=100, size=3)   
-    
-    
+    phone                                       = fields.Char('Phone', size=50)
+    imei                                        = fields.Char('Imei', size=50)
+    speed                                       = fields.Char('Exceso de Velocidad', default=100, size=3)   
+    positionid                                  = fields.Integer('Valido')
+        
 class speed(models.Model):
     _name = "gpsmap.speed"
     _description = 'Positions Speed'
     _pointOnVertex=""
     _order = "starttime DESC"
-    deviceid = fields.Many2one('fleet.vehicle',ondelete='set null', string="Vehiculo", index=True)
-    starttime = fields.Datetime('Start Time')
-    endtime = fields.Datetime('End Time')
-    speed = fields.Float('Velocidad',digits=(3,2))
+    deviceid                                    = fields.Many2one('fleet.vehicle',ondelete='set null', string="Vehiculo", index=True)
+    starttime                                   = fields.Datetime('Start Time')
+    endtime                                     = fields.Datetime('End Time')
+    speed                                       = fields.Float('Velocidad',digits=(3,2))
 
 class positions(models.Model):
     _name = "gpsmap.positions"
@@ -62,7 +62,7 @@ class positions(models.Model):
         return para_value
     def action_addpositions(self):
         self.run_scheduler()
-        """
+        
     def js_positions(self):
         vehicle_obj                             =self.env['fleet.vehicle']        
         vehicle_args                            =[]        
@@ -79,7 +79,7 @@ class positions(models.Model):
                     print('====== ', positions_data[0])
                     return_positions[vehicle.id]    =positions_data[0]
             return return_positions
-        """        
+                
     def run_scheduler_demo(self):
         positions_obj                           =self.env['gpsmap.positions']        
         vehicle_obj                             =self.env['fleet.vehicle']
@@ -94,31 +94,31 @@ class positions(models.Model):
                 positions_arg                   =[('deviceid','=',vehicle.id)]                
                 positions_data                  =positions_obj.search(positions_arg, offset=0, limit=1, order='devicetime DESC')
                 
-                velocidad = random.randint(95, 130)
-                curso = random.randint(30, 160)
+                velocidad                       = random.randint(95, 130)
+                curso                           = random.randint(30, 160)
                 
-                incremento_lat = random.uniform(-0.004, 0.004)
+                incremento_lat                  = random.uniform(-0.004, 0.004)
                 
-                latitude=positions_data[0].latitude + incremento_lat
-                longitude=positions_data[0].longitude + 0.00345
+                latitude                        =positions_data[0].latitude + incremento_lat
+                longitude                       =positions_data[0].longitude + 0.00345
 
                 data_create={}        
-                data_create['protocol']     ='tk103'
-                data_create['deviceid']     =vehicle.id
-                data_create['servertime']   =fields.Datetime.now()
-                data_create['devicetime']   =fields.Datetime.now()
-                data_create['fixtime']      =fields.Datetime.now()
-                data_create['valid']        =''
-                data_create['latitude']     =latitude
-                data_create['longitude']    =longitude
-                data_create['altitude']     =''
-                data_create['speed']        =velocidad
-                data_create['course']       =curso
-                data_create['address']      =''
-                data_create['attributes']   =''
-                data_create['other']        =0
-                data_create['leido']        =''
-                data_create['event']        =''
+                data_create['protocol']         ='tk103'
+                data_create['deviceid']         =vehicle.id
+                data_create['servertime']       =fields.Datetime.now()
+                data_create['devicetime']       =fields.Datetime.now()
+                data_create['fixtime']          =fields.Datetime.now()
+                data_create['valid']            =''
+                data_create['latitude']         =latitude
+                data_create['longitude']        =longitude
+                data_create['altitude']         =''
+                data_create['speed']            =velocidad
+                data_create['course']           =curso
+                data_create['address']          =''
+                data_create['attributes']       =''
+                data_create['other']            =0
+                data_create['leido']            =''
+                data_create['event']            =''
                 
                 positions_obj.create(data_create)    
         self.run_scheduler_position()
@@ -128,29 +128,29 @@ class positions(models.Model):
 
         print('CRON LALO====================',now)        
         
-        positions_obj   =self.env['gpsmap.positions']
-        vehicle_obj     =self.env['fleet.vehicle']
-        speed_obj       =self.env['gpsmap.speed']
-        mail_obj        =self.env['mail.message']
-        geofence_obj    =self.env['gpsmap.geofence']
+        positions_obj                           =self.env['gpsmap.positions']
+        vehicle_obj                             =self.env['fleet.vehicle']
+        speed_obj                               =self.env['gpsmap.speed']
+        mail_obj                                =self.env['mail.message']
+        geofence_obj                            =self.env['gpsmap.geofence']
                 
-        alerts_data     =geofence_obj.geofences()
+        alerts_data                             =geofence_obj.geofences()
         
-        positions_arg               =[('leido','=',0)]                
-        positions_data              =positions_obj.search(positions_arg, offset=0, limit=500)        
-        #positions_data              =positions_obj.search(positions_arg, offset=0, limit=3, order='devicetime ASC')        
+        positions_arg                           =[('leido','=',0)]                
+        positions_data                          =positions_obj.search(positions_arg, offset=0, limit=1000)        
+        #positions_data                         =positions_obj.search(positions_arg, offset=0, limit=3, order='devicetime ASC')        
 
         if len(positions_data)>0:         
             for position in positions_data:
-                vehicle_arg               =[('id','=',position.deviceid.id)]                
-                vehicle              =vehicle_obj.search(vehicle_arg)        
+                vehicle_arg                     =[('id','=',position.deviceid.id)]                
+                vehicle                         =vehicle_obj.search(vehicle_arg)        
                 if vehicle.speed=='':
-                    vehicle.speed=100
+                    vehicle.speed               =100
                 if vehicle.speed==0:
-                    vehicle.speed=100    
+                    vehicle.speed               =100    
 
-                speed_arg                   =[['deviceid','=',position.deviceid.id],['endtime','=',False]]                
-                speed_data                  =speed_obj.search(speed_arg, offset=0, limit=50000)        
+                speed_arg                       =[['deviceid','=',position.deviceid.id],['endtime','=',False]]                
+                speed_data                      =speed_obj.search(speed_arg, offset=0, limit=50000)        
                 
                 #print(position.id, ' ======= Velocidad Count =', len(speed_data), " ID Vehicle=",position.deviceid.id, ' Velocidad permitida =', vehicle.speed, ' Speed=',position.speed)
                 
