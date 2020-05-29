@@ -88,6 +88,7 @@ class positions(models.Model):
                 if len(positions_data)>0:
                     print('====== ', positions_data[0])
                     return_positions[vehicle.id]    =positions_data[0]
+                    return_positions                =positions_data
             
         
         return return_positions
