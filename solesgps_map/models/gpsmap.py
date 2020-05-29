@@ -74,7 +74,7 @@ class positions(models.Model):
         vehicle_args                            =[]        
         return_positions                        ={}
         
-        """
+        
         vehicle_data                            =vehicle_obj.search(vehicle_args, offset=0, limit=None, order=None)
         
         if len(vehicle_data)>0:         
@@ -83,13 +83,13 @@ class positions(models.Model):
                 positions_arg                   =[]
                 #positions_arg                   =[[('deviceid','=',vehicle.id)],[]]
                 
-                #positions_data                  =self.search_read(positions_arg, offset=0, limit=1, order='devicetime DESC')
+                positions_data                  =self.search_read(positions_arg, offset=0, limit=1, order='devicetime DESC')
         
-                #if len(positions_data)>0:
+                if len(positions_data)>0:
                     #print('====== ', positions_data[0])
-                    #return_positions[vehicle.id]    =positions_data[0]
+                    return_positions[vehicle.id]    =positions_data[0]
             
-        """
+        
         return return_positions
     def run_scheduler_demo(self):
         positions_obj                           =self.env['gpsmap.positions']        
