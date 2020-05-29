@@ -243,13 +243,13 @@ odoo.define('solesgps_map', function(require){
                         ['deviceid', '=', vehiculo["id"]]
                     ];
 
-                    /*
+                   
                     rpc.query({
                         model: 'gpsmap.positions',
                         method: method,
                         //domain: arg,
                         fields: fields_select,
-                        /limit:1,         
+                        //limit:1,         
                     })
                     .then(function (result) 
                     {      
