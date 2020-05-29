@@ -88,8 +88,9 @@ class positions(models.Model):
                 #if len(positions_data)>0:
                     #print('====== ', positions_data[0])
                     #return_positions[vehicle.id]    =positions_data[0]
-            return return_positions
+            
         """
+        return return_positions
     def run_scheduler_demo(self):
         positions_obj                           =self.env['gpsmap.positions']        
         vehicle_obj                             =self.env['fleet.vehicle']
