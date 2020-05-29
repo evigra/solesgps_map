@@ -99,7 +99,9 @@ odoo.define('solesgps_map', function(require){
         },
 
         position: function(argument) {
-            gpsmaps_obj.positions_search(argument);         
+            gpsmaps_obj.positions_search(argument);     
+            
+            /*    
             if(argument==undefined)    
             {
                 setTimeout(function()
@@ -117,6 +119,7 @@ odoo.define('solesgps_map', function(require){
                     }         
                 },2500);                
             } 
+            */
         },
         ////////////////////////////////////////////////////////////
         // /etc/init.d/directadmin restart
