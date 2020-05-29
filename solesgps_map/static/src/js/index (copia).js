@@ -228,7 +228,6 @@ odoo.define('solesgps_map', function(require){
             else
             {
                 method          ="search_read";
-                method          ="js_positions";
                 time            =1;
             }
 
@@ -238,23 +237,6 @@ odoo.define('solesgps_map', function(require){
                 {	    
                     console.log("Devices( " + vehiculos.length + ")");		            
                     local.positions=Array();                
-             
-                    rpc.query({
-                        model: 'gpsmap.positions',
-                        method: method,
-                        domain: arg,
-                        fields: fields_select,
-                    //    limit:none,         
-                    })
-                    .then(function (result) 
-                    {      
-                        console.log("Result  " + result );		            
-                    
-                    });
-                            
-                    
-                    
-                    /*
                     for(ivehiculos in vehiculos)
                     {		                
                         var vehiculo        =vehiculos[ivehiculos];		                
@@ -320,16 +302,6 @@ odoo.define('solesgps_map', function(require){
                             }                                                              
                         });
                     }
-                    */
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     gpsmaps_obj.positions_paint(argument);
                 }
             },time);

@@ -1,3 +1,7 @@
+#https://db55a1ae0abbb5ca8169eb905662d4ee:000a42c3ec92d8e1f3925d021dd22ecd@lanbena-care.myshopify.com/
+#    admin/api/2020-01/orders.json
+#    admin/api/2020-01/customers.json
+
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 import datetime
@@ -25,7 +29,8 @@ class vehicle(models.Model):
     imei                                        = fields.Char('Imei', size=50)
     speed                                       = fields.Char('Exceso de Velocidad', default=100, size=3)   
     positionid                                  = fields.Integer('Valido')
-        
+
+
 class speed(models.Model):
     _name = "gpsmap.speed"
     _description = 'Positions Speed'
@@ -62,7 +67,8 @@ class positions(models.Model):
         return para_value
     def action_addpositions(self):
         self.run_scheduler()
-        
+
+
     def js_positions(self):
         vehicle_obj                             =self.env['fleet.vehicle']        
         vehicle_args                            =[]        
@@ -73,13 +79,14 @@ class positions(models.Model):
         if len(vehicle_data)>0:         
             for vehicle in vehicle_data:
                 positions_arg                   =[[],[]]
-                #positions_arg                   =[[('deviceid','=',vehicle.id)],[]]
+                positions_arg                   =[[('deviceid','=',vehicle.id)],[]]
                 positions_data                  =self.search_read(positions_arg, offset=0, limit=1, order='devicetime DESC')
                 if len(positions_data)>0:
                     print('====== ', positions_data[0])
                     return_positions[vehicle.id]    =positions_data[0]
             return return_positions
-                
+
+
     def run_scheduler_demo(self):
         positions_obj                           =self.env['gpsmap.positions']        
         vehicle_obj                             =self.env['fleet.vehicle']
