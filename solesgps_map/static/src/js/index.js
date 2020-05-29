@@ -242,13 +242,14 @@ odoo.define('solesgps_map', function(require){
                     local.positions=Array();                
                
 
-                   /*
+                   
+                        var arg = [];
+
                     rpc.query({
                         model: 'gpsmap.positions',
                         method: method,
-                        //domain: arg,
-                        fields: fields_select,
-                        //limit:1,         
+                        domain: arg,
+                        fields: fields_select
                     })
                     .then(function (result) 
                     {      
@@ -256,7 +257,7 @@ odoo.define('solesgps_map', function(require){
                     
                     });
                     
-                    
+                   /* 
                     for(ivehiculos in vehiculos)
                     {		                
                         var vehiculo        =vehiculos[ivehiculos];		                
