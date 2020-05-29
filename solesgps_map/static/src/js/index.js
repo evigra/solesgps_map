@@ -250,7 +250,7 @@ odoo.define('solesgps_map', function(require){
                     })
                     .then(function (result) 
                     {      
-                        console.log("Device  " + result);
+                        //console.log("Device  " + result);
                     
                     });
                     
@@ -330,7 +330,7 @@ odoo.define('solesgps_map', function(require){
                     
                     
                     
-                    gpsmaps_obj.positions_paint(argument);
+                    //gpsmaps_obj.positions_paint(argument);
                 }
             },time);
                 
