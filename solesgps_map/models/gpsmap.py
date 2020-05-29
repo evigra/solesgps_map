@@ -70,7 +70,7 @@ class positions(models.Model):
 
 
     def js_positions(self):
-        #vehicle_obj                             =self.env['fleet.vehicle']        
+        vehicle_obj                             =self.env['fleet.vehicle']        
         vehicle_args                            =[]        
         return_positions                        ={}
         
