@@ -79,6 +79,7 @@ class positions(models.Model):
         if len(vehicle_data)>0:         
             for vehicle in vehicle_data:
                 positions_arg                   =[[],[]]
+                positions_arg                   =[]
                 #positions_arg                   =[[('deviceid','=',vehicle.id)],[]]
                 
                 positions_data                  =self.search_read(positions_arg, offset=0, limit=1, order='devicetime DESC')
