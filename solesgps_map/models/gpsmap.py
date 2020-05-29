@@ -82,7 +82,7 @@ class positions(models.Model):
                 positions_arg                   =[]
                 #positions_arg                   =[[('deviceid','=',vehicle.id)],[]]
                 
-                positions_data                  =self.search_read(positions_arg, offset=0, limit=1, order='devicetime DESC')
+                #positions_data                  =self.search_read(positions_arg, offset=0, limit=1, order='devicetime DESC')
         
                 #if len(positions_data)>0:
                     #print('====== ', positions_data[0])
