@@ -85,7 +85,7 @@ class positions(models.Model):
                 positions_data                  =self.search_read(positions_arg, offset=0, limit=1, order='devicetime DESC')
         
                 if len(positions_data)>0:
-                    print('====== ', positions_data[0])
+                    #print('====== ', positions_data[0])
                     return_positions[vehicle.id]    =positions_data[0]
             return return_positions
         
