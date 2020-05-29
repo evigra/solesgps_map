@@ -68,7 +68,7 @@ class positions(models.Model):
     def action_addpositions(self):
         self.run_scheduler()
 
-    def search_read(self, model, fields=False, offset=0, limit=False, domain=None, sort=None)
+    def search_read(self, model, fields=False, offset=0, limit=False, domain=None, sort=None):
         vehicle_obj                             =self.env['fleet.vehicle']        
         vehicle_args                            =[]        
         return_positions                        ={}
