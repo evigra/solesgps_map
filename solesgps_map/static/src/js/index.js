@@ -253,7 +253,7 @@ odoo.define('solesgps_map', function(require){
                     })
                     .then(function (result) 
                     {      
-                        console.log("Device  " + vehiculo["id"] );		            
+                        console.log("Device  " + result);
                     
                     });
                     
