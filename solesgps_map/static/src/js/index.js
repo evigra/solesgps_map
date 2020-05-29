@@ -238,20 +238,7 @@ odoo.define('solesgps_map', function(require){
                 {	    
                     console.log("Devices( " + vehiculos.length + ")");		            
                     local.positions=Array();                
-             
-                    rpc.query({
-                        model: 'gpsmap.positions',
-                        method: method,
-                        //domain: arg,
-                        fields: fields_select,
-                    //    limit:none,         
-                    })
-                    .then(function (result) 
-                    {      
-                        console.log("Result  " + result );		            
-                    
-                    });
-                            
+               
                     
                     
                     /*
