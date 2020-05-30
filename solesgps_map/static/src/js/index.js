@@ -230,6 +230,7 @@ odoo.define('solesgps_map', function(require){
             else
             {
                 method          ="search_read";
+                method          ="read_group";
                 //method          ="js_positions";
                 time            =1;
             }
@@ -242,12 +243,14 @@ odoo.define('solesgps_map', function(require){
                     console.log("Devices( " + vehiculos.length + ")");		            
                     local.positions=Array();                
                   
-                  
-                                         
+                    //result = self.env['yourmodel'].read_group([ ("type", "=", "product") ], fields=['Id'], groupby=['deviceid'])
+
+
                     rpc.query({
                         model: 'gpsmap.positions',
                         method: method,
-                        fields: fields_select
+                        fields: fields_select,
+                        groupby=['deviceid']
                     })
                     .then(function (result) 
                     {      
