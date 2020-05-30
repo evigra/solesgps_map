@@ -235,9 +235,6 @@ odoo.define('solesgps_map', function(require){
             }
             
             
-            
-            
-            method          ="js_positions";
             setTimeout(function()
             {            
                 if(vehiculos!= null && vehiculos.length>0)
