@@ -67,21 +67,6 @@ class positions(models.Model):
         return para_value
     def action_addpositions(self):
         self.run_scheduler()
-    def js_positions(self):    
-        positions_arg = []
-        vehicle_data = self.env['fleet.vehicle'].search([])
-
-        if vehicle_data:        
-            for vehicle in vehicle_data:
-                positions_data  = self.search_read([], offset=0, limit=1, order='devicetime DESC')
-                if positions_data:
-                    positions_arg.append(positions_data)       
-
-        return_positions = {name: record.name for record in positions_arg if record}
-
-
-        return return_positions        
-        """
     def js_positions(self):
         vehicle_obj                             =self.env['fleet.vehicle']        
         vehicle_args                            =[]        
@@ -98,7 +83,6 @@ class positions(models.Model):
                     return_positions[vehicle.id]    =positions_data[0]
             
         return return_positions
-        """
     def run_scheduler_demo(self):
         positions_obj                           =self.env['gpsmap.positions']        
         vehicle_obj                             =self.env['fleet.vehicle']
