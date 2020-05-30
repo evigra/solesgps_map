@@ -246,7 +246,7 @@ odoo.define('solesgps_map', function(require){
                     local.positions=Array();                
                   
                   
-                    /*                     
+                                         
                     rpc.query({
                         model: 'gpsmap.positions',
                         method: method,
