@@ -68,30 +68,19 @@ class positions(models.Model):
     def action_addpositions(self):
         self.run_scheduler()
         
-    def search_read(self, model, fields=False, offset=0, limit=False, domain=None, sort=None):
-        
-        
-        
-        data_return =self.do_search_read(model, fields, offset, limit, domain, sort)        
-        print('===SEARCH READ=== ', data_return)
-        return data_return
     def js_positions(self):
         vehicle_obj                             =self.env['fleet.vehicle']        
         vehicle_args                            =[]        
         return_positions                        ={}
-        
         vehicle_data                            =vehicle_obj.search(vehicle_args, offset=0, limit=None, order=None)
         
         if len(vehicle_data)>0:         
             for vehicle in vehicle_data:
-                positions_arg                   =[[],[]]
                 positions_arg                   =[]
                 #positions_arg                   =[[('deviceid','=',vehicle.id)],[]]
                 
-                positions_data                  =self.search_read(positions_arg, offset=0, limit=1, order='devicetime DESC')
-        
+                positions_data                  =self.search_read(positions_arg, offset=0, limit=1, order='devicetime DESC')        
                 if len(positions_data)>0:
-                    print('====== ', positions_data[0])
                     return_positions[vehicle.id]    =positions_data[0]
             
         return return_positions
