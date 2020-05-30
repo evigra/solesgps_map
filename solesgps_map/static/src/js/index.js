@@ -249,7 +249,7 @@ odoo.define('solesgps_map', function(require){
                         model: 'gpsmap.positions',
                         method: method,
                         fields: fields_select,
-                        limit:1,         
+                        limit:  10,         
                     })
                     .then(function (result) 
                     {      
