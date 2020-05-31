@@ -213,7 +213,7 @@ odoo.define('solesgps_map', function(require){
 
         //////////////////////////////////////////////////////////////
         positions_search:function(argument){
-            var fields_select=['distinct(deviceid)','devicetime','latitude','longitude','speed','other','address'];
+            var fields_select=['deviceid','devicetime','latitude','longitude','speed','other','address'];
             var vehiculo_id;
             var vehiculos       =local.vehicles;
             var iresult;
@@ -249,7 +249,8 @@ odoo.define('solesgps_map', function(require){
                         method: method,
                         fields: fields_select,
                         order: 'devicetime DESC',
-                        limit:  10,         
+                        limit:  10,        
+                        group:'deviceid' 
                     })
                     .then(function (result) 
                     {      
