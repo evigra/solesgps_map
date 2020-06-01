@@ -247,10 +247,11 @@ odoo.define('solesgps_map', function(require){
                     })
                     .then(function (result) 
                     {      
-                        foreach(result);
-                        console.log("POSITIONS " + result);		            
+                        //foreach(result);
+                        //datos[i]
+                        //console.log("POSITIONS " + result);		            
                     
-                        if(result!= null && result.length>0)
+                        //if(result!= null && result.length>0)
                         {                            
                             console.log("PASO POSITIONS " + result);		            
                             for(iresult in result)
