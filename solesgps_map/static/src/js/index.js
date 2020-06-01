@@ -244,20 +244,8 @@ odoo.define('solesgps_map', function(require){
                   
                     //result = self.env['yourmodel'].read_group([ ("type", "=", "product") ], fields=['Id'], groupby=['deviceid'])
 
-                    rpc.query({
-                        model: 'gpsmap.positions',
-                        method: method,
-                        fields: fields_select,
-                        order: 'devicetime DESC',
-                        limit:  10,        
-                        group: 'deviceid' 
-                    })
-                    .then(function (result) 
-                    {      
-                        //console.log("Device  " + result);
-                    
-                    });
-                    
+                    gpsmaps_obj.vehicles();
+                                        
                     /*
                     for(ivehiculos in vehiculos)
                     {		                
@@ -507,6 +495,8 @@ odoo.define('solesgps_map', function(require){
 		            {		                
 		                var vehiculo                    =result[iresult];		                
                         var vehiculo_id                 =vehiculo["id"];                        
+                        console.log(" PositionID" + vehiculo["positionid"]); 
+                        
                         if(vehiculo["name"]!="")
                             local.vehicles[vehiculo_id]     =vehiculo;                        
                     }
