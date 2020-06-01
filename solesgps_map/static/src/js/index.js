@@ -229,113 +229,68 @@ odoo.define('solesgps_map', function(require){
             }
             else
             {
-                method          ="search_read";
-                //method          ="js_positions";
+                method          ="js_positions";
                 time            =1;
             }
             
-            method          ="js_positions";
             setTimeout(function()
             {            
                 if(vehiculos!= null && vehiculos.length>0)
                 {	    
-                    console.log("Devices( " + vehiculos.length + ")");		            
                     local.positions=Array();                
-                  
-                    //result = self.env['yourmodel'].read_group([ ("type", "=", "product") ], fields=['Id'], groupby=['deviceid'])
-
-                    
+                                      
                     rpc.query({
                         model: 'gpsmap.positions',
                         method: method,
                         fields: fields_select,
                         order: 'devicetime DESC',
-                        limit:  10,        
-                        group: 'deviceid' 
                     })
                     .then(function (result) 
                     {      
-                        //console.log("Device  " + result);
-                    
-                    });
-                    
-                    /*
-                    for(ivehiculos in vehiculos)
-                    {		                
-                        var vehiculo        =vehiculos[ivehiculos];		                
-                        var device_id       =vehiculo["id"];
-                        
-                        console.log("Device  " + vehiculo["id"] );		            
-                        
-                        var arg = [
-                            ['deviceid', '=', vehiculo["id"]]
-                        ];
-
-                        rpc.query({
-                            model: 'gpsmap.positions',
-                            method: method,
-                            domain: arg,
-                            fields: fields_select,
-                            limit:1,         
-                        })
-                        .then(function (result) 
-                        {      
+                        if(result!= null && result.length>0)
+                        {                            
+                            for(iresult in result)
+                            {
+                                var positions               =result[iresult];
                                 
-                            console.log("Device then" + vehiculo["id"]);		            
-	                        if(result!= null && result.length>0)
-	                        {
-	                            
-	                            for(iresult in result)
-	                            {
-                                    var positions               =result[iresult];
-                                    
-                                    var device                  =positions.deviceid;		                
-                                    //var device_id               =device[0];
-                                    
-                                	if(method=="read")          
-                                	{
-                                	    positions.se            ="historyForm";    
-                                	    device_active           =device_id;
-                                	}                   
-                                    positions.mo                ="";
-                                    positions.st                =1;
-                                    positions.te                ="d_telefono";
-                                    ////positions.dn                =vehiculo_name;
-                                    positions.ty                ="type";
-                                    positions.na                ="name";
-                                    positions.de                =device_id;
-                                    positions.la                =positions.latitude;
-                                    positions.lo                =positions.longitude; 
-                                    positions.co                =positions.course; 
-                                    positions.mi                ="milage"; 
-                                    positions.sp                =positions.speed; 
-                                    positions.ba                ="batery"; 
-                                    positions.ti                =positions.devicetime; 
+                                var device                  =positions.deviceid;		                
+                                //var device_id               =device[0];
+                                
+                            	if(method=="read")          
+                            	{
+                            	    positions.se            ="historyForm";    
+                            	    device_active           =device_id;
+                            	}                   
+                                positions.mo                ="";
+                                positions.st                =1;
+                                positions.te                ="d_telefono";
+                                ////positions.dn                =vehiculo_name;
+                                positions.ty                ="type";
+                                positions.na                ="name";
+                                positions.de                =device_id;
+                                positions.la                =positions.latitude;
+                                positions.lo                =positions.longitude; 
+                                positions.co                =positions.course; 
+                                positions.mi                ="milage"; 
+                                positions.sp                =positions.speed; 
+                                positions.ba                ="batery"; 
+                                positions.ti                =positions.devicetime; 
 
-                                    positions.ho                ="icon_online"; 
-                                    positions.ad                =positions.address; 
-                                    positions.ot                =positions.other; 
-                                    ////positions.im                =vehiculos[device_id].image_vehicle; 
-                                    positions.ev                ="event"; 
-                                    positions.ge                ="geofence"; 
-                                    positions.ni                ="nivel";
-                                    
-                                    local.positions[device_id]  =positions;
-                                }                                    
-                            }                                                              
-                        });
-                    }
-                    */
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    //gpsmaps_obj.positions_paint(argument);
+                                positions.ho                ="icon_online"; 
+                                positions.ad                =positions.address; 
+                                positions.ot                =positions.other; 
+                                ////positions.im                =vehiculos[device_id].image_vehicle; 
+                                positions.ev                ="event"; 
+                                positions.ge                ="geofence"; 
+                                positions.ni                ="nivel";
+                                
+                                local.positions[device_id]  =positions;
+                            }                                    
+                        }                                                              
+
+                    });
+                                        
+                    gpsmaps_obj.positions_paint(argument);
                 }
             },time);
                 
