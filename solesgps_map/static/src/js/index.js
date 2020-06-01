@@ -213,7 +213,7 @@ odoo.define('solesgps_map', function(require){
 
         //////////////////////////////////////////////////////////////
         positions_search:function(argument){
-            var fields_select=['deviceid','devicetime','latitude','longitude','speed','other','address'];
+            var fields_select=['devicetime','latitude','longitude','speed'];
             var vehiculo_id;
             var vehiculos       =local.vehicles;
             var iresult;
@@ -244,8 +244,22 @@ odoo.define('solesgps_map', function(require){
                   
                     //result = self.env['yourmodel'].read_group([ ("type", "=", "product") ], fields=['Id'], groupby=['deviceid'])
 
-                    gpsmaps_obj.vehicles();
-                                        
+                    //gpsmaps_obj.vehicles();
+
+                    rpc.query({
+                        model: 'fleet.vehicle',
+                        method: "js_positions",
+                        fields: fields_select,
+                        order: 'devicetime DESC',
+                        limit:  10,        
+                        group: 'deviceid' 
+                    })
+                    .then(function (result) 
+                    {      
+                        //console.log("Device  " + result);
+                    
+                    });
+                    
                     /*
                     for(ivehiculos in vehiculos)
                     {		                
@@ -495,8 +509,6 @@ odoo.define('solesgps_map', function(require){
 		            {		                
 		                var vehiculo                    =result[iresult];		                
                         var vehiculo_id                 =vehiculo["id"];                        
-                        console.log(" PositionID" + vehiculo["positionid"]); 
-                        
                         if(vehiculo["name"]!="")
                             local.vehicles[vehiculo_id]     =vehiculo;                        
                     }
