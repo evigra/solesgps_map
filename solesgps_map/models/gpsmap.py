@@ -84,6 +84,8 @@ class positions(models.Model):
         return para_value
     def action_addpositions(self):
         self.run_scheduler()
+        
+    @api.multi    
     def js_positions(self):
         vehicle_obj                             =self.env['fleet.vehicle']        
         vehicle_args                            =[]        
@@ -98,6 +100,17 @@ class positions(models.Model):
                 positions_data                  =self.search_read(positions_arg, offset=0, limit=1, order='devicetime DESC')        
                 if len(positions_data)>0:
                     return_positions[vehicle.id]    =positions_data[0]
+        """
+    @api.multi
+    def write(self, values):
+        ''' Store the standard price change in order to be able to retrieve the cost of a product for a given date'''
+        res = super(ProductProduct, self).write(values)
+        if 'standard_price' in values:
+            self._set_standard_price(values['standard_price'])
+        return res        
+
+        """
+
             
         return return_positions
     def run_scheduler_demo(self):

@@ -213,7 +213,7 @@ odoo.define('solesgps_map', function(require){
 
         //////////////////////////////////////////////////////////////
         positions_search:function(argument){
-            var fields_select=['devicetime','latitude','longitude','speed'];
+            var fields_select=['deviceid','devicetime','latitude','longitude','speed','other','address'];
             var vehiculo_id;
             var vehiculos       =local.vehicles;
             var iresult;
@@ -234,7 +234,7 @@ odoo.define('solesgps_map', function(require){
                 time            =1;
             }
             
-            //method          ="js_positions";
+            method          ="js_positions";
             setTimeout(function()
             {            
                 if(vehiculos!= null && vehiculos.length>0)
@@ -244,11 +244,10 @@ odoo.define('solesgps_map', function(require){
                   
                     //result = self.env['yourmodel'].read_group([ ("type", "=", "product") ], fields=['Id'], groupby=['deviceid'])
 
-                    //gpsmaps_obj.vehicles();
-
+                    
                     rpc.query({
-                        model: 'fleet.vehicle',
-                        method: "js_positions",
+                        model: 'gpsmap.positions',
+                        method: method,
                         fields: fields_select,
                         order: 'devicetime DESC',
                         limit:  10,        
