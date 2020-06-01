@@ -28,26 +28,7 @@ class vehicle(models.Model):
     phone                                       = fields.Char('Phone', size=50)
     imei                                        = fields.Char('Imei', size=50)
     speed                                       = fields.Char('Exceso de Velocidad', default=100, size=3)   
-    #positionid                                  = fields.Integer('Valido')
     positionid                                  = fields.Many2one('gpsmap.positions',ondelete='set null', string="Position", index=True)
-    def js_positions(self):
-        vehicle_args                            =[]        
-        return_positions                        ={}
-        vehicle_data                            =self.search(vehicle_args, offset=0, limit=None, order=None)
-        
-        if len(vehicle_data)>0:         
-            for vehicle in vehicle_data:
-                positions_arg                   =[]
-                                
-                vehicle["devicetime"]           =vehicle["positionid"].devicetime
-                vehicle["latitude"]             =vehicle["positionid"].latitude
-                vehicle["longitude"]            =vehicle["positionid"].longitude
-                vehicle["altitude"]             =vehicle["positionid"].altitude
-                vehicle["speed"]                =vehicle["positionid"].speed
-
-            
-        return vehicle
-
 class speed(models.Model):
     _name = "gpsmap.speed"
     _description = 'Positions Speed'
@@ -95,7 +76,8 @@ class positions(models.Model):
         if len(vehicle_data)>0:         
             for vehicle in vehicle_data:
                 positions_arg                   =[]
-                #positions_arg                   =[[('deviceid','=',vehicle.id)],[]]
+                positions_arg                   =[[('deviceid','=',vehicle.id)],[]]
+                positions_arg                   =[('deviceid','=',vehicle.id)]
                 
                 positions_data                  =self.search_read(positions_arg, offset=0, limit=1, order='devicetime DESC')        
                 print('CRON LALO====================',positions_data)
