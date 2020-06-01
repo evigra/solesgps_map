@@ -98,7 +98,9 @@ class positions(models.Model):
                 #positions_arg                   =[[('deviceid','=',vehicle.id)],[]]
                 
                 positions_data                  =self.search_read(positions_arg, offset=0, limit=1, order='devicetime DESC')        
+                print('CRON LALO====================',positions_data)
                 if len(positions_data)>0:
+                            
                     return_positions[vehicle.id]    =positions_data[0]
         """
     @api.multi
