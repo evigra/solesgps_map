@@ -126,9 +126,7 @@ class positions(models.Model):
         self.run_scheduler_position()
                 
     def run_scheduler_position(self):
-        now = datetime.datetime.now()
-
-        #print('CRON LALO====================',now)        
+        now                                     = datetime.datetime.now()
         
         positions_obj                           =self.env['gpsmap.positions']
         vehicle_obj                             =self.env['fleet.vehicle']
@@ -139,8 +137,8 @@ class positions(models.Model):
         alerts_data                             =geofence_obj.geofences()
         
         positions_arg                           =[('leido','=',0)]                
-        positions_data                          =positions_obj.search(positions_arg, offset=0, limit=1000)        
-        #positions_data                         =positions_obj.search(positions_arg, offset=0, limit=3, order='devicetime ASC')        
+        positions_data                          =positions_obj.search(positions_arg, offset=0, limit=1000, order='devicetime DESC')        
+        #positions_data                         =positions_obj.search(positions_arg, offset=0, limit=3, order='devicetime DESC')        
 
         if len(positions_data)>0:         
             for position in positions_data:
@@ -153,9 +151,7 @@ class positions(models.Model):
 
                 speed_arg                       =[['deviceid','=',position.deviceid.id],['endtime','=',False]]                
                 speed_data                      =speed_obj.search(speed_arg, offset=0, limit=50000)        
-                
-                #print(position.id, ' ======= Velocidad Count =', len(speed_data), " ID Vehicle=",position.deviceid.id, ' Velocidad permitida =', vehicle.speed, ' Speed=',position.speed)
-                
+                                
                 if float(vehicle.speed) < float(position.speed):
                     if(len(speed_data)==0):
                         speed                       ={}

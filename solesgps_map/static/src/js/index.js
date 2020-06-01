@@ -97,7 +97,6 @@ odoo.define('solesgps_map', function(require){
                 }    
             });
         },
-
         position: function(argument) {
             gpsmaps_obj.positions_search(argument);     
             
@@ -117,8 +116,7 @@ odoo.define('solesgps_map', function(require){
                         gpsmaps_obj.position(argument);
                     }         
                 },2500);                
-            } 
-            
+            }             
         },
         ////////////////////////////////////////////////////////////
         // /etc/init.d/directadmin restart
@@ -133,7 +131,7 @@ odoo.define('solesgps_map', function(require){
                 gpsmaps_obj.positions_search();         
                 setTimeout(function()
                 {            
-                    gpsmaps_obj.positions();                    
+                    gpsmaps_obj.positions();
                 },15000);
             }
         },
@@ -213,7 +211,7 @@ odoo.define('solesgps_map', function(require){
 
         //////////////////////////////////////////////////////////////
         positions_search:function(argument){
-            var fields_select=['deviceid','devicetime','latitude','longitude','speed','other','address'];
+            var fields_select   =['deviceid','devicetime','latitude','longitude','speed','other','address'];
             var vehiculo_id;
             var vehiculos       =local.vehicles;
             var iresult;
@@ -246,11 +244,7 @@ odoo.define('solesgps_map', function(require){
                         order: 'devicetime DESC',
                     })
                     .then(function (result) 
-                    {      
-                        //foreach(result);
-                        //datos[i]
-                        //console.log("POSITIONS " + result);		            
-                    
+                    {                          
                         //if(result!= null && result.length>0)
                         {                            
                             console.log("PASO POSITIONS " + result);		            
@@ -297,113 +291,11 @@ odoo.define('solesgps_map', function(require){
                         gpsmaps_obj.positions_paint(argument);                                                              
 
                     });
-                                        
-                    
                 }
             },time);
                 
         },
 
-/*        
-        positions_search:function(argument){
-            var fields_select=['deviceid','devicetime','latitude','longitude','speed','other','address'];
-            var vehiculo_id;
-            var vehiculos       =local.vehicles;
-            var iresult;
-            var method;
-            var time;
-            var ivehiculos;
-            
-            if(typeof argument=="number")
-            {
-                method          ="read";
-                arg             =[argument]
-                time            =1000;
-            }
-            else
-            {
-                method          ="search_read";
-                time            =1;
-            }
-
-            setTimeout(function()
-            {            
-                if(vehiculos!= null && vehiculos.length>0)
-                {	    
-                    console.log("Devices( " + vehiculos.length + ")");		            
-                    local.positions=Array();                
-                    for(ivehiculos in vehiculos)
-                    {		                
-                        var vehiculo        =vehiculos[ivehiculos];		                
-                        var device_id       =vehiculo["id"];
-                        
-                        console.log("Device  " + vehiculo["id"] );		            
-                        
-                        var arg = [
-                            ['deviceid', '=', vehiculo["id"]]
-                        ];
-
-                        rpc.query({
-                            model: 'gpsmap.positions',
-                            method: method,
-                            domain: arg,
-                            fields: fields_select,
-                            limit:1,         
-                        })
-                        .then(function (result) 
-                        {      
-                                
-                            console.log("Device then" + vehiculo["id"]);		            
-	                        if(result!= null && result.length>0)
-	                        {
-	                            
-	                            for(iresult in result)
-	                            {
-                                    var positions               =result[iresult];
-                                    
-                                    var device                  =positions.deviceid;		                
-                                    //var device_id               =device[0];
-                                    
-                                	if(method=="read")          
-                                	{
-                                	    positions.se            ="historyForm";    
-                                	    device_active           =device_id;
-                                	}                   
-                                    positions.mo                ="";
-                                    positions.st                =1;
-                                    positions.te                ="d_telefono";
-                                    ////positions.dn                =vehiculo_name;
-                                    positions.ty                ="type";
-                                    positions.na                ="name";
-                                    positions.de                =device_id;
-                                    positions.la                =positions.latitude;
-                                    positions.lo                =positions.longitude; 
-                                    positions.co                =positions.course; 
-                                    positions.mi                ="milage"; 
-                                    positions.sp                =positions.speed; 
-                                    positions.ba                ="batery"; 
-                                    positions.ti                =positions.devicetime; 
-
-                                    positions.ho                ="icon_online"; 
-                                    positions.ad                =positions.address; 
-                                    positions.ot                =positions.other; 
-                                    ////positions.im                =vehiculos[device_id].image_vehicle; 
-                                    positions.ev                ="event"; 
-                                    positions.ge                ="geofence"; 
-                                    positions.ni                ="nivel";
-                                    
-                                    local.positions[device_id]  =positions;
-                                }                                    
-                            }                                                              
-                        });
-                    }
-                    gpsmaps_obj.positions_paint(argument);
-                }
-            },time);
-                
-        },
-  
-  */
         //////////////////////////////////////////////////////////////
         CreateMap:function(iZoom,iMap,coordinates,object) 
         {
@@ -503,7 +395,6 @@ odoo.define('solesgps_map', function(require){
 			            }			
 			            icon="/solesgps_map/static/src/img/vehiculo_" +image+ "/i135.png";
 		                opcion_vehiculo =opcion_vehiculo+"<li class=\"vehicle\" position=\"\" latitude=\"\" longitude=\"\" vehicle=\""+vehiculo_id+"\" style=\"padding-left:0px; padding-top:5px; padding-bottom:5px;\"><table class=\"select_devices\" device_id=\""+vehiculo_id+"\"><tr><td height=\"17\" width=\"50\" align=\"center\"><img height=\"17\" src=\"" +icon+ "\"></td><td>" + vehiculo_name + "</td></tr></table></li>";
-                        //alert("menu vehicle="+vehiculo_id+" imagen="+ vehiculos[vehiculo_id]["image_vehicle"] );		                
 		            }
                 
 		            if(!$("ul#menu_vehicles").length)	      
@@ -528,7 +419,7 @@ odoo.define('solesgps_map', function(require){
 		        {
     		        gpsmaps_obj.vehicles_menu(type);		        
 		        }    
-            },500);
+            },50);
 		},
     });
     
