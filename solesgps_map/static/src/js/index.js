@@ -605,13 +605,13 @@ odoo.define('solesgps_map', function(require){
 		{				
 			if(typeof datos[i]=="object")
 			{   
-			    alert(i);
-			    /*
+			    //alert(i);
+			    //*
 			    
 		        console.log(i + " (");             
 			    foreach(datos[i]);
 		        console.log(" )");             
-		        */
+		        //*/
 			}
 			else
 			{
