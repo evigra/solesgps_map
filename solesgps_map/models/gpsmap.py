@@ -75,27 +75,12 @@ class positions(models.Model):
         
         if len(vehicle_data)>0:         
             for vehicle in vehicle_data:
-                positions_arg                   =[]
-                positions_arg                   =[[('deviceid','=',vehicle.id)],[]]
-                positions_arg                   =[('deviceid','=',vehicle.id)]
-                
+                #positions_arg                   =[]
+                #positions_arg                   =[[('deviceid','=',vehicle.id)],[]]
+                positions_arg                   =[('deviceid','=',vehicle.id)]                
                 positions_data                  =self.search_read(positions_arg, offset=0, limit=1, order='devicetime DESC')        
-                print('CRON LALO====================',positions_data)
-                if len(positions_data)>0:
-                            
-                    return_positions[vehicle.id]    =positions_data[0]
-        """
-    @api.multi
-    def write(self, values):
-        ''' Store the standard price change in order to be able to retrieve the cost of a product for a given date'''
-        res = super(ProductProduct, self).write(values)
-        if 'standard_price' in values:
-            self._set_standard_price(values['standard_price'])
-        return res        
-
-        """
-
-            
+                if len(positions_data)>0:                            
+                    return_positions[vehicle.id]    =positions_data[0]        
         return return_positions
     def run_scheduler_demo(self):
         positions_obj                           =self.env['gpsmap.positions']        
@@ -143,7 +128,7 @@ class positions(models.Model):
     def run_scheduler_position(self):
         now = datetime.datetime.now()
 
-        print('CRON LALO====================',now)        
+        #print('CRON LALO====================',now)        
         
         positions_obj                           =self.env['gpsmap.positions']
         vehicle_obj                             =self.env['fleet.vehicle']
