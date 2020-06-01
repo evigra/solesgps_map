@@ -251,6 +251,7 @@ odoo.define('solesgps_map', function(require){
                     
                         if(result!= null && result.length>0)
                         {                            
+                            console.log("PASO POSITIONS " + result);		            
                             for(iresult in result)
                             {
                                 var positions               =result[iresult];
