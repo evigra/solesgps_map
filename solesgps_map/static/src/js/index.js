@@ -286,11 +286,12 @@ odoo.define('solesgps_map', function(require){
                                 
                                 local.positions[device_id]  =positions;
                             }                                    
-                        }                                                              
+                        }
+                        gpsmaps_obj.positions_paint(argument);                                                              
 
                     });
                                         
-                    gpsmaps_obj.positions_paint(argument);
+                    
                 }
             },time);
                 
