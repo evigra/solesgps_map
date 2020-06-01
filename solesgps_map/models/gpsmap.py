@@ -85,7 +85,7 @@ class positions(models.Model):
     def action_addpositions(self):
         self.run_scheduler()
         
-    @api.multi    
+    @api.model    
     def js_positions(self):
         vehicle_obj                             =self.env['fleet.vehicle']        
         vehicle_args                            =[]        
