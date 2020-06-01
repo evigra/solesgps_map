@@ -247,6 +247,8 @@ odoo.define('solesgps_map', function(require){
                     })
                     .then(function (result) 
                     {      
+                        console.log("POSITIONS " + result);		            
+                    
                         if(result!= null && result.length>0)
                         {                            
                             for(iresult in result)
