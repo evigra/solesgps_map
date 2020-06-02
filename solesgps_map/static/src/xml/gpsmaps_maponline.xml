@@ -21,8 +21,7 @@
 		                </svg>                     
 		            </div>
 		            
-                    <div style="z-index:1; position:absolute; bottom:220px; left:-180px; width:30px; height:30px">                    
-                    
+                    <div style="z-index:1; position:absolute; bottom:220px; left:-180px; width:30px; height:30px">                                    
 		                <svg style="width:170px; height:150px;">
 		                    <defs>
 		                        <radialGradient fy="0.3155646940654273" fx="0.31551003284316154" id="r-1ad5cc38271d43ad873613284f569139">
@@ -30,19 +29,19 @@
 		                            <stop stop-color="#2a2a2a" offset="100%"></stop>
 		                        </radialGradient>
 		                        <linearGradient y2="0" x2="6.123233995736766e-17" y1="1" x1="0" id="r-11d86e69af01454d8137abf492215963">
-		                            <stop stop-color="#222222" offset="0%"></stop>
-		                            <stop stop-color="#555555" offset="50%"></stop>
-		                            <stop stop-color="#222222" offset="100%"></stop>
+		                            <stop></stop>
+		                            <stop></stop>
+		                            <stop></stop>
 		                        </linearGradient>
 		                        <linearGradient y2="0" x2="6.123233995736766e-17" y1="1" x1="0" id="r-30186ab1d34947ba8fb3873dc7fb745b">
-		                            <stop stop-color="#222222" offset="0%"></stop>
-		                            <stop stop-color="#555555" offset="50%"></stop>
-		                            <stop stop-color="#222222" offset="100%"></stop>
+		                            <stop></stop>
+		                            <stop></stop>
+		                            <stop></stop>
 		                        </linearGradient>
 		                        <linearGradient y2="0" x2="6.123233995736766e-17" y1="1" x1="0" id="r-248dc58e96c54eb189a06f2ecc7dba05">
-		                            <stop stop-color="#222222" offset="0%"></stop>
-		                            <stop stop-color="#555555" offset="50%"></stop>
-		                            <stop stop-color="#222222" offset="100%"></stop>
+		                            <stop></stop>
+		                            <stop></stop>
+		                            <stop></stop>
 		                        </linearGradient>
 		                        <linearGradient y2="0" x2="6.123233995736766e-17" y1="1" x1="0" id="r-d90de3abcc9448038fb1da1e17b338c4">
 		                            <stop stop-color="#444444" offset="0%"></stop>
@@ -59,31 +58,31 @@
 		                    <path opacity="0.65" stroke-linecap="butt" stroke-width="2.782608695652174" style="stroke-width: 2.78261; stroke-linecap: butt; opacity: 0.65;" d="M197.22357264933143,182.4730871992914L189.68408302780733,172.82638537061877" stroke="#ffdd33" fill="none"></path>
 		                    <path stroke-linecap="butt" stroke-width="1.6695652173913045" style="stroke-width: 1.66957; stroke-linecap: butt;" d="M210.7049763252996,169.47633196131252L208.75242856506605,165.47515590970073" stroke="#ffffff" fill="none"></path>
 			                <text font-size="10px" fill="#ffffff" stroke="none" font="10px &quot;Arial&quot;" style="text-anchor: middle; font: 12px &quot;Arial&quot;;" text-anchor="middle" y="193.86584175530288" x="203.39224597603294">
-			                <tspan>0 </tspan>
+    			                <tspan>0 </tspan>
 			                </text>
 		                    <text font-size="10px" fill="#ffffff" stroke="none" font="10px &quot;Arial&quot;" style="text-anchor: middle; font: 12px &quot;Arial&quot;;" text-anchor="middle" y="180.06585041323024" x="231.6712918947108">
-		                    <tspan>20 </tspan>
+    		                    <tspan>20 </tspan>
 		                    </text>
 		                    <path opacity="0.65" stroke-linecap="butt" stroke-width="2.782608695652174" style="stroke-width: 2.78261; stroke-linecap: butt; opacity: 0.65;" d="M229.24543346901075,166.84662842430475L226.28049539315515,154.9675753420626" stroke="#ffdd33" fill="none"></path>
 		                    <path stroke-linecap="butt" stroke-width="1.6695652173913045" style="stroke-width: 1.66957; stroke-linecap: butt;" d="M246.84706018048132,160.45549167874952L246.69039236336238,156.0060751162029" stroke="#ffffff" fill="none"></path>
 		                    <text font-size="10px" fill="#ffffff" stroke="none" font="10px &quot;Arial&quot;" style="text-anchor: middle; font: 12px &quot;Arial&quot;;" text-anchor="middle" y="178.95857787034436" x="263.1183598718609">
-		                    <tspan>40 </tspan>
+    		                    <tspan>40 </tspan>
 		                    </text>
 
 		                    <path opacity="0.65" stroke-linecap="butt" stroke-width="2.782608695652174" style="stroke-width: 2.78261; stroke-linecap: butt; opacity: 0.65;" d="M264.85461338431304,165.59279830786068L266.97670101064347,153.53462663755508" stroke="#ffdd33" fill="none"></path>
 		                    <path stroke-linecap="butt" stroke-width="1.6695652173913045" style="stroke-width: 1.66957; stroke-linecap: butt;" d="M283.5341133177254,166.91195486717746L285.2004046627055,162.7833563512608" stroke="#ffffff" fill="none"></path>
 		                    <text font-size="10px" fill="#ffffff" stroke="none" font="10px &quot;Arial&quot;" style="text-anchor: middle; font: 12px &quot;Arial&quot;;" text-anchor="middle" y="190.73539257449687" x="292.2979874377013">
-		                    <tspan>60 </tspan>
+    		                    <tspan>60 </tspan>
 		                    </text>
 		                    <path opacity="0.65" stroke-linecap="butt" stroke-width="2.782608695652174" style="stroke-width: 2.78261; stroke-linecap: butt; opacity: 0.65;" d="M297.8962504809265,178.92831487741935L304.73857197820166,168.77521700276498" stroke="#ffdd33" fill="none"></path>
 		                    <path stroke-linecap="butt" stroke-width="1.6695652173913045" style="stroke-width: 1.66957; stroke-linecap: butt;" d="M314.42496903114755,187.7297553775828L317.6262097283475,184.6355817317484" stroke="#ffffff" fill="none"></path>
 		                    <text font-size="10px" fill="#ffffff" stroke="none" font="10px &quot;Arial&quot;" style="text-anchor: middle; font: 12px &quot;Arial&quot;;" text-anchor="middle" y="213.36075366556793" x="314.1666274281026">
-		                    <tspan>80 </tspan>
+	    	                    <tspan>80 </tspan>
 		                    </text>
 		                    <path opacity="0.65" stroke-linecap="butt" stroke-width="2.782608695652174" style="stroke-width: 2.78261; stroke-linecap: butt; opacity: 0.65;" d="M322.65926929358676,204.54820331365391L333.0391649069563,198.05508950131875" stroke="#ffdd33" fill="none"></path>
 		                    <path stroke-linecap="butt" stroke-width="1.6695652173913045" style="stroke-width: 1.66957; stroke-linecap: butt;" d="M334.1803032536596,219.31064444922455L338.3631754650215,217.7857075274469" stroke="#ffffff" fill="none"></path>
 		                    <text font-size="10px" fill="#ffffff" stroke="none" font="10px &quot;Arial&quot;" style="text-anchor: middle; font: 12px &quot;Arial&quot;;" text-anchor="middle" y="242.92397023659203" x="324.9443989327246">
-		                    <tspan>100 </tspan>
+	    	                    <tspan>100 </tspan>
 		                    </text>
 
 		                    <path opacity="0.65" stroke-linecap="butt" stroke-width="2.782608695652174" style="stroke-width: 2.78261; stroke-linecap: butt; opacity: 0.65;" d="M332.3995345141392,273.57014951475867L344.17089658758766,276.9373137311528" stroke="#ffdd33" fill="none"></path>
