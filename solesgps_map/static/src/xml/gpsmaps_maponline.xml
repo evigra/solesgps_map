@@ -11,19 +11,19 @@
 		        <div id="tablero"  style="float:left;"></div>
             </div>  
             <center>          
-            <div id="odometro" style="background-color:#999; z-index:101; position:absolute; bottom:30px; height:1px; width:40px; right:80px;  ">
-                <div id="gsm" style="z-index:101; overflow:hidden;position:absolute; bottom:0px; left:300px; width:40px; height:30px">
-                    <div style="z-index:100; position:absolute; bottom:220px; left:-180px; width:25px; height:25px">                    
-		                <svg style="width:170px; height:170px;">		                   
+            <div id="odometro" style="background-color:#999; z-index:101; position:absolute; bottom:30px; height:1px; width:300px; right:160px;  ">
+                <div id="gsm" style="z-index:101; overflow:hidden;position:absolute; bottom:0px; left:300px; width:160px; height:130px">
+                    <div style="z-index:100; position:absolute; bottom:220px; left:-180px; width:50px; height:50px">                    
+		                <svg style="width:340px; height:270px;">		                   
 		                    <path class="altitude" transform="rotate(-38 250 250)" cy="250" cx="250" stroke-width="0" style="stroke-width: 0;" d="M251.11304347826086,166.52173913043478L252.7826086956522,250L251.94782608695652,269.47826086956525L248.05217391304348,269.47826086956525L247.2173913043478,250L248.88695652173914,166.52173913043478Z" stroke="#000000" fill="#ff6622"></path>
 		                    <path class="altitude" transform="rotate(-38 250 250)" opacity="0.5" style="opacity: 0.5;" d="M251.11304347826086,166.52173913043478C251.11304347826086,166.52173913043478,252.7826086956522,250,252.7826086956522,250C252.7826086956522,250,251.94782608695652,269.47826086956525,251.94782608695652,269.47826086956525C251.94782608695652,269.47826086956525,249.8528309178744,269.47826086956525,248.7355001610306,269.47826086956525" stroke="#ffffff" fill="none"></path>
 		                    <path class="altitude" transform="rotate(-38 250 250)" opacity="0.5" style="opacity: 0.5;" d="M248.7355001610306,269.47826086956525C248.32919806763283,269.47826086956525,248.05217391304348,269.47826086956525,248.05217391304348,269.47826086956525C248.05217391304348,269.47826086956525,247.2173913043478,250,247.2173913043478,250C247.2173913043478,250,248.88695652173914,166.52173913043478,248.88695652173914,166.52173913043478C248.88695652173914,166.52173913043478,251.11304347826086,166.52173913043478,251.11304347826086,166.52173913043478" stroke="#000000" fill="none"></path>           
 		                </svg>                     
 		            </div>
 		            
-                    <div style="z-index:1; position:absolute; bottom:220px; left:-180px; width:30px; height:30px">                    
+                    <div style="z-index:1; position:absolute; bottom:220px; left:-180px; width:50px; height:50px">                    
                     
-		                <svg style="width:170px; height:150px;">
+		                <svg style="width:340px; height:270px;">
 		                    <defs>
 		                        <radialGradient fy="0.3155646940654273" fx="0.31551003284316154" id="r-1ad5cc38271d43ad873613284f569139">
 		                            <stop stop-color="#555555" offset="0%"></stop>
