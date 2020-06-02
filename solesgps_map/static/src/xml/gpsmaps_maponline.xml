@@ -163,7 +163,7 @@
 
                 <div id="centro">
                     <div style="background-color:#eee; position:absolute; bottom:255px; left:-140px; width:50px; height:50px">                    
-                    <svg >
+                    <svg style="width:360px; height:305px;">
                 
                         <circle stroke-width="0" style="opacity: 1; fill-opacity: 1; stroke-width: 0;" fill-opacity="1" opacity="1" stroke="#333333" fill="url(#r-1ad5cc38271d43ad873613284f569139)" r="105.73913043478262" cy="250" cx="250"></circle>
                         <circle stroke-width="2.782608695652174" style="stroke-width: 2.78261;" stroke="#ffffff" fill="none" r="105.73913043478262" cy="249.6920732283527" cx="249.69198196787727"></circle>
