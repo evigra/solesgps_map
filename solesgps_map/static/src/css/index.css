@@ -61,8 +61,8 @@ div#gsm {
 @media (max-width:767px)
 {
     div#gsm {
-        bottom:     0px; 
-        left:       100px;     
+        display:    none;        
+    
     }
 }
 
