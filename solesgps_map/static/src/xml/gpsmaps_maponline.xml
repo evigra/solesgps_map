@@ -11,7 +11,7 @@
 		        <div id="tablero"  style="float:left;"></div>
             </div>  
             <center>          
-            <div id="odometro" style="background-color:#999; z-index:101; position:absolute; bottom:30px; height:1px; width:300px; right:80px;  ">
+            <div id="odometro" style="background-color:#999; z-index:101; position:absolute; bottom:30px; height:1px; width:40px; right:80px;  ">
                 <div id="gsm" style="z-index:101; overflow:hidden;position:absolute; bottom:0px; left:300px; width:40px; height:30px">
                     <div style="z-index:100; position:absolute; bottom:220px; left:-180px; width:25px; height:25px">                    
 		                <svg style="width:170px; height:170px;">		                   
@@ -73,7 +73,7 @@
 		                    <path opacity="0.65" stroke-linecap="butt" stroke-width="2.782608695652174" style="stroke-width: 2.78261; stroke-linecap: butt; opacity: 0.65;" d="M264.85461338431304,165.59279830786068L266.97670101064347,153.53462663755508" stroke="#ffdd33" fill="none"></path>
 		                    <path stroke-linecap="butt" stroke-width="1.6695652173913045" style="stroke-width: 1.66957; stroke-linecap: butt;" d="M283.5341133177254,166.91195486717746L285.2004046627055,162.7833563512608" stroke="#ffffff" fill="none"></path>
 		                    <text font-size="10px" fill="#ffffff" stroke="none" font="10px &quot;Arial&quot;" style="text-anchor: middle; font: 12px &quot;Arial&quot;;" text-anchor="middle" y="190.73539257449687" x="292.2979874377013">
-		                    <tspan>60 lalo</tspan>
+		                    <tspan>60 </tspan>
 		                    </text>
 		                    <path opacity="0.65" stroke-linecap="butt" stroke-width="2.782608695652174" style="stroke-width: 2.78261; stroke-linecap: butt; opacity: 0.65;" d="M297.8962504809265,178.92831487741935L304.73857197820166,168.77521700276498" stroke="#ffdd33" fill="none"></path>
 		                    <path stroke-linecap="butt" stroke-width="1.6695652173913045" style="stroke-width: 1.66957; stroke-linecap: butt;" d="M314.42496903114755,187.7297553775828L317.6262097283475,184.6355817317484" stroke="#ffffff" fill="none"></path>
@@ -127,7 +127,7 @@
 		                    <path stroke-linecap="butt" stroke-width="1.6695652173913045" style="stroke-width: 1.66957; stroke-linecap: butt;" d="M163.86965111195886,225.30743025879414L159.5898822231121,224.0804702716535" stroke="#ffffff" fill="none">
 		                    </path>
 		                    <text font-size="10px" fill="#ffffff" stroke="none" font="10px &quot;Arial&quot;" style="text-anchor: middle; font: 12px &quot;Arial&quot;;" text-anchor="middle" y="217.9732926705771" x="183.16910841683006">
-		                    <tspan>-</tspan>
+		                    <tspan>50 </tspan>
 		                    </text>
 		                    <path opacity="0.65" stroke-linecap="butt" stroke-width="2.782608695652174" style="stroke-width: 2.78261; stroke-linecap: butt; opacity: 0.65;" d="M174.3238433543517,209.771222344717L163.5129638335448,204.024254108248" stroke="#ffdd33" fill="none">
 		                    </path>
