@@ -7,87 +7,13 @@
 	height: 120px;
 }
 .vehicle_active {
-    background-color:   #7c7bad;
-    border-radius:      0;
-    color:              white;
-    padding-top:        5px;
-    padding-bottom:     5px;
-    padding-left:       15px;
+    background-color: #7c7bad;
+    border-radius: 0;
+    color: white;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:15px;
 }
-
-div#gsm {
-    z-index:            101; 
-    overflow:           hidden;
-    position:           absolute; 
-    width:              40px; 
-    height:             30px;
-}
-
-
-
-linearGradient stop:nth-child(1) 
-{        
-    stop-color:         #222222;
-    offset:             0%;
-}
-linearGradient stop:nth-child(2) 
-{        
-    stop-color:         #555555;
-    offset:             50%;
-}
-linearGradient stop:nth-child(3) 
-{        
-    stop-color:         #222222;
-    offset:             100%;
-}
-
-
-
-
-/* ####################################### */
-/* ######      DESKTOP GRANDE       ###### */
-/* ####################################### */
-@media (min-width:1200px)
-{
-    div#gsm {
-        bottom:     0px; 
-        left:       300px;     
-    }
-
-}
-
-
-/* ####################################### */
-/* ######      DESKTOP MEDIO        ###### */
-/* ####################################### */
-@media (max-width:1199px) and (min-width:992px)
-{
-}
-
-
-/* ####################################### */
-/* ######         TABLETS           ###### */
-/* ####################################### */
-@media (max-width:991px) and (min-width:768px)
-{
-
-}
-
-
-
-/* ####################################### */
-/* ######         MOVILES           ###### */
-/* ####################################### */
-@media (max-width:767px)
-{
-    div#gsm {
-        bottom:     0px; 
-        left:       100px;     
-    }
-}
-
-
-
 
 
 
