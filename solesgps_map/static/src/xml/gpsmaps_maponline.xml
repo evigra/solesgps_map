@@ -23,32 +23,6 @@
 		            
                     <div style="z-index:1; position:absolute; bottom:220px; left:-180px; width:30px; height:30px">                                    
 		                <svg style="width:170px; height:150px;">
-		                    <defs>
-		                        <radialGradient fy="0.3155646940654273" fx="0.31551003284316154" id="r-1ad5cc38271d43ad873613284f569139">
-		                            <stop stop-color="#555555" offset="0%"></stop>
-		                            <stop stop-color="#2a2a2a" offset="100%"></stop>
-		                        </radialGradient>
-		                        <linearGradient y2="0" x2="6.123233995736766e-17" y1="1" x1="0" id="r-11d86e69af01454d8137abf492215963">
-		                            <stop></stop>
-		                            <stop></stop>
-		                            <stop></stop>
-		                        </linearGradient>
-		                        <linearGradient y2="0" x2="6.123233995736766e-17" y1="1" x1="0" id="r-30186ab1d34947ba8fb3873dc7fb745b">
-		                            <stop></stop>
-		                            <stop></stop>
-		                            <stop></stop>
-		                        </linearGradient>
-		                        <linearGradient y2="0" x2="6.123233995736766e-17" y1="1" x1="0" id="r-248dc58e96c54eb189a06f2ecc7dba05">
-		                            <stop></stop>
-		                            <stop></stop>
-		                            <stop></stop>
-		                        </linearGradient>
-		                        <linearGradient y2="0" x2="6.123233995736766e-17" y1="1" x1="0" id="r-d90de3abcc9448038fb1da1e17b338c4">
-		                            <stop stop-color="#444444" offset="0%"></stop>
-		                            <stop stop-color="#aaaaaa" offset="50%"></stop>
-		                            <stop stop-color="#444444" offset="100%"></stop>
-		                        </linearGradient>
-		                    </defs>
 
 		                    <circle stroke-width="0" style="opacity: 1; fill-opacity: 1; stroke-width: 0;" fill-opacity="1" opacity="1" stroke="#333333" fill="url(#r-1ad5cc38271d43ad873613284f569139)" r="105.73913043478262" cy="250" cx="250"></circle>
 		                    <circle stroke-width="2.782608695652174" style="stroke-width: 2.78261;" stroke="#ffffff" fill="none" r="105.73913043478262" cy="249.6920732283527" cx="249.69198196787727"></circle>
