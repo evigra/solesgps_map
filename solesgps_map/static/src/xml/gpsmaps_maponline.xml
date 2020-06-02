@@ -11,7 +11,7 @@
 		        <div id="tablero"  style="float:left;"></div>
             </div>  
             <center>          
-            <div id="odometro" style="background-color:#999; z-index:101; position:absolute; bottom:30px; height:1px; width:200px; right:80px;  ">
+            <div id="odometro" style="background-color:#999; z-index:101; position:absolute; bottom:30px; height:1px; width:300px; right:80px;  ">
                 <div id="gsm" style="z-index:101; overflow:hidden;position:absolute; bottom:0px; left:300px; width:40px; height:30px">
                     <div style="z-index:100; position:absolute; bottom:220px; left:-180px; width:25px; height:25px">                    
 		                <svg style="width:170px; height:170px;">		                   
