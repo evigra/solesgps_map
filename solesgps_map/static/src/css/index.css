@@ -59,6 +59,10 @@ div#odometro div#centro {
 /* ####################################### */
 @media (max-width:991px) and (min-width:768px)
 {
+    div#centro div svg {
+        width:          360px; 
+        height:         305px;
+    }
 
 }
 
@@ -70,8 +74,8 @@ div#odometro div#centro {
 @media (max-width:767px)
 {
     div#centro div svg {
-        width:          300px; 
-        height:         260px;
+        width:          180px; 
+        height:         152px;
     }
 
 }
