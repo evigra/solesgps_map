@@ -70,8 +70,8 @@ div#odometro div#centro {
 @media (max-width:767px)
 {
     div#centro div svg {
-        width:          180px; 
-        height:         152px;
+        width:          300px; 
+        height:         260px;
     }
 
 }
