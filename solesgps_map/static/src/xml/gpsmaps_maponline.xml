@@ -169,6 +169,7 @@
                         <circle stroke-width="2.782608695652174" style="stroke-width: 2.78261;" stroke="#ffffff" fill="none" r="105.73913043478262" cy="249.6920732283527" cx="249.69198196787727"></circle>
                         <circle stroke-width="2.782608695652174" style="stroke-width: 2.78261;" stroke="#333333" fill="none" r="105.73913043478262" cy="250.3079267716473" cx="250.30801803212273"></circle>
                         <circle stroke-width="2.782608695652174" style="stroke-width: 2.78261;" stroke="#cccccc" fill="none" r="105.73913043478262" cy="250" cx="250"></circle>
+
                         <text font-size="10px" fill="#ffffff" stroke="none" font="10px &quot;Arial&quot;" style="text-anchor: middle; font: 12px &quot;Arial&quot;;" text-anchor="middle" y="279.3817855336773" x="178.87582098702137">
                             <tspan>0 </tspan>
                         </text>

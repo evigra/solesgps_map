@@ -77,6 +77,12 @@ div#odometro div#centro {
         width:          180px; 
         height:         152px;
     }
+    
+    div#centro div svg circle {
+        cx:             125; 
+        cy:             125;
+    }
+
 
 }
 
