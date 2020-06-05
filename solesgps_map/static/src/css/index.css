@@ -24,10 +24,6 @@ div#odometro div#centro {
     width:          220px; 
     height:         165px
 }
-div#centro div svg {
-    width:          360px; 
-    height:         305px;
-}
 
 
 
@@ -36,6 +32,10 @@ div#centro div svg {
 /* ####################################### */
 @media (min-width:1200px)
 {
+    div#centro div svg {
+        width:          360px; 
+        height:         305px;
+    }
 
 }
 
@@ -45,6 +45,11 @@ div#centro div svg {
 /* ####################################### */
 @media (max-width:1199px) and (min-width:992px)
 {
+    div#centro div svg {
+        width:          360px; 
+        height:         305px;
+    }
+
 
 }
 
@@ -64,6 +69,10 @@ div#centro div svg {
 /* ####################################### */
 @media (max-width:767px)
 {
+    div#centro div svg {
+        width:          180px; 
+        height:         152px;
+    }
 
 }
 
