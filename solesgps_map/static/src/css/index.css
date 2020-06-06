@@ -15,18 +15,15 @@
     padding-left:15px;
 }
 
-
-    div#odometro div#centro {
-        z-index:        101; 
-        overflow:       hidden; 
-        position:       absolute; 
-        width:          220px; 
-        height:         165px;
-
-        bottom:         0px; 
-        left:           100px; 
-    }
-
+div#odometro div#centro {
+    z-index:        101; 
+    overflow:       hidden; 
+    position:       absolute; 
+    bottom:         0px; 
+    left:           100px; 
+    width:          220px; 
+    height:         165px
+}
 
 
 
@@ -35,6 +32,7 @@
 /* ####################################### */
 @media (min-width:1200px)
 {
+
 }
 
 
@@ -52,6 +50,7 @@
 /* ####################################### */
 @media (max-width:991px) and (min-width:768px)
 {
+
 }
 
 
@@ -61,6 +60,7 @@
 /* ####################################### */
 @media (max-width:767px)
 {
+
 }
 
 
