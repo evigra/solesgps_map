@@ -21,8 +21,7 @@
 		                </svg>                     
 		            </div>
 		            
-                    <div style="z-index:1; position:absolute; bottom:220px; left:-180px; width:50px; height:50px">                    
-                    
+                    <div style="z-index:1; position:absolute; bottom:220px; left:-180px; width:50px; height:50px">                                        
 		                <svg style="width:340px; height:270px;">
 		                    <defs>
 		                        <radialGradient fy="0.3155646940654273" fx="0.31551003284316154" id="r-1ad5cc38271d43ad873613284f569139">
@@ -97,69 +96,6 @@
 		            </div>
                 </div>
 
-                <div id="izq" style="z-index:101; overflow:hidden;  position:absolute; bottom:0px; left:-35px; width:190px; height:130px">
-                    <div style="z-index:100; position:absolute; bottom:220px; left:-140px; width:50px; height:50px">  
-		                <svg style="width:340px; height:270px;">
-		                    <path class="bateria" transform="rotate(-110 250 250)" cy="250" cx="250" stroke-width="0" style="stroke-width: 0;" d="M251.11304347826086,166.52173913043478L252.7826086956522,250L251.94782608695652,269.47826086956525L248.05217391304348,269.47826086956525L247.2173913043478,250L248.88695652173914,166.52173913043478Z" stroke="#000000" fill="#ff6622"></path>
-		                    <path class="bateria" transform="rotate(-110 250 250)" opacity="0.5" style="opacity: 0.5;" d="M251.11304347826086,166.52173913043478C251.11304347826086,166.52173913043478,252.7826086956522,250,252.7826086956522,250C252.7826086956522,250,251.94782608695652,269.47826086956525,251.94782608695652,269.47826086956525C251.94782608695652,269.47826086956525,249.8528309178744,269.47826086956525,248.7355001610306,269.47826086956525" stroke="#ffffff" fill="none"></path>
-		                    <path class="bateria" transform="rotate(-110 250 250)" opacity="0.5" style="opacity: 0.5;" d="M248.7355001610306,269.47826086956525C248.32919806763283,269.47826086956525,248.05217391304348,269.47826086956525,248.05217391304348,269.47826086956525C248.05217391304348,269.47826086956525,247.2173913043478,250,247.2173913043478,250C247.2173913043478,250,248.88695652173914,166.52173913043478,248.88695652173914,166.52173913043478C248.88695652173914,166.52173913043478,251.11304347826086,166.52173913043478,251.11304347826086,166.52173913043478" stroke="#000000" fill="none"></path>           
-		                </svg> 
-		            </div>                       	
-		            
-                    <div style="z-index:1; position:absolute; bottom:220px; left:-140px; width:50px; height:50px">  
-		                <svg style="width:340px; height:270px;">
-		                    <circle stroke-width="0" style="opacity: 1; fill-opacity: 1; stroke-width: 0;" fill-opacity="1" opacity="1" stroke="#333333" fill="url(#r-1ad5cc38271d43ad873613284f569139)" r="105.73913043478262" cy="250" cx="250"></circle>
-		                    <circle stroke-width="2.782608695652174" style="stroke-width: 2.78261;" stroke="#ffffff" fill="none" r="105.73913043478262" cy="249.6920732283527" cx="249.69198196787727"></circle>
-		                    <circle stroke-width="2.782608695652174" style="stroke-width: 2.78261;" stroke="#333333" fill="none" r="105.73913043478262" cy="250.3079267716473" cx="250.30801803212273"></circle>
-		                    <circle stroke-width="2.782608695652174" style="stroke-width: 2.78261;" stroke="#cccccc" fill="none" r="105.73913043478262" cy="250" cx="250"></circle>
-		                    <text font-size="10px" fill="#ffffff" stroke="none" font="10px &quot;Arial&quot;" style="text-anchor: middle; font: 12px &quot;Arial&quot;;" text-anchor="middle" y="279.3817855336773" x="178.87582098702137">
-		                        <tspan>0 </tspan>
-		                    </text>
-		                    <path opacity="0.65" stroke-linecap="butt" stroke-width="2.782608695652174" style="stroke-width: 2.78261; stroke-linecap: butt; opacity: 0.65;" d="M169.46232670589183,279.3073099527472L157.95694480673353,283.4940685174254" stroke="#ffdd33" fill="none">
-		                    </path>
-		                    <path stroke-linecap="butt" stroke-width="1.6695652173913045" style="stroke-width: 1.66957; stroke-linecap: butt;" d="M161.27165261212036,262.4675727315207L156.86279063011392,263.0870794510993" stroke="#ffffff" fill="none">
-		                    </path>
-		                    <text font-size="10px" fill="#ffffff" stroke="none" font="10px &quot;Arial&quot;" style="text-anchor: middle; font: 12px &quot;Arial&quot;;" text-anchor="middle" y="248.22133436619725" x="174.4973435734026">
-		                    <tspan>25 </tspan>
-		                    </text>
-		                    <path opacity="0.65" stroke-linecap="butt" stroke-width="2.782608695652174" style="stroke-width: 2.78261; stroke-linecap: butt; opacity: 0.65;" d="M164.50434492870585,244.0226928951913L152.290679918521,243.16879188021863" stroke="#ffdd33" fill="none">
-		                    </path>
-		                    <path stroke-linecap="butt" stroke-width="1.6695652173913045" style="stroke-width: 1.66957; stroke-linecap: butt;" d="M163.86965111195886,225.30743025879414L159.5898822231121,224.0804702716535" stroke="#ffffff" fill="none">
-		                    </path>
-		                    <text font-size="10px" fill="#ffffff" stroke="none" font="10px &quot;Arial&quot;" style="text-anchor: middle; font: 12px &quot;Arial&quot;;" text-anchor="middle" y="217.9732926705771" x="183.16910841683006">
-		                    <tspan>50 </tspan>
-		                    </text>
-		                    <path opacity="0.65" stroke-linecap="butt" stroke-width="2.782608695652174" style="stroke-width: 2.78261; stroke-linecap: butt; opacity: 0.65;" d="M174.3238433543517,209.771222344717L163.5129638335448,204.024254108248" stroke="#ffdd33" fill="none">
-		                    </path>
-		                    <path stroke-linecap="butt" stroke-width="1.6695652173913045" style="stroke-width: 1.66957; stroke-linecap: butt;" d="M181.35483334639363,192.41527029586217L177.94389338845048,189.55391726708515" stroke="#ffffff" fill="none">
-		                    </path>
-		                    <text font-size="10px" fill="#ffffff" stroke="none" font="10px &quot;Arial&quot;" style="text-anchor: middle; font: 12px &quot;Arial&quot;;" text-anchor="middle" y="193.86584175530288" x="203.39224597603294">
-		                    <tspan>75 </tspan>
-		                    </text>
-		                    <path opacity="0.65" stroke-linecap="butt" stroke-width="2.782608695652174" style="stroke-width: 2.78261; stroke-linecap: butt; opacity: 0.65;" d="M197.22357264933143,182.4730871992914L189.68408302780733,172.82638537061877" stroke="#ffdd33" fill="none"></path>
-		                    <path stroke-linecap="butt" stroke-width="1.6695652173913045" style="stroke-width: 1.66957; stroke-linecap: butt;" d="M210.7049763252996,169.47633196131252L208.75242856506605,165.47515590970073" stroke="#ffffff" fill="none"></path>
-		                    <text font-size="10px" fill="#ffffff" stroke="none" font="10px &quot;Arial&quot;" style="text-anchor: middle; font: 12px &quot;Arial&quot;;" text-anchor="middle" y="180.06585041323024" x="231.6712918947108">
-		                    <tspan>100 </tspan>
-		                    </text>
-		                    <path opacity="0.65" stroke-linecap="butt" stroke-width="2.782608695652174" style="stroke-width: 2.78261; stroke-linecap: butt; opacity: 0.65;" d="M229.24543346901075,166.84662842430475L226.28049539315515,154.9675753420626" stroke="#ffdd33" fill="none"></path>
-		                    <path stroke-linecap="butt" stroke-width="1.6695652173913045" style="stroke-width: 1.66957; stroke-linecap: butt;" d="M246.84706018048132,160.45549167874952L246.69039236336238,156.0060751162029" stroke="#ffffff" fill="none"></path>
-		                    <text font-size="10px" fill="#ffffff" stroke="none" font="10px &quot;Arial&quot;" style="text-anchor: middle; font: 12px &quot;Arial&quot;;" text-anchor="middle" y="178.95857787034436" x="263.1183598718609">
-		                    <tspan>INT </tspan>
-		                    </text>
-
-		                    <path opacity="0.65" stroke-linecap="butt" stroke-width="2.782608695652174" style="stroke-width: 2.78261; stroke-linecap: butt; opacity: 0.65;" d="M264.85461338431304,165.59279830786068L266.97670101064347,153.53462663755508" stroke="#ffdd33" fill="none"></path>
-		                    <path stroke-linecap="butt" stroke-width="1.6695652173913045" style="stroke-width: 1.66957; stroke-linecap: butt;" d="M283.5341133177254,166.91195486717746L285.2004046627055,162.7833563512608" stroke="#ffffff" fill="none"></path>
-
-		                    <path opacity="0.65" stroke-linecap="butt" stroke-width="2.782608695652174" style="stroke-width: 2.78261; stroke-linecap: butt; opacity: 0.65;" d="M332.3995345141392,273.57014951475867L344.17089658758766,276.9373137311528" stroke="#ffdd33" fill="none"></path>
-		                    <path opacity="0.65" stroke-linecap="round" stroke-width="1.6695652173913045" style="stroke-width: 1.66957; stroke-linecap: round; opacity: 0.65;" d="M169.66944936510254,279.87035103558503A85.70434782608697,85.70434782608697,10,1,1,330.2584096516356,280.0636477574687" stroke="#ffdd33" fill="none"></path>
-												
-		                    <circle stroke-width="2.226086956521739" style="stroke-width: 2.22609;" stroke="#000000" fill="#ffffff" r="2.226086956521739" cy="310.10434782608695" cx="275.6"></circle>
-		                    <circle stroke-width="0" style="stroke-width: 0;" stroke="#000" fill="#191919" r="10.017391304347827" cy="250.3079267716473" cx="250.30801803212273"></circle>
-		                    <circle stroke-width="0" style="stroke-width: 0;" stroke="#000" fill="#666666" r="10.017391304347827" cy="249.6920732283527" cx="249.69198196787727"></circle>
-		                    <circle stroke-width="0" style="stroke-width: 0;" stroke="#000" fill="#333333" r="9.460869565217392" cy="250" cx="250"></circle>
-		                </svg> 
-		            </div>       
-                </div>     
 
                 <div id="centro">
                     <div style="background-color:#eee; position:absolute; bottom:255px; left:-140px; width:50px; height:50px">                    
