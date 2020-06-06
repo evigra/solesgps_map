@@ -71,7 +71,6 @@ div#centro div svg {
         bottom:         0px; 
         left:           100px; 
     }
-
 }
 
 
@@ -83,10 +82,10 @@ div#centro div svg {
 {
     div#odometro div#centro {
         bottom:         0px; 
-        left:           10px; 
+        right:           10px; 
     }
 
-    div#odometro div#gsm {
+    div#odometro > div#gsm {
         display:        none;
     }
 
