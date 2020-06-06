@@ -26,6 +26,8 @@ class vehicle(models.Model):
         ('93', 'Red  Phone')
         ], 'Img GPS', default='01', help='Image of GPS Vehicle', required=True)
     phone                                       = fields.Char('Phone', size=50)
+    economic_number                             = fields.Char('Economic Number', size=50)
+
     imei                                        = fields.Char('Imei', size=50)
     speed                                       = fields.Char('Exceso de Velocidad', default=100, size=3)   
     positionid                                  = fields.Many2one('gpsmap.positions',ondelete='set null', string="Position", index=True)

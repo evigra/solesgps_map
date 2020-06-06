@@ -16,17 +16,16 @@
 }
 
 
-div#odometro div#centro {
-    z-index:        101; 
-    overflow:       hidden; 
-    position:       absolute; 
-    width:          220px; 
-    height:         165px;
+    div#odometro div#centro {
+        z-index:        101; 
+        overflow:       hidden; 
+        position:       absolute; 
+        width:          220px; 
+        height:         165px;
 
-    bottom:         0px; 
-    left:           100px; 
-}
-
+        bottom:         0px; 
+        left:           100px; 
+    }
 
 
 
@@ -53,16 +52,6 @@ div#odometro div#centro {
 /* ####################################### */
 @media (max-width:991px) and (min-width:768px)
 {
-    div#odometro div#centro {
-        z-index:        101; 
-        overflow:       hidden; 
-        position:       absolute; 
-        width:          220px; 
-        height:         165px;
-
-        bottom:         0px; 
-        left:           100px; 
-    }
 }
 
 
@@ -74,16 +63,6 @@ div#odometro div#centro {
 {
     div#odometro div#gsm {
         display:        none;
-    }
-    div#odometro div#centro {
-        z-index:        101; 
-        overflow:       hidden; 
-        position:       absolute; 
-        width:          220px; 
-        height:         165px;
-
-        bottom:         0px; 
-        left:           100px; 
     }
 }
 
