@@ -83,8 +83,6 @@ div#centro div svg {
     div#odometro  div#centro {
         bottom:         0px; 
         right:          -100px; 
-        background-color:#eee; 
-
     }
 
     div#odometro  div#gsm {
