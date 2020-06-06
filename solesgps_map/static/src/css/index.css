@@ -70,6 +70,8 @@ div#centro div svg {
     div#odometro  div#centro {
         bottom:         0px; 
         right:          -180px; 
+        width:          200px; 
+
     }
     div#odometro  div#gsm {
         display:        none;
@@ -83,7 +85,8 @@ div#centro div svg {
 {
     div#odometro  div#centro {
         bottom:         0px; 
-        right:          -180px; 
+        right:          -180px;
+        width:          200px;          
     }
     div#odometro  div#gsm {
         display:        none;
