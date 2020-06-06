@@ -19,8 +19,6 @@ div#odometro div#centro {
     z-index:        101; 
     overflow:       hidden; 
     position:       absolute; 
-    bottom:         0px; 
-    left:           100px; 
     width:          220px; 
     height:         165px
 }
@@ -32,11 +30,10 @@ div#odometro div#centro {
 /* ####################################### */
 @media (min-width:1200px)
 {
-    div#centro div svg {
-        width:          360px; 
-        height:         305px;
+    div#odometro div#centro {
+        bottom:         0px; 
+        left:           100px; 
     }
-
 }
 
 
@@ -45,11 +42,10 @@ div#odometro div#centro {
 /* ####################################### */
 @media (max-width:1199px) and (min-width:992px)
 {
-    div#centro div svg {
-        width:          360px; 
-        height:         305px;
+    div#odometro div#centro {
+        bottom:         0px; 
+        left:           100px; 
     }
-
 
 }
 
@@ -59,11 +55,10 @@ div#odometro div#centro {
 /* ####################################### */
 @media (max-width:991px) and (min-width:768px)
 {
-    div#centro div svg {
-        width:          360px; 
-        height:         305px;
+    div#odometro div#centro {
+        bottom:         0px; 
+        left:           100px; 
     }
-
 }
 
 
@@ -73,17 +68,13 @@ div#odometro div#centro {
 /* ####################################### */
 @media (max-width:767px)
 {
-    div#centro div svg {
-        width:          180px; 
-        height:         152px;
+    div#odometro div#gsm {
+        display:        none;
     }
-    
-    div#centro div svg circle {
-        cx:             125; 
-        cy:             125;
+    div#odometro div#centro {
+        bottom:         0px; 
+        left:           10px; 
     }
-
-
 }
 
 
