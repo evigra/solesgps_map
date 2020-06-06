@@ -69,15 +69,12 @@ div#centro div svg {
 {
     div#odometro  div#centro {
         bottom:         0px; 
-        right:          -200px; 
+        right:          -180px; 
     }
-
     div#odometro  div#gsm {
         display:        none;
     }
 }
-
-
 
 /* ####################################### */
 /* ######         MOVILES           ###### */
@@ -86,9 +83,8 @@ div#centro div svg {
 {
     div#odometro  div#centro {
         bottom:         0px; 
-        right:          -100px; 
+        right:          -180px; 
     }
-
     div#odometro  div#gsm {
         display:        none;
     }
