@@ -67,9 +67,13 @@ div#centro div svg {
 /* ####################################### */
 @media (max-width:991px) and (min-width:768px)
 {
-    div#odometro div#centro {
+    div#odometro  div#centro {
         bottom:         0px; 
-        left:           100px; 
+        right:          -100px; 
+    }
+
+    div#odometro  div#gsm {
+        display:        none;
     }
 }
 
