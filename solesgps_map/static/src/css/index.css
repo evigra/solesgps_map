@@ -16,6 +16,20 @@
 }
 
 
+    div#odometro div#centro {
+        z-index:        101; 
+        overflow:       hidden; 
+        position:       absolute; 
+        width:          220px; 
+        height:         165px;
+
+        bottom:         0px; 
+        left:           100px; 
+    }
+
+
+
+
 
 /* ####################################### */
 /* ######      DESKTOP GRANDE       ###### */
