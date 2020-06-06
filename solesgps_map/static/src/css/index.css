@@ -80,9 +80,9 @@ div#centro div svg {
 /* ####################################### */
 @media (max-width:767px)
 {
-    div#odometro div#centro {
+    div#odometro > div#centro {
         bottom:         0px; 
-        right:           10px; 
+        right:          10px; 
     }
 
     div#odometro > div#gsm {
