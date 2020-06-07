@@ -143,7 +143,7 @@ odoo.define('solesgps_map', function(require){
             var ipositions;
             if(local.positions.length>0)
             {   
-                local.positions.length
+
                 var vehiculo_id;
                 var vehiculos       =local.vehicles;
                 var ivehiculos;
@@ -171,22 +171,22 @@ odoo.define('solesgps_map', function(require){
                                     $("li.vehicle[vehicle='"+device_id+"']").attr(coordinates);
              
 	                            var v 	={
-	                                mo:"", 
-	                                st:"1", 
-	                                te:"d_telefono",   
-	                                dn:vehiculo_name,
-	                                ty:"type",
-	                                na:"name",
-	                                de:device_id,
-	                                la:positions.latitude,
-	                                lo:positions.longitude, 
-	                                co:positions.course, 
-	                                mi:"milage", 
-	                                sp:positions.speed, 
-	                                ba:"batery", 
-	                                ti:positions.devicetime, 
-	                                ho:"icon_online", 
-	                                ad:positions.address, 
+	                                mo: "", 
+	                                st: "1", 
+	                                te: "d_telefono",   
+	                                dn: vehiculo_name,
+	                                ty: "type",
+	                                na: "name",
+	                                de: device_id,
+	                                la: positions.latitude,
+	                                lo: positions.longitude, 
+	                                co: positions.course, 
+	                                mi: "milage", 
+	                                sp: positions.speed, 
+	                                ba: "batery", 
+	                                ti: positions.devicetime, 
+	                                ho: "icon_online", 
+	                                ad: positions.address, 
 	                                ot:positions.other, 
 
 	                                im:vehiculo_img, 
