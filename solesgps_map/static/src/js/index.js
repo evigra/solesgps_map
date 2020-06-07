@@ -317,7 +317,7 @@ odoo.define('solesgps_map', function(require){
 			        
 			        mapOptions.ScaleControlOptions		={position: google.maps.ControlPosition.TOP_RIGHT}
 			        mapOptions.RotateControlOptions		={position: google.maps.ControlPosition.TOP_RIGHT}
-			        mapOptions.zoomControlOptions		={position: google.maps.ControlPosition.TOP_RIGHT};
+			        mapOptions.zoomControlOptions		={position: google.maps.ControlPosition.TOP_LEFT};
 			        mapOptions.streetViewControlOptions	={position: google.maps.ControlPosition.TOP_RIGHT}
 			        				      
 			        map    				                = new google.maps.Map(document.getElementById(object), mapOptions);        
@@ -387,7 +387,12 @@ odoo.define('solesgps_map', function(require){
 		                var vehiculo        =vehiculos[ivehiculos];		                
                         var vehiculo_id     =vehiculo["id"];
                         var vehiculo_name   =vehiculo["name"];
-                                                
+                        
+                        if(!(vehiculo["economic_number"]==undefined || vehiculo["economic_number"]==false))
+                        {
+                            var vehiculo_name   =vehiculo["economic_number"];
+                        }                        
+                                                                        
 			            var image="01";
 			            if(!(vehiculo["image_vehicle"]==undefined || vehiculo["image_vehicle"]==false))
 			            {
