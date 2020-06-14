@@ -24,6 +24,8 @@
             <field name="public">groups</field>
         </record>
 
+            <!--
+
     <data noupdate="1">
 
         <record id="position_rule_user" model="ir.rule">
@@ -34,12 +36,11 @@
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_unlink" eval="False"/>
-            <!--
             <field name="domain_force">[('cost_id.vehicle_id.driver_id','=',user.partner_id.id)]</field>
-            -->
         </record>
     </data>    
-        
+                    -->
+
         
 <!--
     <data noupdate="1">
