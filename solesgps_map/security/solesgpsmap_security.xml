@@ -24,18 +24,18 @@
             <field name="public">groups</field>
         </record>
 
+
+
+            <!--
         <record id="position_rule_user" model="ir.rule">
             <field name="name">User can only see positions</field>
-            <field name="model_id" ref="model_gpsmap_positions"/>
+            <field name="model_id" ref="gpsmap_positions"/>
             <field name="groups" eval="[(4, ref('gpsmap_group_user'))]"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_unlink" eval="False"/>
         </record>
-
-
-            <!--
 
     <data noupdate="1">
 
