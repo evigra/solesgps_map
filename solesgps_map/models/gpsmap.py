@@ -11,6 +11,9 @@ from dateutil.relativedelta import relativedelta
 from odoo import api, fields, models, _
 class fuel(models.Model):
     _inherit = "fleet.vehicle.log.fuel"
+class services(models.Model):
+    _inherit = "fleet.vehicle.log.services"
+
 
 class vehicle(models.Model):
     _inherit = "fleet.vehicle"
