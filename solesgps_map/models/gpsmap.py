@@ -34,7 +34,6 @@ class vehicle(models.Model):
 class speed(models.Model):
     _name = "gpsmap.speed"
     _description = 'Positions Speed'
-    _pointOnVertex=""
     _order = "starttime DESC"
     deviceid                                    = fields.Many2one('fleet.vehicle',ondelete='set null', string="Vehiculo", index=True)
     starttime                                   = fields.Datetime('Start Time')
