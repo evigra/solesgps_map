@@ -15,6 +15,8 @@ class services(models.Model):
     _inherit = "fleet.vehicle.log.services"
 class cost(models.Model):
     _inherit = "fleet.vehicle.cost"
+class contract(models.Model):
+    _inherit = "fleet.vehicle.log.contract"
 
 
 

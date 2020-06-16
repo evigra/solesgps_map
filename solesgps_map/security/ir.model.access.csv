@@ -9,3 +9,4 @@ access_gpsmap_vehicle_user,access_gpsmap_vehicle,model_fleet_vehicle,gpsmap_grou
 access_gpsmap_fuel_user,access_gpsmap_fuel,model_fleet_vehicle_log_fuel,gpsmap_group_user,1,0,0,0
 access_gpsmap_services_user,access_gpsmap_services,model_fleet_vehicle_log_services,gpsmap_group_user,1,0,0,0
 access_gpsmap_cost_user,access_gpsmap_cost,model_fleet_vehicle_cost,gpsmap_group_user,1,0,0,0
+access_gpsmap_contract_user,access_gpsmap_contract,model_fleet_vehicle_log_contract,gpsmap_group_user,1,0,0,0
