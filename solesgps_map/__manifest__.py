@@ -31,7 +31,7 @@ Main Features
     ],
     'data': [
         'security/solesgpsmap_security.xml',
-#        'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/solesgpsmap_menuitem.xml',
         'views/solesgpsmap_views.xml',
     ],
