@@ -386,7 +386,7 @@ odoo.define('solesgps_map', function(require){
 		            {		                
 		                var vehiculo        =vehiculos[ivehiculos];		                
                         var vehiculo_id     =vehiculo["id"];
-                        var vehiculo_name   =vehiculo["name"];
+                        var vehiculo_name   =vehiculo["license_plate"];
                         
                         if(!(vehiculo["economic_number"]==undefined || vehiculo["economic_number"]==false))
                         {
