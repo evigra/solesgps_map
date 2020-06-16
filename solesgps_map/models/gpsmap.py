@@ -13,6 +13,9 @@ class fuel(models.Model):
     _inherit = "fleet.vehicle.log.fuel"
 class services(models.Model):
     _inherit = "fleet.vehicle.log.services"
+class cost(models.Model):
+    _inherit = "fleet.vehicle.cost"
+
 
 
 class vehicle(models.Model):
