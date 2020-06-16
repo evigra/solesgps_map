@@ -9,6 +9,9 @@ import requests
 import random
 from dateutil.relativedelta import relativedelta
 from odoo import api, fields, models, _
+class fuel(models.Model):
+    _inherit = "fleet.vehicle.log.fuel"
+
 class vehicle(models.Model):
     _inherit = "fleet.vehicle"
     image_vehicle = fields.Selection([
