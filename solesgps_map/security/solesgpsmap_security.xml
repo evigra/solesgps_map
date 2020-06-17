@@ -32,11 +32,16 @@
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_unlink" eval="False"/>
-            <field name="domain_force">[('cost_id.vehicle_id.driver_id','=',user.partner_id.id)]</field>
+            
         </record>
 
 
             <!--
+            <field name="domain_force">[('driver_id','=',user.partner_id.id)]</field>
+            
+            ('deviceid','=',user.partner_id.id)
+
+
 
 
     <data noupdate="1">
