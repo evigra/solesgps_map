@@ -10,7 +10,10 @@
         </xpath>
     </template>
 
-    <template id="footer_defaultaaaaaa" inherit_id="website.footer_custom" customize_show="True" name="Automatic Footer aaa">
+
+
+
+    <template id="footer_defaultaaaaaa" inherit_id="website.footer_custom" customize_show="True" name="Automatic Footer aaaa">
         <xpath expr="//div[@id='footer']" position="replace" >
             <div id="footer" class="container hidden-print" t-if='not no_footer'>
                 <div class="row">
