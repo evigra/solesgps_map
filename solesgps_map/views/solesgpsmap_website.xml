@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <t name="Contact Us Espejo" t-name="website.espejo">
-                  <t t-call="website.layout">
                     <div id="wrap">
                       <div class="oe_structure"/>
                       <div class="container">
@@ -24,6 +23,5 @@
                       </div>
                       <div class="oe_structure"/>
                     </div>
-                  </t>
                 </t>
             
