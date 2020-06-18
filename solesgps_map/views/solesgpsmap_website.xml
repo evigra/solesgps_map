@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<t name="Contact Us Espejo" t-name="website.espejo">
+                  <t t-call="website.layout">
+                    <div id="wrap">
+                      <div class="oe_structure"/>
+                      <div class="container">
+                          <h1>Contact us</h1>
+                          <div class="row">
+                              <div class="col-md-8">
+                                  <div class="oe_structure">
+                                      <div>
+                                          <p>PRUEBA LALO Contact us about anything related to our company or services.</p>
+                                          <p>We'll do our best to get back to you as soon as possible.</p>
+                                      </div>
+                                  </div>
+                                  <div class="text-center mt64" name="mail_button">
+                                      <a t-attf-href="mailto:{{ res_company.email }}" class="btn btn-primary" id="o_contact_mail">Send us an email</a>
+                                  </div>
+                              </div>
+                              <div class="col-md-4 mb32">
+                                  <t t-call="website.company_description"/>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="oe_structure"/>
+                    </div>
+                  </t>
+                </t>
+            
