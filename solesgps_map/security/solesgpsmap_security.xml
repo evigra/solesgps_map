@@ -36,8 +36,7 @@
             <field name="domain_force">[('company_id.id','=',user.company_id.id)]</field>            
         </record>
 
-
-            <!--
+<!--
             <field name="domain_force">[('driver_id','=',user.partner_id.id)]</field>
             
             ('deviceid','=',user.partner_id.id)
