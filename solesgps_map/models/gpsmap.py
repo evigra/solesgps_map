@@ -19,6 +19,8 @@ class contract(models.Model):
     _inherit = "fleet.vehicle.log.contract"
 class odometer(models.Model):
     _inherit = "fleet.vehicle.odometer"
+class vehicle_modle(models.Model):
+    _inherit = "fleet.vehicle.model"
 
 
 
