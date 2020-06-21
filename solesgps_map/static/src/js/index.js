@@ -211,7 +211,7 @@ odoo.define('solesgps_map', function(require){
 
         //////////////////////////////////////////////////////////////
         positions_search:function(argument){
-            var fields_select   =['deviceid','devicetime','latitude','longitude','speed','other','address'];
+            var fields_select   =['deviceid','devicetime','latitude','longitude','speed','other','address','event','status'];
             var vehiculo_id;
             var vehiculos       =local.vehicles;
             var iresult;
@@ -266,7 +266,7 @@ odoo.define('solesgps_map', function(require){
                                 positions.st                =1;
                                 positions.te                ="d_telefono";
                                 ////positions.dn                =vehiculo_name;
-                                positions.ty                ="type";
+                                positions.ty                =positions.status;
                                 positions.na                ="name";
                                 positions.de                =device_id;
                                 positions.la                =positions.latitude;
@@ -279,9 +279,9 @@ odoo.define('solesgps_map', function(require){
 
                                 positions.ho                ="icon_online"; 
                                 positions.ad                =positions.address; 
-                                positions.ot                =positions.other; 
+                                //positions.ot                =positions.other; 
                                 ////positions.im                =vehiculos[device_id].image_vehicle; 
-                                positions.ev                ="event"; 
+                                positions.ev                =positions.event; 
                                 positions.ge                ="geofence"; 
                                 positions.ni                ="nivel";
                                 

@@ -76,7 +76,7 @@ class positions(models.Model):
     course                                      = fields.Float('Curso',digits=(3,2))
     address                                     = fields.Char('Calle', size=150)
     attributes                                  = fields.Char('Atributos', size=5000)
-    other                                       = fields.Char('Otros', size=5000)
+    status                                      = fields.Char('Type', size=5000)
     leido                                       = fields.Integer('Leido')
     event                                       = fields.Char('Evento', size=70)
     def get_system_para(self):
