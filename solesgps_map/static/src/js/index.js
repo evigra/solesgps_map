@@ -175,7 +175,7 @@ odoo.define('solesgps_map', function(require){
 	                                st: "1", 
 	                                te: "d_telefono",   
 	                                dn: vehiculo_name,
-	                                ty: "type",
+	                                ty: positions.status,
 	                                na: "name",
 	                                de: device_id,
 	                                la: positions.latitude,
@@ -187,10 +187,10 @@ odoo.define('solesgps_map', function(require){
 	                                ti: positions.devicetime, 
 	                                ho: "icon_online", 
 	                                ad: positions.address, 
-	                                ot:positions.other, 
+	                                //ot: positions.other, 
 
 	                                im:vehiculo_img, 
-	                                ev:"event", 
+	                                ev:positions.event, 
 	                                ge:"geofence", 
 	                                ni:"nivel"
                                 };
