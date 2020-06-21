@@ -852,7 +852,7 @@ odoo.define('solesgps_map', function(require){
 	    //alert(vehicle["st"]);		
 		if(vehicle["st"]=="1" || vehicle["st"]=="-1")
 		{
-		    console.log("locationsMap 2 vehicle[st]");		
+		    //console.log("locationsMap 2 vehicle[st]");		
 			var device_id=vehicle["de"];
 			
 			if(localizacion_anterior==undefined)	
@@ -866,7 +866,7 @@ odoo.define('solesgps_map', function(require){
 			}									
 			if(vehicle["se"]=="historyMap" || vehicle["se"]=="historyForm" || vehicle["ti"] >= localizacion_anterior[device_id]["ti"])
 			{
-			    console.log("locationsMap 4 vehicle[se]");		
+			    //console.log("locationsMap 4 vehicle[se]");		
 			    //alert("1");
 				//if(vehicle["ti"] > localizacion_anterior[device_id]["ti"] && vehicle["se"]!="simulator")
 				//	hablar(vehicle);
@@ -879,26 +879,27 @@ odoo.define('solesgps_map', function(require){
 					.attr("lon", vehicle["lo"]);
 					
 				icon_status="";	
-				if(vehicle["ty"]=="alarm")				icon_status="sirena.png";
-				if(vehicle["ty"]=="deviceStopped")		icon_status="stop.png";
-				if(vehicle["ty"]=="deviceMoving")		icon_status="car_signal1.png";
-				if(vehicle["ty"]=="deviceOnline")		icon_status="car_signal1.png";
+				if(vehicle["ty"]=="alarm")				                icon_status="sirena.png";
+				if(vehicle["ty"]=="deviceStopped")		                icon_status="stop.png";
+				if(vehicle["ty"]=="deviceMoving")		                icon_status="car_signal1.png";
+				if(vehicle["ty"]=="deviceOnline")		                icon_status="car_signal1.png";
 				if(vehicle["ty"]=="deviceOffline")		
 				{
 					icon_status="car_signal0.png";
-					if(vehicle["ho"]==1)	icon_status="car_signal1.png";
+					if(vehicle["ho"]==1)	                            icon_status="car_signal1.png";
 				}	
-				if(vehicle["ty"]=="ignitionOn")			icon_status="swich_on.png";
-				if(vehicle["ty"]=="ignitionOff")		icon_status="swich_off.png";
+				if(vehicle["ty"]=="ignitionOn")			                icon_status="swich_on.png";
+				if(vehicle["ty"]=="ignitionOff")		                icon_status="swich_off.png";
 				
 				if(vehicle["sp"]<5 && vehicle["ty"]=="deviceOnline")	icon_status="stop.png";
 				if(vehicle["sp"]>5 && vehicle["ty"]=="deviceOnline")	icon_status="car_signal1.png";
 				
 				
 				if(icon_status!="")
-				{
-					img_icon="<img width=\"20\" title=\""+ vehicle["ty"] +"\" src=\"../sitio_web/img/"+ icon_status +"\" >";
-					$("table.select_devices[device="+ vehicle["de"] +"] tr td.event_device").html(img_icon);
+				{				    
+				    console.log("Icon status:" + icon_status);
+					img_icon="<img width=\"20\" title=\""+ vehicle["ty"] +"\" src=\"/solesgps_map/static/src/img/"+ icon_status +"\" >";
+					$("table.select_devices[device_id="+ vehicle["de"] +"] tr td.event_device").html(img_icon);
 				}	
 			
 				var icon        		=undefined;
