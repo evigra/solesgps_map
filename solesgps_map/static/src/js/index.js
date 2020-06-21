@@ -756,6 +756,8 @@ odoo.define('solesgps_map', function(require){
 	
     function odometro(item)	 
     {    	
+        if(item["at"]==undefined)           item["at"]=new Array();
+    
     	if(item["at"]["battery"])			item["ba"]  =item["at"]["battery"];
     	else								item["ba"]  =0;
     	if(item["al"])						item["al"]  =item["al"];
@@ -763,23 +765,13 @@ odoo.define('solesgps_map', function(require){
     	
 		//if(item["ot"]["battery"])			item["ga"]  =item["ot"]["battery"];
 		var gas;
-    	if(item["at"]["io3"])				
+    	if(item["at"]["io3"]!=undefined)				
     	{
     		gas								=item["at"]["io3"];
     		item["ga"]  					=parseInt(gas.substring(0,3));
-    		
-    		//item["ga"]  					gas.substring(1,3);
     	}	
     	else								item["ga"]  =0;
-		
-		
-		
-    	//if(item["ot"]["io3"])				item["ga"]  =item["ot"]["io3"];
-    	//else								item["ga"]  =0;
-
-    	if(item["ot"]["ip"])				item["ip"]  =item["ot"]["ip"];
-    	else								item["ip"]  =undefined;
-    	
+				
     	
     	if(item["ts"])						item["ts"]  =item["ts"];
     	else								item["ts"]  =1.852;
