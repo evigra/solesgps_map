@@ -135,7 +135,7 @@ class positions(models.Model):
                 data_create['course']           =curso
                 data_create['address']          =''
                 data_create['attributes']       =''
-                data_create['other']            =0
+                #data_create['other']            =0
                 data_create['leido']            =''
                 data_create['event']            =''
                 
