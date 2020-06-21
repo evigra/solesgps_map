@@ -894,7 +894,7 @@ odoo.define('solesgps_map', function(require){
 				if(vehicle["sp"]<5 && vehicle["ty"]=="deviceOnline")	icon_status="stop.png";
 				if(vehicle["sp"]>5 && vehicle["ty"]=="deviceOnline")	icon_status="car_signal1.png";
 				
-				
+				console.log("INICIO Icon status:" + icon_status);
 				if(icon_status!="")
 				{				    
 				    console.log("Icon status:" + icon_status);
