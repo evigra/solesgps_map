@@ -211,7 +211,7 @@ odoo.define('solesgps_map', function(require){
 
         //////////////////////////////////////////////////////////////
         positions_search:function(argument){
-            var fields_select   =['deviceid','devicetime','latitude','longitude','speed','other','address','event','status'];
+            var fields_select   =['deviceid','devicetime','latitude','longitude','speed','attributes','address','event','status'];
             var vehiculo_id;
             var vehiculos       =local.vehicles;
             var iresult;
@@ -279,7 +279,7 @@ odoo.define('solesgps_map', function(require){
 
                                 positions.ho                ="icon_online"; 
                                 positions.ad                =positions.address; 
-                                //positions.ot                =positions.other; 
+                                positions.at                =positions.attributes; 
                                 ////positions.im                =vehiculos[device_id].image_vehicle; 
                                 positions.ev                =positions.event; 
                                 positions.ge                ="geofence"; 
@@ -756,16 +756,16 @@ odoo.define('solesgps_map', function(require){
 	
     function odometro(item)	 
     {    	
-    	if(item["ot"]["battery"])			item["ba"]  =item["ot"]["battery"];
+    	if(item["at"]["battery"])			item["ba"]  =item["at"]["battery"];
     	else								item["ba"]  =0;
     	if(item["al"])						item["al"]  =item["al"];
     	else								item["al"]  =0;
     	
 		//if(item["ot"]["battery"])			item["ga"]  =item["ot"]["battery"];
 		var gas;
-    	if(item["ot"]["io3"])				
+    	if(item["at"]["io3"])				
     	{
-    		gas								=item["ot"]["io3"];
+    		gas								=item["at"]["io3"];
     		item["ga"]  					=parseInt(gas.substring(0,3));
     		
     		//item["ga"]  					gas.substring(1,3);
