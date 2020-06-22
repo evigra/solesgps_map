@@ -399,7 +399,7 @@ odoo.define('solesgps_map', function(require){
 			                image=vehiculo["image_vehicle"];
 			            }			
 			            icon="/solesgps_map/static/src/img/vehiculo_" +image+ "/i135.png";
-		                opcion_vehiculo =opcion_vehiculo+"<li class=\"vehicle\" position=\"\" latitude=\"\" longitude=\"\" vehicle=\""+vehiculo_id+"\" style=\"padding-left:0px; padding-top:5px; padding-bottom:5px;\"><table width=\"100%\" class=\"select_devices\" device_id=\""+vehiculo_id+"\"><tr><td height=\"17\" width=\"50\" align=\"center\"><img height=\"17\" src=\"" +icon+ "\"></td><td>" + vehiculo_name + "</td><td  width=\"50\" align=\"center\" class=\"event_device\">" + vehiculo_name + "</td></tr></table></li>";
+		                opcion_vehiculo =opcion_vehiculo+"<li class=\"vehicle\" position=\"\" latitude=\"\" longitude=\"\" vehicle=\""+vehiculo_id+"\" style=\"padding-left:0px; padding-top:5px; padding-bottom:5px;\"><table width=\"100%\" class=\"select_devices\" device_id=\""+vehiculo_id+"\"><tr><td height=\"17\" width=\"50\" align=\"center\"><img height=\"17\" src=\"" +icon+ "\"></td><td>" + vehiculo_name + "</td><td  width=\"50\" align=\"center\" class=\"event_device\"> -</td></tr></table></li>";
 		            }
                 
 		            if(!$("ul#menu_vehicles").length)	      
@@ -894,14 +894,13 @@ odoo.define('solesgps_map', function(require){
 				if(vehicle["sp"]<5 && vehicle["ty"]=="deviceOnline")	icon_status="stop.png";
 				if(vehicle["sp"]>5 && vehicle["ty"]=="deviceOnline")	icon_status="car_signal1.png";
 				
-				console.log("INICIO Icon status:" + icon_status);
 				if(icon_status!="")
 				{				    
 				    console.log("Icon status:" + icon_status);
 					img_icon="<img width=\"20\" title=\""+ vehicle["ty"] +"\" src=\"/solesgps_map/static/src/img/"+ icon_status +"\" >";
 					$("table.select_devices[device_id="+ vehicle["de"] +"] tr td.event_device").html(img_icon);
 				}	
-			
+							
 				var icon        		=undefined;
 				
 				var posicion 		    = LatLng(coordinates);						    	
