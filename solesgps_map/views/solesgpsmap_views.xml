@@ -10,9 +10,7 @@
         </xpath>
     </template>
 
-
-
-
+<!--
     <template id="footer_defaultaaaaaa" inherit_id="website.footer_custom" customize_show="True" name="Automatic Footer aaaa">
         <xpath expr="//div[@id='footer']" position="replace" >
             <div id="footer" class="container hidden-print" t-if='not no_footer'>
@@ -64,7 +62,7 @@
         </xpath>
     </template>
 
-
+-->
 
     <record id="view_gpsmap_vehicle_form_inherit" model="ir.ui.view">
         <field name="name">gpsmap.vehicle.form</field>
