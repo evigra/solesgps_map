@@ -33,7 +33,7 @@
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_unlink" eval="False"/>
-            <field name="domain_force">[('company_id.id','=',user.company_id.id)]</field>            
+            <field name="domain">[('company_id.id','=',user.company_id.id)]</field>            
         </record>
         <record id="access_gpsmap_vehicle" model="ir.rule">
             <field name="name">User can only see his/her vehicle</field>
