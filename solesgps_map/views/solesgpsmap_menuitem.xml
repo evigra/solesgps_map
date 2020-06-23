@@ -13,7 +13,7 @@
     <record id='fleet_position_action' model='ir.actions.act_window'>
         <field name="name">Histoy Map</field>
         <field name="res_model">gpsmap.positions</field>
-        <field name="domain">[('deviceid.company_id.id','=',user.company_id.id)]</field>
+        <field name="domain">[('deviceid.company_id.id','=','user.company_id.id')]</field>
     </record>
     <menuitem action="fleet_position_action" parent="fleet.fleet_vehicles" id="=fleet_position_menu" groups="fleet.fleet_group_user"/>
 
