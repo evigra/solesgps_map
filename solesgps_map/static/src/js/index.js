@@ -205,7 +205,6 @@ odoo.define('solesgps_map', function(require){
 	                                ho: "icon_online", 
 	                                ad: positions.address, 
 	                                //ot: positions.other, 
-
 	                                im: vehiculo_img, 
 	                                ev: positions.event, 
 	                                ge: "geofence", 
@@ -226,7 +225,6 @@ odoo.define('solesgps_map', function(require){
                                 vehiculo["ty"]=positions.status;
                                 vehiculo["ti"]=positions.devicetime;
                                 vehiculo["im"]=vehiculo_img;
-
                                 
 	                            locationsMap(vehiculo);            
 	                            //locationsMap(v);  
@@ -803,11 +801,11 @@ odoo.define('solesgps_map', function(require){
     		item["ga"]  					=parseInt(gas.substring(0,3));
     	}	
     	else								item["ga"]  =0;
-				
-    	
-    	if(item["ts"])						item["ts"]  =item["ts"];
-    	else								item["ts"]  =1.852;
-    	
+				    	
+    	if(item["odometer_unit"]=="kilometers")		item["ts"]  =1.852;
+    	else if(item["odometer_unit"]=="miles")	    item["ts"]  =1.15;
+    	else                                        item["ts"]  =1.852;
+    	    	    	
 
     	if(item["ba"]>100) item["ba"]=125;    
         var bat=item["ba"]*12/12.5-110;
