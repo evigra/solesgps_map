@@ -23,6 +23,4 @@
         <field name="res_model">gpsmap.speed</field>
     </record>
     <menuitem action="fleet_speed_action" parent="fleet.fleet_vehicles" id="=fleet_speed_menu" groups="fleet.fleet_group_user"/>
-
-
 </odoo>
