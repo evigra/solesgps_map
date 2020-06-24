@@ -176,7 +176,6 @@ odoo.define('solesgps_map', function(require){
 	                        
 	                        if(vehiculo["id"]==device_id)
 	                        {		                        
-                                var vehiculo_id     =vehiculo["id"];
                                 var vehiculo_name   =vehiculo["name"];
                                 var vehiculo_img    =vehiculo["image_vehicle"];
 
@@ -222,6 +221,7 @@ odoo.define('solesgps_map', function(require){
                                 vehiculo["de"]=device_id;
                                 vehiculo["la"]=positions.latitude;
                                 vehiculo["lo"]=positions.longitude;
+                                vehiculo["co"]=positions.course;
                                 vehiculo["sp"]=positions.speed;
                                 vehiculo["ty"]=positions.status;
                                 vehiculo["ti"]=positions.devicetime;
@@ -230,7 +230,8 @@ odoo.define('solesgps_map', function(require){
                                 
 	                            locationsMap(vehiculo);            
 	                            //locationsMap(v);  
-	                            if(device_active==device_id) execute_streetMap(v);				
+	                            //if(device_active==device_id) execute_streetMap(v);				
+	                            if(device_active==device_id) execute_streetMap(vehiculo);
                             }    
                         }
                     }            
