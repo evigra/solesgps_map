@@ -100,6 +100,16 @@ odoo.define('solesgps_map', function(require){
         position: function(argument) {
             gpsmaps_obj.positions_search(argument);     
             
+            setTimeout(function()
+            {  
+                if(argument==undefined)                 gpsmaps_obj.positions(argument,0);
+                else if($("#data_tablero").length==0)   gpsmaps_obj.position(argument);         
+            },100);
+            
+            
+            /*
+            
+            
             if(argument==undefined)    
             {
                 setTimeout(function()
@@ -115,8 +125,9 @@ odoo.define('solesgps_map', function(require){
                     {
                         gpsmaps_obj.position(argument);
                     }         
-                },2500);                
-            }             
+                },100);                
+            } 
+            */            
         },
         ////////////////////////////////////////////////////////////
         // /etc/init.d/directadmin restart
@@ -124,15 +135,21 @@ odoo.define('solesgps_map', function(require){
         // ./getLicense.sh 10968 112610
         //
         // /usr/local/directadmin/scripts/./getLicense.sh 10968 112610
-        positions: function() {
+        positions: function(index) {
             if($("div#map").length>0) 
-            {        	    
-                del_locations();
-                gpsmaps_obj.positions_search();         
+            {      
+                var time=100;  	    
+                if(index!=0)
+                {            
+                    time=15000;        
+                    del_locations();
+                    gpsmaps_obj.positions_search();         
+                }    
+                index++;
                 setTimeout(function()
                 {            
-                    gpsmaps_obj.positions();
-                },15000);
+                    gpsmaps_obj.positions(index);
+                },time);
             }
         },
     
@@ -189,10 +206,10 @@ odoo.define('solesgps_map', function(require){
 	                                ad: positions.address, 
 	                                //ot: positions.other, 
 
-	                                im:vehiculo_img, 
-	                                ev:positions.event, 
-	                                ge:"geofence", 
-	                                ni:"nivel"
+	                                im: vehiculo_img, 
+	                                ev: positions.event, 
+	                                ge: "geofence", 
+	                                ni: "nivel"
                                 };
                                 if(typeof argument=="number")
                                 {
