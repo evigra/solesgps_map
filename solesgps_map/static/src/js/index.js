@@ -187,6 +187,7 @@ odoo.define('solesgps_map', function(require){
                                 if($("li.vehicle[vehicle='"+device_id+"']").length>0)                        
                                     $("li.vehicle[vehicle='"+device_id+"']").attr(coordinates);
              
+             
 	                            var v 	={
 	                                mo: "", 
 	                                st: "1", 
@@ -211,11 +212,24 @@ odoo.define('solesgps_map', function(require){
 	                                ge: "geofence", 
 	                                ni: "nivel"
                                 };
+                                
+                                
                                 if(typeof argument=="number")
                                 {
                                     v.se="historyForm";
                                 }
-	                            locationsMap(v);            
+                                
+                                vehiculo["de"]=device_id;
+                                vehiculo["la"]=positions.latitude;
+                                vehiculo["lo"]=positions.longitude;
+                                vehiculo["sp"]=positions.speed;
+                                vehiculo["ty"]=positions.status;
+                                vehiculo["ti"]=positions.devicetime;
+                                vehiculo["im"]=vehiculo_img;
+
+                                
+	                            locationsMap(vehiculo);            
+	                            //locationsMap(v);  
 	                            if(device_active==device_id) execute_streetMap(v);				
                             }    
                         }
