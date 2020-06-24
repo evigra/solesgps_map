@@ -165,11 +165,6 @@
                                 
                                 <rect stroke-width="0" style="stroke-width: 0;" stroke="#000" fill="#000000" ry="0" rx="0" r="0" height="8.904347826086957" width="3.8956521739130436" y="307.8782608695652" x="273.6521739130435">                            </rect>
                                 <circle stroke-width="2.226086956521739" style="stroke-width: 2.22609;" stroke="#000000" fill="#ffffff" r="2.226086956521739" cy="310.10434782608695" cx="275.6"></circle>
-                                <text font-size="10px" fill="#ffffff" stroke="none" font="10px &quot;Arial&quot;" style="text-anchor: middle; font: 15px &quot;Arial&quot;;" text-anchor="middle" y="220" x="250">
-                                    <tspan>KM / HR</tspan>
-                                </text>
-
-                                <circle stroke-width="2.226086956521739" style="stroke-width: 2.22609;" stroke="#000000" fill="#ffffff" r="2.226086956521739" cy="310.10434782608695" cx="275.6"></circle>
                                 <circle stroke-width="0" style="stroke-width: 0;" stroke="#000" fill="#191919" r="10.017391304347827" cy="250.3079267716473" cx="250.30801803212273"></circle>
                                 <circle stroke-width="0" style="stroke-width: 0;" stroke="#000" fill="#666666" r="10.017391304347827" cy="249.6920732283527" cx="249.69198196787727"></circle>
                                 <circle stroke-width="0" style="stroke-width: 0;" stroke="#000" fill="#333333" r="9.460869565217392" cy="250" cx="250"></circle>
