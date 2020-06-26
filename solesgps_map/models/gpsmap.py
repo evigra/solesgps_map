@@ -98,7 +98,6 @@ class positions(models.Model):
                 if len(positions_data)>0:                            
                     return_positions[vehicle.id]    =positions_data[0]        
         return return_positions
-        """
     def run_scheduler_demo(self):
         positions_obj                           =self.env['gpsmap.positions']        
         vehicle_obj                             =self.env['fleet.vehicle']
@@ -156,6 +155,7 @@ class positions(models.Model):
         positions_arg                           =[('leido','=',0)]                
         positions_data                          =positions_obj.search(positions_arg, offset=0, limit=1000, order='devicetime DESC')        
 
+
         if len(positions_data)>0:         
             for position in positions_data:
                 vehicle_arg                     =[('id','=',position.deviceid.id)]                
@@ -203,7 +203,7 @@ class positions(models.Model):
                                     
                 position["leido"]=1                
                 positions_obj.write(position)
-        """        
+                
 class geofence(models.Model):
     _name = "gpsmap.geofence"
     _description = 'GPS Geofence'

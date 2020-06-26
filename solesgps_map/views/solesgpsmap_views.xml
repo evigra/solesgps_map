@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
+
     <template id="assets_backend" name="gpsmap_assets" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
             <link rel="stylesheet" href="/solesgps_map/static/src/css/index.css"/>
@@ -10,6 +11,19 @@
         </xpath>
     </template>
 
+    <record forcecreate="True" id="ir_cron_solesgps_position_get" model="ir.cron">
+        <field name="name">SolesGPS: Get positions</field>
+        <field name="model_id" ref="model_gpsmap_positions"/>
+        <field name="state">code</field>
+        <field name="code">model.run_scheduler_get_position()</field>
+        <field name="user_id" ref="base.user_root" />
+        <field name="interval_number">1</field>
+        <field name="interval_type">minutes</field>
+        <field name="numbercall">-1</field>
+        <field eval="False" name="doall" />
+        <field name="active" eval="True"/>
+    </record>
+        
 
     <record id="view_gpsmap_vehicle_form_inherit" model="ir.ui.view">
         <field name="name">gpsmap.vehicle.form</field>
@@ -123,20 +137,11 @@
         <field name="smtp_user">odoo_alerts@solesgps.com</field>
         <field name="smtp_pass">Odoo_alerts1</field>          
     </record>
+    
+    
+
+    
 <!--
-      <record forcecreate="True" id="ir_cron_contract_costs_generator" model="ir.cron">
-        <field name="name">Fleet: Generate contracts costs based on costs frequency</field>
-        <field name="model_id" ref="model_fleet_vehicle_log_contract"/>
-        <field name="state">code</field>
-        <field name="code">model.run_scheduler()</field>
-        <field name="user_id" ref="base.user_root" />
-        <field name="interval_number">1</field>
-        <field name="interval_type">days</field>
-        <field name="numbercall">-1</field>
-        <field eval="False" name="doall" />
-      </record>
-
-
     <record id="solesgps_mail_install" model="mail.mail"> 
         <field name="subject">Install module Odoo SolesGPS Map</field>
         <field name="email_to">e.vizcaino@solesgps.com</field>
