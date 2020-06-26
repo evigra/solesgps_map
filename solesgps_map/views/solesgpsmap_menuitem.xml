@@ -5,16 +5,18 @@
     <menuitem name="Geolocation" parent="menu_root" id="solesgps_map_geolocation" sequence="2" groups="gpsmap_group_user"/>
         
     <record id="action_gpsmap_maponline" model="ir.actions.client">
-        <field name="name">Geolocation</field>
+        <field name="name">Map Online</field>
         <field name="tag">gpsmap.maponline</field>
+        <field name="domain">[('deviceid.company_id.id','=','user.company_id.id')]</field>
     </record>
     <menuitem id="menu_gpsmap_maponline" name="Online Map" sequence="1" parent="solesgps_map_geolocation" action="action_gpsmap_maponline" groups="gpsmap_group_user"/>
 
 
 
     <record id="action_gpsmap_street" model="ir.actions.client">
-        <field name="name">Geolocation</field>
+        <field name="name">Street Online</field>
         <field name="tag">gpsmap.streetonline</field>
+        <field name="domain">[('deviceid.company_id.id','=','user.company_id.id')]</field>
     </record>
     <menuitem id="menu_gpsmap_streetonline" sequence="2" name="Online Street"  parent="solesgps_map_geolocation" action="action_gpsmap_street" groups="gpsmap_group_user"/>    
 
