@@ -143,15 +143,15 @@ odoo.define('solesgps_map', function(require){
         positions: function(argument) {
             if($("div#map").length>0) 
             { 
-                console.log("POSITIONS =========================== ", local.actualizaciones);
+                console.log("POSITIONS ================ lalo =========== ");
                 var time=100;  	    
-                if(local.actualizaciones>0)
+                //if(local.actualizaciones>0)
                 {            
                     time=15000;        
                     del_locations();
                     gpsmaps_obj.positions_search();         
                 }    
-                local.actualizaciones++;
+                //local.actualizaciones++;
                 setTimeout(function()
                 {            
                     gpsmaps_obj.positions(argument);
