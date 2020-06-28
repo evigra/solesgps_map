@@ -103,7 +103,7 @@ odoo.define('solesgps_map', function(require){
         //////////////////////////////////////////////////////////////
         position: function(argument) {
             //gpsmaps_obj.positions_search(argument);     
-            
+            gpsmaps_obj.positions(argument,0);
             //setTimeout(function()
             {  
                 if(argument==undefined)                 gpsmaps_obj.positions(argument,0);
