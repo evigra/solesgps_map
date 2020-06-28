@@ -61,6 +61,7 @@ odoo.define('solesgps_map', function(require){
         {
             setTimeout(function()
             {       
+                console.log("Pinta las geocercas");
                 var igeofences;
                 var geofences   =local.geofences;
                 for(igeofences in geofences)
@@ -75,6 +76,7 @@ odoo.define('solesgps_map', function(require){
                 }
             },500);
         },
+        //////////////////////////////////////////////////////////////
         geofences:function(){
             local.geofences=Array();
             var iresult;
@@ -87,6 +89,7 @@ odoo.define('solesgps_map', function(require){
             {   
 		        if(result!= null && result.length>0)
 		        {
+		            console.log("llena variable geocerca");
 		            for(iresult in result)
 		            {		                
 		                var geofence                        =result[iresult];		                
@@ -97,19 +100,20 @@ odoo.define('solesgps_map', function(require){
                 }    
             });
         },
+        //////////////////////////////////////////////////////////////
         position: function(argument) {
-            gpsmaps_obj.positions_search(argument);     
+            //gpsmaps_obj.positions_search(argument);     
             
-            setTimeout(function()
+            //setTimeout(function()
             {  
                 if(argument==undefined)                 gpsmaps_obj.positions(argument,0);
                 else if($("#data_tablero").length==0)   gpsmaps_obj.position(argument);         
-            },100);
+            }
+            //,100);
             
             
             /*
-            
-            
+                        
             if(argument==undefined)    
             {
                 setTimeout(function()
@@ -155,8 +159,7 @@ odoo.define('solesgps_map', function(require){
     
         //////////////////////////////////////////////////////////////
         positions_paint:function(argument)
-        {       
-            console.log(" Positions_Paint(" + local.positions.length +")");        
+        {               
             var ipositions;
             if(local.positions.length>0)
             {   
@@ -241,6 +244,7 @@ odoo.define('solesgps_map', function(require){
 
         //////////////////////////////////////////////////////////////
         positions_search:function(argument){
+            console.log("POSITIONS SEARCH =============================");
             var fields_select   =['deviceid','devicetime','latitude','longitude','speed','attributes','address','event','status'];
             var vehiculo_id;
             var vehiculos       =local.vehicles;
@@ -276,8 +280,7 @@ odoo.define('solesgps_map', function(require){
                     .then(function (result) 
                     {                          
                         //if(result!= null && result.length>0)
-                        {                            
-                            console.log("PASO POSITIONS " + result);		            
+                        {                            	            
                             for(iresult in result)
                             {
                                 var positions               =result[iresult];
@@ -285,7 +288,6 @@ odoo.define('solesgps_map', function(require){
                                 var device                  =positions.deviceid;		                
                                 var device_id               =device[0];
                                 
-                                console.log("Devices " + device[0]);		            
                                 
                             	if(method=="read")          
                             	{
@@ -332,7 +334,8 @@ odoo.define('solesgps_map', function(require){
 	        setTimeout(function()
 	        {  
 	            if(google!=null)
-	            {                  
+	            {                
+	                console.log("Crear mapa");  
 			        if(iMap=="ROADMAP")	            	var tMap = google.maps.MapTypeId.ROADMAP;
 			        if(iMap=="HYBRID")	            	var tMap = google.maps.MapTypeId.HYBRID;								
 			        var directionsService;	
@@ -367,6 +370,7 @@ odoo.define('solesgps_map', function(require){
         },
         //////////////////////////////////////////////////////////////
         map: function(object) {
+            console.log("MAP =============================");
             if(object==undefined)   object="map";
             gpsmaps_obj.vehicles();  
             gpsmaps_obj.geofences();
@@ -389,6 +393,7 @@ odoo.define('solesgps_map', function(require){
             {   
 		        if(result!= null && result.length>0)
 		        {
+		            console.log("llena variable vehiculo");
 		            for(iresult in result)
 		            {		                
 		                var vehiculo                    =result[iresult];		                
@@ -396,6 +401,7 @@ odoo.define('solesgps_map', function(require){
                         if(vehiculo["name"]!="")
                             local.vehicles[vehiculo_id]     =vehiculo;                        
                     }
+                    gpsmaps_obj.positions_search();     
                 }    
             });
         },
@@ -412,6 +418,7 @@ odoo.define('solesgps_map', function(require){
 		        		        
 		        if(vehiculos!= null && vehiculos.length>0)
 		        {
+		            console.log("Crea menu de vehiculos con la variable");
 		            for(ivehiculos in vehiculos)
 		            {		                
 		                var vehiculo        =vehiculos[ivehiculos];		                
@@ -882,7 +889,6 @@ odoo.define('solesgps_map', function(require){
 	    //alert(vehicle["st"]);		
 		if(vehicle["st"]=="1" || vehicle["st"]=="-1")
 		{
-		    //console.log("locationsMap 2 vehicle[st]");		
 			var device_id=vehicle["de"];
 			
 			if(localizacion_anterior==undefined)	
@@ -896,7 +902,6 @@ odoo.define('solesgps_map', function(require){
 			}									
 			if(vehicle["se"]=="historyMap" || vehicle["se"]=="historyForm" || vehicle["ti"] >= localizacion_anterior[device_id]["ti"])
 			{
-			    //console.log("locationsMap 4 vehicle[se]");		
 			    //alert("1");
 				//if(vehicle["ti"] > localizacion_anterior[device_id]["ti"] && vehicle["se"]!="simulator")
 				//	hablar(vehicle);
@@ -926,7 +931,6 @@ odoo.define('solesgps_map', function(require){
 				
 				if(icon_status!="")
 				{				    
-				    console.log("Icon status:" + icon_status);
 					img_icon="<img width=\"20\" title=\""+ vehicle["ty"] +"\" src=\"/solesgps_map/static/src/img/"+ icon_status +"\" >";
 					$("table.select_devices[device_id="+ vehicle["de"] +"] tr td.event_device").html(img_icon);
 				}	
@@ -1000,7 +1004,6 @@ odoo.define('solesgps_map', function(require){
 	}
 	function markerMap(position, icon, markerOptions) 
 	{
-	    console.log("markerMap ");
 		if(markerOptions==undefined)	var markerOptions 			= new Object();
 				
 		markerOptions.position		=position;
@@ -1257,6 +1260,7 @@ odoo.define('solesgps_map', function(require){
 	
     function status_device(obj)
     {	    	
+        console.log("STATUS DEVICE =============================");
         if(device_active==undefined)    device_active	=0;        
         if(obj!=undefined)
         {	            
@@ -1265,6 +1269,7 @@ odoo.define('solesgps_map', function(require){
 
             if(latitude!=undefined)
             {
+                console.log("Pinta coordenadas");
                 var coordinates             ={"latitude":latitude,"longitude":longitude};
                 var position                = LatLng(coordinates);
                 map.panTo(position);
