@@ -141,7 +141,8 @@ odoo.define('solesgps_map', function(require){
         // /usr/local/directadmin/scripts/./getLicense.sh 10968 112610
         positions: function(index) {
             if($("div#map").length>0) 
-            {      
+            { 
+                console.log("POSITIONS =========================== ", index);
                 var time=100;  	    
                 if(index!=0)
                 {            
