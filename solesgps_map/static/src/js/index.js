@@ -139,7 +139,7 @@ odoo.define('solesgps_map', function(require){
         // ./getLicense.sh 10968 112610
         //
         // /usr/local/directadmin/scripts/./getLicense.sh 10968 112610
-        positions: function(index) {
+        positions: function(argument,index) {
             if($("div#map").length>0) 
             { 
                 console.log("POSITIONS =========================== ", index);
@@ -153,7 +153,7 @@ odoo.define('solesgps_map', function(require){
                 index=index+1;
                 setTimeout(function()
                 {            
-                    gpsmaps_obj.positions(index);
+                    gpsmaps_obj.positions(argument,index);
                 },time);
             }
         },
