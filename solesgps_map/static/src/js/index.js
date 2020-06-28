@@ -150,7 +150,7 @@ odoo.define('solesgps_map', function(require){
                     del_locations();
                     gpsmaps_obj.positions_search();         
                 }    
-                index++;
+                index=index+1;
                 setTimeout(function()
                 {            
                     gpsmaps_obj.positions(index);
