@@ -38,6 +38,7 @@
     var maponline_obj;
     var map;
     var class_gpsmap;
+    var actualizaciones         =0;
         
 odoo.define('solesgps_map', function(require){
     "use strict";
@@ -103,10 +104,9 @@ odoo.define('solesgps_map', function(require){
         //////////////////////////////////////////////////////////////
         position: function(argument) {
             //gpsmaps_obj.positions_search(argument);     
-            gpsmaps_obj.positions(argument,0);
             //setTimeout(function()
             {  
-                if(argument==undefined)                 gpsmaps_obj.positions(argument,0);
+                if(argument==undefined)                 gpsmaps_obj.positions(argument);
                 else if($("#data_tablero").length==0)   gpsmaps_obj.position(argument);         
             }
             //,100);
@@ -139,21 +139,21 @@ odoo.define('solesgps_map', function(require){
         // ./getLicense.sh 10968 112610
         //
         // /usr/local/directadmin/scripts/./getLicense.sh 10968 112610
-        positions: function(argument,index) {
+        positions: function(argument) {
             if($("div#map").length>0) 
             { 
-                console.log("POSITIONS =========================== ", index);
+                console.log("POSITIONS =========================== ", actualizaciones);
                 var time=100;  	    
-                if(index!=0)
+                if(actualizaciones!=0)
                 {            
                     time=15000;        
                     del_locations();
                     gpsmaps_obj.positions_search();         
                 }    
-                index=index+1;
+                actualizaciones++;
                 setTimeout(function()
                 {            
-                    gpsmaps_obj.positions(argument,index);
+                    gpsmaps_obj.positions(argument);
                 },time);
             }
         },
