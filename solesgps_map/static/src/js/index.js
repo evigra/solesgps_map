@@ -4,7 +4,6 @@
     //
     // /usr/local/directadmin/scripts/./getLicense.sh 10968 112610
 
-
     var geocoder;
     var gMEvent					=undefined;
     
@@ -124,23 +123,21 @@ odoo.define('solesgps_map', function(require){
         },
         ////////////////////////////////////////////////////////////
         positions: function(argument) {
-            var time=100;  	    
-            if($("div#map").length>0) 
+            var time=50;  	    
+            if($("div#maponline").length>0) 
             { 
                 console.log("POSITIONS ====== lalo =");
-                //if(local.actualizaciones>0)
-                {            
-                    time=15000;        
-                    del_locations();
-                    gpsmaps_obj.positions_search();         
-                }    
-                //local.actualizaciones++;
+                time=15000;        
+                del_locations();
+                gpsmaps_obj.positions_search(argument);         
             }
-            setTimeout(function()
-            {            
-                gpsmaps_obj.positions(argument);
-            },time);
-
+            if(typeof argument!="number")
+            {
+                setTimeout(function()
+                {            
+                    gpsmaps_obj.positions(argument);
+                },time);
+            }
         },    
         //////////////////////////////////////////////////////////////
         positions_paint:function(argument)
@@ -350,7 +347,7 @@ odoo.define('solesgps_map', function(require){
         //////////////////////////////////////////////////////////////
         map: function(object) {
             console.log("MAP ===========");
-            if(object==undefined)   object="map";
+            if(object==undefined)   object="maponline";
             gpsmaps_obj.vehicles();  
             gpsmaps_obj.geofences();
 	        var iZoom               =5;
