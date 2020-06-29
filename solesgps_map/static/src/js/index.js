@@ -117,7 +117,6 @@ odoo.define('solesgps_map', function(require){
             //gpsmaps_obj.positions_search(argument);     
             //setTimeout(function()
             {  
-                alert(argument);
                 if(argument==undefined)                 gpsmaps_obj.positions(argument);
                 else if($("#data_tablero").length==0)   gpsmaps_obj.position(argument);         
             }
@@ -125,10 +124,10 @@ odoo.define('solesgps_map', function(require){
         },
         ////////////////////////////////////////////////////////////
         positions: function(argument) {
+            var time=100;  	    
             if($("div#map").length>0) 
             { 
                 console.log("POSITIONS ====== lalo =");
-                var time=100;  	    
                 //if(local.actualizaciones>0)
                 {            
                     time=15000;        
@@ -136,11 +135,12 @@ odoo.define('solesgps_map', function(require){
                     gpsmaps_obj.positions_search();         
                 }    
                 //local.actualizaciones++;
-                setTimeout(function()
-                {            
-                    gpsmaps_obj.positions(argument);
-                },time);
             }
+            setTimeout(function()
+            {            
+                gpsmaps_obj.positions(argument);
+            },time);
+
         },    
         //////////////////////////////////////////////////////////////
         positions_paint:function(argument)
