@@ -51,16 +51,16 @@
         
 odoo.define('solesgps_map', function(require){
     "use strict";
-    var core        = require('web.core');
-    var Widget      = require('web.Widget');
-    var rpc         = require('web.rpc');
+    var core                    = require('web.core');
+    var Widget                  = require('web.Widget');
+    var rpc                     = require('web.rpc');
 
-    map             =undefined;    
-    local.vehicles  =Array();
-    local.geofences =Array();
-    local.positions =undefined;    
-    local.gpsmap    =undefined;
-    local.actualizaciones    =0;        
+    map                         =undefined;    
+    local.vehicles              =Array();
+    local.geofences             =Array();
+    local.positions             =undefined;    
+    local.gpsmap                =undefined;
+    local.actualizaciones       =0;        
     
     //////////////////////////////////////////////////////////////
     ////////  CLASS GPSMAP  
@@ -125,7 +125,7 @@ odoo.define('solesgps_map', function(require){
         positions: function(argument) {
             if($("div#map").length>0) 
             { 
-                console.log("POSITIONS ================ lalo =========== ");
+                console.log("POSITIONS ====== lalo =");
                 var time=100;  	    
                 //if(local.actualizaciones>0)
                 {            
@@ -146,7 +146,7 @@ odoo.define('solesgps_map', function(require){
             var ipositions;
             if(local.positions.length>0)
             {   
-
+                console.log("POSITIONS PAINT ========");
                 var vehiculo_id;
                 var vehiculos       =local.vehicles;
                 var ivehiculos;
@@ -222,7 +222,7 @@ odoo.define('solesgps_map', function(require){
         },
         //////////////////////////////////////////////////////////////
         positions_search:function(argument){
-            console.log("POSITIONS SEARCH =============================");
+            console.log("POSITIONS SEARCH ========");
             var fields_select   =['deviceid','devicetime','latitude','longitude','speed','attributes','address','event','status'];
             var vehiculo_id;
             var vehiculos       =local.vehicles;
@@ -347,7 +347,7 @@ odoo.define('solesgps_map', function(require){
         },
         //////////////////////////////////////////////////////////////
         map: function(object) {
-            console.log("MAP =============================");
+            console.log("MAP ===========");
             if(object==undefined)   object="map";
             gpsmaps_obj.vehicles();  
             gpsmaps_obj.geofences();
@@ -449,7 +449,6 @@ odoo.define('solesgps_map', function(require){
     local.maponline = Widget.extend({
         template: 'gpsmaps_maponline',
         start: function() {       
-            alert("AAAAA");
             local.vehicles  =Array();
             local.geofences =Array();
             local.positions =undefined;    
@@ -1156,7 +1155,7 @@ odoo.define('solesgps_map', function(require){
 	
     function status_device(obj)
     {	    	
-        console.log("STATUS DEVICE =============================");
+        console.log("STATUS DEVICE ==========");
         if(device_active==undefined)    device_active	=0;        
         if(obj!=undefined)
         {	            
