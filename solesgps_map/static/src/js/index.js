@@ -114,12 +114,15 @@ odoo.define('solesgps_map', function(require){
         position: function(argument) {
             console.log("POSITION ========");
             //gpsmaps_obj.positions_search(argument);     
-            //setTimeout(function()
+            setTimeout(function()
             {  
                 if(argument==undefined)                 gpsmaps_obj.positions(argument);
-                else if($("#data_tablero").length==0)   gpsmaps_obj.position(argument);         
-            }
-            //,100);
+                else if($("#data_tablero").length==0)   
+                {
+                    console.log("tablero");
+                    gpsmaps_obj.position(argument);         
+                }    
+            },100);
         },
         ////////////////////////////////////////////////////////////
         positions: function(argument) {
