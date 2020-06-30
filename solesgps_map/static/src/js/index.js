@@ -319,8 +319,6 @@ odoo.define('solesgps_map', function(require){
         map: function(object) {
             console.log("MAP ===========");
             if(object==undefined)   object="maponline";
-            gpsmaps_obj.vehicles();  
-            gpsmaps_obj.geofences();
 	        var iZoom               =5;
 	        var iMap                ="ROADMAP";
 	        var coordinates         ={latitude:19.057522756727606,longitude:-104.29785901920393};
@@ -448,8 +446,11 @@ odoo.define('solesgps_map', function(require){
             local.positions =undefined;    
 
             status_device();
-            gpsmaps_obj.map();            
+            gpsmaps_obj.vehicles();  
+            gpsmaps_obj.geofences();
             gpsmaps_obj.positions_search();
+            gpsmaps_obj.map();            
+            
             gpsmaps_obj.vehicles_menu(argument);               
             var obj=$("li.vehicle_active")
             status_device(obj);
