@@ -449,8 +449,8 @@ odoo.define('solesgps_map', function(require){
 
             status_device();
             gpsmaps_obj.map();            
-            gpsmaps_obj.vehicles_menu(argument);   
             gpsmaps_obj.positions_search();
+            gpsmaps_obj.vehicles_menu(argument);               
             var obj=$("li.vehicle_active")
             status_device(obj);
             gpsmaps_obj.geofences_paint();
