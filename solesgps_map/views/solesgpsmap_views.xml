@@ -32,16 +32,21 @@
         <field name="model">fleet.vehicle</field>
         <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
         <field name="arch" type="xml">
-        <xpath expr="//group" position="after">            
-            <group col="4" string="GPS Configuration">
-                <field name="imei"/>
-                <field name="phone"/>
-                <field name="economic_number"/>
-                <field name="image_vehicle"/>
-                <field name="speed"/>
-                <field name="temporal_id"/>
-            </group>                
-        </xpath>                
+            <xpath expr="//group" position="after">            
+                <group col="4" string="GPS Configuration">
+                    <field name="imei"/>
+                    <field name="phone"/>
+                    <field name="economic_number"/>
+                    <field name="image_vehicle"/>
+                    <field name="speed"/>
+                    <field name="temporal_id"/>
+                </group>                
+            </xpath>                
+            <xpath expr="//button[@name='toggle_active']" position="after">            
+                <button name="toggle_motor" type="object" class="oe_stat_button" icon="fa-archive">
+                    <field name="motor" widget="boolean_button" options='{"terminology": "archive"}'/>
+                </button>       
+            </xpath>                
         </field>
     </record>        
 
