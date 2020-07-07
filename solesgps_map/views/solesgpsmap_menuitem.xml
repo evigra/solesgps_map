@@ -8,7 +8,7 @@
         <field name="name">Map Online</field>
         <field name="tag">gpsmap.maponline</field>
     </record>
-    <menuitem id="menu_gpsmap_maponline" name="Online Map" sequence="1" parent="solesgps_map_geolocation" action="action_gpsmap_maponline" groups="gpsmap_group_user"/>
+    <menuitem id="menu_gpsmap_maponline" name="Online Map" sequence="1" parent="solesgps_map_geolocation" action="action_gpsmap_maponline" groups="gpsmap_group_temporal"/>
 
 
 
@@ -16,7 +16,7 @@
         <field name="name">Street Online</field>
         <field name="tag">gpsmap.streetonline</field>
     </record>
-    <menuitem id="menu_gpsmap_streetonline" sequence="2" name="Online Street"  parent="solesgps_map_geolocation" action="action_gpsmap_street" groups="gpsmap_group_user"/>    
+    <menuitem id="menu_gpsmap_streetonline" sequence="2" name="Online Street"  parent="solesgps_map_geolocation" action="action_gpsmap_street" groups="gpsmap_group_temporal"/>    
 
 
 
