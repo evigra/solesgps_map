@@ -53,6 +53,7 @@
 
 
 
+
         <record id="access_gpsmap_positions_user" model="ir.rule">
             <field name="name">User can only see his/her vehicle</field>
             <field name="model_id" ref="model_gpsmap_positions"/>
