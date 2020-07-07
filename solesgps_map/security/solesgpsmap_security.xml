@@ -4,6 +4,7 @@
             <field name="name">SolesGPS</field>
             <field name="sequence">17</field>
         </record>
+        
         <record id="gpsmap_group_temporal" model="res.groups">
             <field name="name">Temporal</field>
             <field name="category_id" ref="module_gpsmap_category"/>
@@ -14,7 +15,6 @@
             <field name="category_id" ref="module_gpsmap_category"/>
             <field name="implied_ids" eval="[(4, ref('gpsmap_group_temporal'))]"/>
         </record>
-
         <record id="gpsmap_group_manager" model="res.groups">
             <field name="name">Manager</field>
             <field name="category_id" ref="module_gpsmap_category"/>
@@ -24,18 +24,6 @@
 
 
 
-
-
-        <record id="access_gpsmap_vehicle_temporal" model="ir.rule">
-            <field name="name">User can only see his/her vehicle</field>
-            <field name="model_id" ref="model_fleet_vehicle"/>
-            <field name="domain_force">[('temporal_id.id','=',user.id)]</field>            
-            <field name="groups" eval="[(4, ref('gpsmap_group_temporal'))]"/>
-            <field name="perm_read" eval="True"/>
-            <field name="perm_write" eval="False"/>
-            <field name="perm_create" eval="False"/>
-            <field name="perm_unlink" eval="False"/>            
-        </record>
         
 
 <!--
@@ -51,8 +39,16 @@
         </record>
 
 -->
-        
-        
+        <record id="access_gpsmap_vehicle_temporal" model="ir.rule">
+            <field name="name">User can only see his/her vehicle</field>
+            <field name="model_id" ref="model_fleet_vehicle"/>
+            <field name="domain_force">[('temporal_id.id','=',user.id)]</field>            
+            <field name="groups" eval="[(4, ref('gpsmap_group_temporal'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>            
+        </record>                
         <record id="access_gpsmap_vehicle_user" model="ir.rule">
             <field name="name">User can only see his/her vehicle</field>
             <field name="model_id" ref="model_fleet_vehicle"/>
@@ -63,7 +59,6 @@
             <field name="perm_create" eval="False"/>
             <field name="perm_unlink" eval="False"/>            
         </record>
-
         <record id="access_gpsmap_vehicle" model="ir.rule">
             <field name="name">User can only see his/her vehicle</field>
             <field name="model_id" ref="model_fleet_vehicle"/>
