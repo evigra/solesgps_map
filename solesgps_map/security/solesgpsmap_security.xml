@@ -80,16 +80,6 @@
             <field name="perm_create" eval="False"/>
             <field name="perm_unlink" eval="False"/>            
         </record>
-        <record id="access_gpsmap_positions_manager" model="ir.rule">
-            <field name="name">User can only see his/her vehicle</field>
-            <field name="model_id" ref="model_gpsmap_positions"/>
-            <field name="domain_force">[('deviceid.company_id.id','=',user.company_id.id)]</field>
-            <field name="groups" eval="[(4, ref('gpsmap_group_manager'))]"/>
-            <field name="perm_read" eval="True"/>
-            <field name="perm_write" eval="True"/>
-            <field name="perm_create" eval="True"/>
-            <field name="perm_unlink" eval="False"/>            
-        </record>
 
 <!--
         <record id="access_gpsmap_positions" model="ir.rule">
