@@ -10,8 +10,6 @@
     </record>
     <menuitem id="menu_gpsmap_maponline" name="Online Map" sequence="1" parent="solesgps_map_geolocation" action="action_gpsmap_maponline" groups="gpsmap_group_temporal"/>
 
-
-
     <record id="action_gpsmap_street" model="ir.actions.client">
         <field name="name">Street Online</field>
         <field name="tag">gpsmap.streetonline</field>
