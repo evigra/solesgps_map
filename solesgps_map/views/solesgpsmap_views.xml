@@ -43,7 +43,6 @@
     </record>        
 
 
-
     <record id='gpsmap_positions_view_form' model='ir.ui.view'>
         <field name="name">gpsmap.positions.form</field>
         <field name="model">gpsmap.positions</field>
@@ -94,6 +93,7 @@
                 <field name="deviceid" />
                 <field name="devicetime"/>
                 <field name="speed"/>
+                
                 <field name="address" />
                 <field name="event" />
                 <field name="leido" />
