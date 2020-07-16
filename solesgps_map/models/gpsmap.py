@@ -52,9 +52,6 @@ class vehicle(models.Model):
     motor                                       = fields.Boolean('Motor', default=True, track_visibility="onchange")
     def toggle_motor(self):
         print('TOOGLE--------------- MOTOR')          
-        
-        
-        
     
 
 class speed(models.Model):
