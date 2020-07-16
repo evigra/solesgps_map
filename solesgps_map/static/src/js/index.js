@@ -4,6 +4,7 @@
     //
     // /usr/local/directadmin/scripts/./getLicense.sh 10968 112610
 
+
     var geocoder;
     var gMEvent					=undefined;
     
@@ -114,33 +115,32 @@ odoo.define('solesgps_map', function(require){
         position: function(argument) {
             console.log("POSITION ========");
             //gpsmaps_obj.positions_search(argument);     
-            setTimeout(function()
+            //setTimeout(function()
             {  
                 if(argument==undefined)                 gpsmaps_obj.positions(argument);
-                else if($("#data_tablero").length==0)   
-                {
-                    console.log("tablero");
-                    gpsmaps_obj.position(argument);         
-                }    
-            },100);
+                else if($("#data_tablero").length==0)   gpsmaps_obj.position(argument);         
+            }
+            //,100);
         },
         ////////////////////////////////////////////////////////////
         positions: function(argument) {
-            var time=50;  	    
-            if($("div#maponline").length>0) 
+            var time=100;  	    
+            if($("div#map").length>0) 
             { 
                 console.log("POSITIONS ====== lalo =");
-                time=15000;        
-                del_locations();
-                gpsmaps_obj.positions_search(argument);         
-            }
-            if(typeof argument!="number")
-            {
-                setTimeout(function()
+                //if(local.actualizaciones>0)
                 {            
-                    gpsmaps_obj.positions(argument);
-                },time);
+                    time=15000;        
+                    del_locations();
+                    gpsmaps_obj.positions_search();         
+                }    
+                //local.actualizaciones++;
             }
+            setTimeout(function()
+            {            
+                gpsmaps_obj.positions(argument);
+            },time);
+
         },    
         //////////////////////////////////////////////////////////////
         positions_paint:function(argument)
@@ -350,7 +350,7 @@ odoo.define('solesgps_map', function(require){
         //////////////////////////////////////////////////////////////
         map: function(object) {
             console.log("MAP ===========");
-            if(object==undefined)   object="maponline";
+            if(object==undefined)   object="map";
             gpsmaps_obj.vehicles();  
             gpsmaps_obj.geofences();
 	        var iZoom               =5;
