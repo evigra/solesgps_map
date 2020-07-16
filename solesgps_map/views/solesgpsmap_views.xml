@@ -39,7 +39,6 @@
                 <field name="economic_number"/>
                 <field name="image_vehicle"/>
                 <field name="speed"/>
-                <field name="temporal_id"/>
             </group>                
         </xpath>                
         </field>
