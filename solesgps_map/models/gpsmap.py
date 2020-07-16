@@ -50,10 +50,6 @@ class vehicle(models.Model):
     speed                                       = fields.Char('Exceso de Velocidad', default=100, size=3)   
     positionid                                  = fields.Many2one('gpsmap.positions',ondelete='set null', string="Position", index=True)
     motor                                       = fields.Boolean('Motor', default=True, track_visibility="onchange")
-    def toggle_motor(self):
-        print('TOOGLE--------------- MOTOR')          
-    
-
 class speed(models.Model):
     _name = "gpsmap.speed"
     _description = 'Positions Speed'

@@ -41,10 +41,14 @@
                     <field name="speed"/>
                     <field name="temporal_id"/>
                 </group>                
-            </xpath>
+            </xpath>                
             <xpath expr="//sheet/div/button[@name='toggle_active']" position="after">            
                 <button name="toggle_motor" type="object" class="oe_stat_button" icon="fa-key">
-                    <field name="motor" widget="boolean_button"/>                    
+                    <field name="motor" widget="boolean_button"/>
+                    
+                    <!--
+                    <field name="motor" widget="boolean_button" options='{"terminology": "archive"}'/>    
+                    -->
                 </button>       
             </xpath>                
         </field>
