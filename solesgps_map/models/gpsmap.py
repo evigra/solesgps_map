@@ -49,7 +49,6 @@ class vehicle(models.Model):
     imei                                        = fields.Char('Imei', size=50)
     speed                                       = fields.Char('Exceso de Velocidad', default=100, size=3)   
     positionid                                  = fields.Many2one('gpsmap.positions',ondelete='set null', string="Position", index=True)
-    motor                                       = fields.Boolean('Motor', default=True, track_visibility="onchange")
 class speed(models.Model):
     _name = "gpsmap.speed"
     _description = 'Positions Speed'
@@ -58,16 +57,7 @@ class speed(models.Model):
     starttime                                   = fields.Datetime('Start Time')
     endtime                                     = fields.Datetime('End Time')
     speed                                       = fields.Float('Velocidad',digits=(3,2))
-    """
-class motor(models.Model):
-    _name = "gpsmap.motor"
-    _description = 'Motor'
-    _order = "starttime DESC"
-    deviceid                                    = fields.Many2one('fleet.vehicle',ondelete='set null', string="Vehiculo", index=True)
-    command                                     = fields.Char('Command', size=50)
-    starttime                                   = fields.Datetime('Start Time')
-    endtime                                     = fields.Datetime('End Time')
-    """
+
 class positions(models.Model):
     _name = "gpsmap.positions"
     _description = 'GPS Positions'
@@ -210,7 +200,8 @@ class positions(models.Model):
                         print('===========',alerts.name)
                         print('===========',alerts.device_ids)
                         print('===========',alerts.geofence_ids)                                
-                                                        
+                    
+                                    
                 position["leido"]=1                
                 positions_obj.write(position)
                 
